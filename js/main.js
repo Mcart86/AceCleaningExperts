@@ -65,6 +65,29 @@ document.addEventListener("DOMContentLoaded", function () {
     revealTargets.forEach(function (el) { io.observe(el); });
   }
 
+  // Testimonial carousel.
+  var carousel = document.getElementById("testiCarousel");
+  if (carousel) {
+    var slides = carousel.querySelectorAll(".carousel-slide");
+    var dotsWrap = carousel.parentElement.querySelector(".carousel-dots");
+    var dots = dotsWrap ? dotsWrap.querySelectorAll(".carousel-dot") : [];
+    var idx = 0;
+
+    function goTo(n) {
+      idx = (n + slides.length) % slides.length;
+      slides.forEach(function (s, i) { s.classList.toggle("is-active", i === idx); });
+      dots.forEach(function (d, i) { d.classList.toggle("is-active", i === idx); });
+    }
+
+    dots.forEach(function (d) {
+      d.addEventListener("click", function () { goTo(Number(d.dataset.goto)); });
+    });
+    var prevBtn = carousel.querySelector(".carousel-prev");
+    var nextBtn = carousel.querySelector(".carousel-next");
+    if (prevBtn) prevBtn.addEventListener("click", function () { goTo(idx - 1); });
+    if (nextBtn) nextBtn.addEventListener("click", function () { goTo(idx + 1); });
+  }
+
   // Multi-step quote wizard on the contact page.
   var wizard = document.getElementById("quoteWizard");
   if (wizard) {

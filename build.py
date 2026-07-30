@@ -210,10 +210,11 @@ def trust_strip():
     return f'<div class="trust-strip"><div class="wrap">\n    {lis}\n  </div></div>'
 
 def stats_bar():
-    return """<div class="stats-bar"><div class="wrap stats-grid">
-    <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Years Serving South Jersey</div></div>
-    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Licensed &amp; Insured</div></div>
-    <div class="stat stat-placeholder"><div class="stat-num">[ ]</div><div class="stat-label">Add real review count once collected (e.g. &ldquo;4.8&#9733; &middot; 32 reviews&rdquo;)</div></div>
+    return """<div class="stats-bar"><div class="wrap stats-grid stats-grid-4">
+    <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Years Experience</div></div>
+    <div class="stat stat-placeholder"><div class="stat-num">[ ]</div><div class="stat-label">Homes Cleaned &mdash; add once known</div></div>
+    <div class="stat stat-placeholder"><div class="stat-num">[ ]</div><div class="stat-label">5-Star Reviews &mdash; add once collected</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Satisfaction Guaranteed</div></div>
   </div></div>"""
 
 def breadcrumb(trail):
@@ -391,14 +392,14 @@ def town_page(t):
 
 # Edit/add entries here to revise testimonials — each is (quote, name, town, star_count)
 TESTIMONIALS = [
-    ("[Insert a short, real customer quote here before launch — pull a strong line from a verified Google or Facebook review.]", "[Customer Name]", "[Town]", 5),
-    ("[Insert a second real, permission-cleared review here.]", "[Customer Name]", "[Town]", 5),
-    ("[Insert a third real, permission-cleared review here.]", "[Customer Name]", "[Town]", 5),
+    ("[Add Review Headline]", "[Insert a short, real customer quote here before launch — pull a strong line from a verified Google or Facebook review.]", "[Customer Name]", "[Town]", 5),
+    ("[Add Review Headline]", "[Insert a second real, permission-cleared review here.]", "[Customer Name]", "[Town]", 5),
+    ("[Add Review Headline]", "[Insert a third real, permission-cleared review here.]", "[Customer Name]", "[Town]", 5),
 ]
 
 def testimonials(items=TESTIMONIALS):
     cards = []
-    for quote, name, town, stars in items:
+    for headline, quote, name, town, stars in items:
         star_str = "&#9733;" * stars
         cards.append(f'''      <div class="testi-card">
         <div class="quote-mark">&ldquo;</div>
@@ -410,6 +411,35 @@ def testimonials(items=TESTIMONIALS):
     grid = "\n".join(cards)
     return f'<div class="testi-grid">\n{grid}\n    </div>\n    <p class="testi-note">Swap each card for a real, permission-cleared review before launch.</p>'
 
+def testimonial_carousel(items=TESTIMONIALS):
+    slides = []
+    for i, (headline, quote, name, town, stars) in enumerate(items):
+        star_str = "&#9733;" * stars
+        active = " is-active" if i == 0 else ""
+        slides.append(f'''    <div class="carousel-slide{active}" data-slide="{i}">
+      <div class="stars">{star_str}</div>
+      <h3 class="carousel-headline">{headline}</h3>
+      <p class="carousel-quote">{quote}</p>
+      <div class="who">{name}</div>
+      <div class="where">{town}, NJ</div>
+    </div>''')
+    slides_html = "\n".join(slides)
+    dots = "\n    ".join(
+        f'<button type="button" class="carousel-dot{" is-active" if i == 0 else ""}" data-goto="{i}" aria-label="Show testimonial {i + 1}"></button>'
+        for i in range(len(items))
+    )
+    return f'''<div class="testi-carousel" id="testiCarousel">
+  <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous testimonial">{icon('chevron')}</button>
+  <div class="carousel-track">
+{slides_html}
+  </div>
+  <button type="button" class="carousel-arrow carousel-next" aria-label="Next testimonial">{icon('chevron')}</button>
+</div>
+<div class="carousel-dots">
+    {dots}
+</div>
+<p class="testi-note">Swap each slide for a real, permission-cleared review before launch.</p>'''
+
 print("build.py scaffold loaded")
 
 # ============================================================== HOME ====
@@ -418,15 +448,20 @@ home_body = f"""
   <div class="wrap">
     <div class="hero-copy">
       <span class="eyebrow">Veteran-Owned &middot; Family-Operated</span>
-      <h1>Your Family's Home Deserves a Family You Can Trust</h1>
-      <p class="lede">Serving South Jersey for 30+ years. Deep steam extraction, EPA-certified products, and a local crew that treats your home like their own.</p>
+      <h1>South Jersey's Trusted Carpet Cleaning Experts</h1>
+      <p class="lede">Veteran-owned. Family-operated. Serving homes and businesses throughout South Jersey for 30+ years with honest pricing and a crew that shows up when they say they will.</p>
       <div class="btn-row">
         <a href="/contact/" class="btn btn-primary">Get Free Quote</a>
         <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
       </div>
+      <div class="hero-stars">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span>[Add review count once collected]</span>
+      </div>
       <ul class="hero-trust">
         <li>{icon('shield')} Veteran-Owned</li>
         <li>{icon('clock')} 30+ Years Experience</li>
+        <li>{icon('check')} Fully Insured</li>
         <li>{icon('building')} Residential &amp; Commercial</li>
       </ul>
     </div>
@@ -463,6 +498,23 @@ home_body = f"""
         <div class="placeholder-block">{icon('sofa')}<span>Before &amp; After</span></div>
         <div class="ba-mini-label">Upholstery</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="why-ace">
+  <div class="wrap why-row">
+    <div class="placeholder-block">{icon('home')}<span>Ace Team / Truck</span></div>
+    <div>
+      <span class="eyebrow">Why Ace</span>
+      <h2>Why South Jersey Chooses Ace</h2>
+      <ul class="benefit-list">
+        <li><span class="b-icon">{icon('shield')}</span><span class="b-text">Veteran-Owned</span></li>
+        <li><span class="b-icon">{icon('home')}</span><span class="b-text">Family-Owned &amp; Operated</span></li>
+        <li><span class="b-icon">{icon('droplet')}</span><span class="b-text">Professional-Grade Equipment</span></li>
+        <li><span class="b-icon">{icon('star')}</span><span class="b-text">Experienced, Trained Technicians</span></li>
+        <li><span class="b-icon">{icon('check')}</span><span class="b-text">Satisfaction Guaranteed</span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -515,20 +567,14 @@ home_body = f"""
   </div>
 </section>
 
-<section id="why-ace">
-  <div class="wrap why-row">
-    <div class="placeholder-block">{icon('home')}<span>Ace Team / Truck</span></div>
+<section id="meet-ace">
+  <div class="wrap meet-ace-row">
     <div>
-      <span class="eyebrow">Why Ace</span>
-      <h2>Why South Jersey Chooses Ace</h2>
-      <ul class="benefit-list">
-        <li><span class="b-icon">{icon('shield')}</span><span class="b-text">Veteran-Owned</span></li>
-        <li><span class="b-icon">{icon('clock')}</span><span class="b-text">Serving South Jersey for 30+ Years</span></li>
-        <li><span class="b-icon">{icon('droplet')}</span><span class="b-text">Professional-Grade Equipment</span></li>
-        <li><span class="b-icon">{icon('star')}</span><span class="b-text">Experienced, Trained Technicians</span></li>
-        <li><span class="b-icon">{icon('check')}</span><span class="b-text">Satisfaction-Focused Service</span></li>
-      </ul>
+      <span class="eyebrow">Meet Ace</span>
+      <h2>The People Behind Ace</h2>
+      <p class="lede">Veteran-owned and family-operated, serving South Jersey for 30+ years. The person who quotes your job is accountable for the crew that shows up to do it &mdash; no corporate hand-offs, no call centers.</p>
     </div>
+    <div class="placeholder-block">{icon('home')}<span>Team / Truck Photo</span></div>
   </div>
 </section>
 
@@ -538,24 +584,7 @@ home_body = f"""
       <span class="eyebrow">Reviews</span>
       <h2>What South Jersey Says About Ace</h2>
     </div>
-    {testimonials()}
-  </div>
-</section>
-
-<section id="who-we-serve">
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow">Who We Serve</span>
-      <h2>Trusted Across South Jersey</h2>
-    </div>
-    <div class="grid-6">
-      <div class="who-card"><div class="icon">{icon('home')}</div><h3>Homeowners</h3></div>
-      <div class="who-card"><div class="icon">{icon('briefcase')}</div><h3>Property Managers</h3></div>
-      <div class="who-card"><div class="icon">{icon('building')}</div><h3>Offices</h3></div>
-      <div class="who-card"><div class="icon">{icon('utensils')}</div><h3>Restaurants</h3></div>
-      <div class="who-card"><div class="icon">{icon('book')}</div><h3>Schools</h3></div>
-      <div class="who-card"><div class="icon">{icon('hardhat')}</div><h3>Contractors</h3></div>
-    </div>
+    {testimonial_carousel()}
   </div>
 </section>
 
@@ -601,7 +630,7 @@ home_body = f"""
   </div>
 </section>
 
-{cta_band()}
+{cta_band("Ready to Love Your Floors Again?", "Veteran-Owned. Family-Operated. Serving South Jersey Since 1983.")}
 """
 page("/", "Ace Cleaning Experts | South Jersey's Trusted Carpet Cleaning Experts",
      "Veteran-owned, family-operated carpet, tile and upholstery cleaning serving Sewell, Deptford, Haddonfield and all of South Jersey for 30+ years. Call 856-582-1711.",
