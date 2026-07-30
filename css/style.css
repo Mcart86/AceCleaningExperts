@@ -135,12 +135,64 @@ nav.primary-nav a:hover, nav.primary-nav a[aria-current="page"] { color: var(--r
 .nav-phone .call-number { font-weight: 700; color: var(--charcoal); font-size: 0.98rem; }
 .nav-toggle { display: none; background: none; border: 1.5px solid var(--border); border-radius: var(--radius-sm); width: 42px; height: 42px; align-items: center; justify-content: center; }
 
+/* ---------- Service Areas nav dropdown ---------- */
+.nav-dropdown { position: relative; display: flex; align-items: center; }
+.nav-dropdown-trigger { display: inline-flex; align-items: center; gap: 4px; }
+.nav-dropdown-trigger .chev { width: 14px; height: 14px; transition: transform 0.15s ease; }
+.nav-dropdown-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  padding: 10px;
+  min-width: 230px;
+  display: grid;
+  gap: 1px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 60;
+}
+.nav-dropdown-panel a { padding: 9px 12px; border-radius: var(--radius-sm); font-size: 0.92rem; color: var(--charcoal-70); }
+.nav-dropdown-panel a:hover { background: var(--gray); color: var(--red); }
+.nav-dropdown-viewall { margin-top: 6px; border-top: 1px solid var(--border-soft); font-weight: 700; color: var(--red) !important; }
+.nav-dropdown:hover .nav-dropdown-panel,
+.nav-dropdown:focus-within .nav-dropdown-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.nav-dropdown:hover .nav-dropdown-trigger .chev,
+.nav-dropdown:focus-within .nav-dropdown-trigger .chev {
+  transform: rotate(180deg);
+}
+
 @media (max-width: 980px) {
   nav.primary-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; align-items: stretch; border-bottom: 1px solid var(--border-soft); padding: 8px 22px 20px; gap: 0; box-shadow: 0 12px 24px -12px rgba(0,0,0,0.15); }
   nav.primary-nav.open { display: flex; }
   nav.primary-nav a { padding: 13px 6px; border-bottom: 1px solid var(--border-soft); }
   .nav-toggle { display: flex; }
   .nav-phone .call-label { display: none; }
+
+  .nav-dropdown { flex-direction: column; align-items: stretch; }
+  .nav-dropdown-trigger { border-bottom: 1px solid var(--border-soft); }
+  .nav-dropdown-panel {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 4px 0 4px 16px;
+    min-width: 0;
+  }
+  .nav-dropdown-panel a { padding: 10px 6px; border-bottom: 1px solid var(--border-soft); font-size: 0.9rem; }
+  .nav-dropdown-viewall { border-top: none; margin-top: 0; }
 }
 
 /* ---------- Trust bar ---------- */

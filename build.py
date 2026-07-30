@@ -67,7 +67,19 @@ def header(active):
     links = []
     for label, href, key in NAV:
         cur = ' aria-current="page"' if key == active else ""
-        links.append(f'<a href="{href}"{cur}>{label}</a>')
+        if key == "areas":
+            town_links = "\n          ".join(
+                f'<a href="/service-areas/{t["slug"]}/">{t["name"]}</a>' for t in TOWNS
+            )
+            links.append(f'''<div class="nav-dropdown">
+        <a href="{href}"{cur} class="nav-dropdown-trigger">{label} {icon('chevron')}</a>
+        <div class="nav-dropdown-panel">
+          {town_links}
+          <a href="/service-areas/" class="nav-dropdown-viewall">View All Service Areas</a>
+        </div>
+      </div>''')
+        else:
+            links.append(f'<a href="{href}"{cur}>{label}</a>')
     nav_links = "\n      ".join(links)
     return f"""<div class="announce">
   <div class="wrap">
