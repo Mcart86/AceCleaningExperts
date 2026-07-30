@@ -84,7 +84,7 @@ def header(active):
     return f"""<div class="announce">
   <div class="wrap">
     <span>{icon('star')} Veteran-Owned &amp; Family-Operated</span>
-    <span class="center-item">Serving South Jersey for 30+ Years</span>
+    <span class="center-item">Serving South Jersey for 40+ Years</span>
     <span>Residential &amp; Commercial Cleaning</span>
   </div>
 </div>
@@ -113,7 +113,7 @@ def footer():
   <div class="wrap footer-grid">
     <div>
       <div class="footer-logo-badge"><img src="/images/ace-logo.jpg" alt="Ace Cleaning Experts logo" class="footer-logo-img"></div>
-      <p>Veteran-owned, family-operated carpet and floor cleaning serving South Jersey for 30+ years.</p>
+      <p>Veteran-owned, family-operated carpet and floor cleaning serving South Jersey for 40+ years.</p>
       <div class="foot-social">
         <a href="https://www.facebook.com/AceCleaningExperts/" aria-label="Facebook">{icon('facebook')}</a>
       </div>
@@ -194,7 +194,7 @@ def cta_band(headline="Ready to Love Your Floors Again?", sub="Fast response, ho
       <span>Fast Response</span>
       <span>Veteran-Owned</span>
       <span>Deep Cleaning Guaranteed</span>
-      <span>Serving South Jersey for 30+ Years</span>
+      <span>Serving South Jersey for 40+ Years</span>
     </div>
   </div>
 </section>"""
@@ -211,9 +211,9 @@ def trust_strip():
 
 def stats_bar():
     return """<div class="stats-bar"><div class="wrap stats-grid stats-grid-4">
-    <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Years Experience</div></div>
-    <div class="stat stat-placeholder"><div class="stat-num">[ ]</div><div class="stat-label">Homes Cleaned &mdash; add once known</div></div>
-    <div class="stat stat-placeholder"><div class="stat-num">[ ]</div><div class="stat-label">5-Star Reviews &mdash; add once collected</div></div>
+    <div class="stat"><div class="stat-num">40+</div><div class="stat-label">Years Experience</div></div>
+    <div class="stat"><div class="stat-num">10,000+</div><div class="stat-label">Homes Cleaned</div></div>
+    <div class="stat"><div class="stat-num stat-num-bold">5&#9733;</div><div class="stat-label">Star Rating</div></div>
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Satisfaction Guaranteed</div></div>
   </div></div>"""
 
@@ -449,14 +449,14 @@ home_body = f"""
     <div class="hero-copy">
       <span class="eyebrow">Veteran-Owned &middot; Family-Operated</span>
       <h1>Your Family's Home Deserves a Family You Can Trust</h1>
-      <p class="lede">Serving South Jersey for 30+ years. Deep steam extraction, EPA-certified products, and a local crew that treats your home like their own.</p>
+      <p class="lede">Serving South Jersey for 40+ years. Deep steam extraction, EPA-certified products, and a local crew that treats your home like their own.</p>
       <div class="btn-row">
         <a href="/contact/" class="btn btn-primary">Get Free Quote</a>
         <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
       </div>
       <ul class="hero-trust">
         <li>{icon('shield')} Veteran-Owned</li>
-        <li>{icon('clock')} 30+ Years Experience</li>
+        <li>{icon('clock')} 40+ Years Experience</li>
         <li>{icon('building')} Residential &amp; Commercial</li>
       </ul>
     </div>
@@ -567,7 +567,7 @@ home_body = f"""
     <div>
       <span class="eyebrow">Meet Ace</span>
       <h2>The People Behind Ace</h2>
-      <p class="lede">Veteran-owned and family-operated, serving South Jersey for 30+ years. The person who quotes your job is accountable for the crew that shows up to do it &mdash; no corporate hand-offs, no call centers.</p>
+      <p class="lede">Veteran-owned and family-operated, serving South Jersey for 40+ years. The person who quotes your job is accountable for the crew that shows up to do it &mdash; no corporate hand-offs, no call centers.</p>
     </div>
     <div class="placeholder-block">{icon('home')}<span>Team / Truck Photo</span></div>
   </div>
@@ -628,7 +628,7 @@ home_body = f"""
 {cta_band("Ready to Love Your Floors Again?", "Veteran-Owned. Family-Operated. Serving South Jersey Since 1983.")}
 """
 page("/", "Ace Cleaning Experts | South Jersey's Trusted Carpet Cleaning Experts",
-     "Veteran-owned, family-operated carpet, tile and upholstery cleaning serving Sewell, Deptford, Haddonfield and all of South Jersey for 30+ years. Call 856-582-1711.",
+     "Veteran-owned, family-operated carpet, tile and upholstery cleaning serving Sewell, Deptford, Haddonfield and all of South Jersey for 40+ years. Call 856-582-1711.",
      "home", home_body)
 
 # ============================================================== ABOUT ===
@@ -637,8 +637,8 @@ about_body = f"""
   <div class="wrap">
     {breadcrumb([("Home","/"),("About Us", None)])}
     <span class="eyebrow">Our Story</span>
-    <h1>Three Decades of Straight Talk and Clean Carpets</h1>
-    <p class="lede">Ace Cleaning Experts started the way most good local businesses do &mdash; with a family, a van, and a determination to do the job right. Thirty-plus years later, we're still locally owned and operated: not a franchise, not a national call center, just the same commitment to honest pricing and work you can trust.</p>
+    <h1>Four Decades of Straight Talk and Clean Carpets</h1>
+    <p class="lede">Ace Cleaning Experts started the way most good local businesses do &mdash; with a family, a van, and a determination to do the job right. Forty-plus years later, we're still locally owned and operated: not a franchise, not a national call center, just the same commitment to honest pricing and work you can trust.</p>
   </div>
 </section>
 
@@ -695,7 +695,7 @@ about_body = f"""
 {cta_band("Come See Why South Jersey Calls Ace First", "Talk to a real person on the first ring &mdash; no scripts, no upsells.")}
 """
 page("/about-us/", "About Ace Cleaning Experts | Veteran-Owned, Family-Operated NJ Cleaners",
-     "Meet Ace Cleaning Experts: a veteran-owned, family-operated carpet and floor cleaning company serving South Jersey for 30+ years. Local, insured, EPA-certified.",
+     "Meet Ace Cleaning Experts: a veteran-owned, family-operated carpet and floor cleaning company serving South Jersey for 40+ years. Local, insured, EPA-certified.",
      "about", about_body)
 
 # ============================================================ SERVICES ==
@@ -705,7 +705,7 @@ services_body = f"""
     {breadcrumb([("Home","/"),("Services", None)])}
     <span class="eyebrow">What We Do</span>
     <h1>Cleaning Services for Every Room and Every Business</h1>
-    <p class="lede">Carpet, upholstery, tile, grout, hardwood and commercial floor care &mdash; all handled by the same local crew, with EPA-certified products and 30+ years of hands-on experience behind every job.</p>
+    <p class="lede">Carpet, upholstery, tile, grout, hardwood and commercial floor care &mdash; all handled by the same local crew, with EPA-certified products and 40+ years of hands-on experience behind every job.</p>
   </div>
 </section>
 
