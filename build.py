@@ -449,7 +449,7 @@ home_body = f"""
     <div class="hero-copy">
       <span class="eyebrow">Veteran-Owned &middot; Family-Operated</span>
       <h1>Your Family's Home Deserves a Family You Can Trust</h1>
-      <p class="lede">Serving South Jersey for 40+ years. Deep steam extraction, EPA-certified products, and a local crew that treats your home like their own.</p>
+      <p class="lede">South Jersey's carpet, tile &amp; upholstery cleaning experts. Serving homes and businesses for 40+ years with deep steam extraction, EPA-certified products, and a local crew that treats your home like their own.</p>
       <div class="btn-row">
         <a href="/contact/" class="btn btn-primary">Get Free Quote</a>
         <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
