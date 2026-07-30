@@ -997,37 +997,31 @@ areas_body = f"""
       <a href="/service-areas/deptford-nj/" class="area-pill priority">Deptford</a>
       <a href="/service-areas/haddonfield-nj/" class="area-pill priority">Haddonfield</a>
     </div>
-  </div>
-</section>
 
-<section style="background:var(--gray);">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Towns We Cover</span>
-      <h2>South Jersey Coverage</h2>
+    <div style="background:var(--gray); border-radius:var(--radius); padding:36px 32px; margin-top:48px;">
+      <div class="section-head" style="margin-bottom:26px;">
+        <span class="eyebrow">Towns We Cover</span>
+        <h2>South Jersey Coverage</h2>
+      </div>
+      <div class="area-pill-grid">
+        <a href="/service-areas/west-deptford-nj/" class="area-pill">West Deptford</a>
+        <a href="/service-areas/cherry-hill-nj/" class="area-pill">Cherry Hill</a>
+        <a href="/service-areas/washington-township-nj/" class="area-pill">Washington Township</a>
+        <a href="/service-areas/voorhees-nj/" class="area-pill">Voorhees</a>
+        <a href="/service-areas/blackwood-nj/" class="area-pill">Blackwood</a>
+        <a href="/service-areas/turnersville-nj/" class="area-pill">Turnersville</a>
+        <a href="/service-areas/logan-township-nj/" class="area-pill">Logan Township</a>
+        <a href="/service-areas/franklin-township-nj/" class="area-pill">Franklin Township</a>
+      </div>
+      <div class="grid-4" style="margin-top:28px;">
+        <div class="county-card"><h3>Gloucester County</h3><p style="margin:0; color:var(--charcoal-70); font-size:0.92rem;">Including Sewell &amp; Deptford, and surrounding communities.</p></div>
+        <div class="county-card"><h3>Camden County</h3><p style="margin:0; color:var(--charcoal-70); font-size:0.92rem;">Including Haddonfield, and surrounding communities.</p></div>
+        <div class="county-card"><h3>Atlantic County</h3><p style="margin:0; color:var(--charcoal-70); font-size:0.92rem;">Residential and commercial jobs throughout the county.</p></div>
+        <div class="county-card"><h3>Cape May County</h3><p style="margin:0; color:var(--charcoal-70); font-size:0.92rem;">Residential and commercial jobs throughout the county.</p></div>
+      </div>
     </div>
-    <div class="area-pill-grid">
-      <a href="/service-areas/west-deptford-nj/" class="area-pill">West Deptford</a>
-      <a href="/service-areas/cherry-hill-nj/" class="area-pill">Cherry Hill</a>
-      <a href="/service-areas/washington-township-nj/" class="area-pill">Washington Township</a>
-      <a href="/service-areas/voorhees-nj/" class="area-pill">Voorhees</a>
-      <a href="/service-areas/blackwood-nj/" class="area-pill">Blackwood</a>
-      <a href="/service-areas/turnersville-nj/" class="area-pill">Turnersville</a>
-      <a href="/service-areas/logan-township-nj/" class="area-pill">Logan Township</a>
-      <a href="/service-areas/franklin-township-nj/" class="area-pill">Franklin Township</a>
-    </div>
-    <div class="grid-4" style="margin-top:40px;">
-      <div class="county-card"><h3>Gloucester County</h3><p style="margin:0; color:var(--charcoal-70); font-size:0.92rem;">Including Sewell &amp; Deptford, and surrounding communities.</p></div>
-      <div class="county-card"><h3>Camden County</h3><p style="margin:0; color:var(--charcoal-70); font-size:0.92rem;">Including Haddonfield, and surrounding communities.</p></div>
-      <div class="county-card"><h3>Atlantic County</h3><p style="margin:0; color:var(--charcoal-70); font-size:0.92rem;">Residential and commercial jobs throughout the county.</p></div>
-      <div class="county-card"><h3>Cape May County</h3><p style="margin:0; color:var(--charcoal-70); font-size:0.92rem;">Residential and commercial jobs throughout the county.</p></div>
-    </div>
-  </div>
-</section>
 
-<section>
-  <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" style="margin-top:48px; margin-bottom:22px;">
       <span class="eyebrow">Extended Area</span>
       <h2>Just Across the Bridge</h2>
       <p class="lede">We also schedule appointments in Philadelphia, PA and in Wilmington and the surrounding Delaware area.</p>
