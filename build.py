@@ -218,6 +218,27 @@ def process_steps(steps):
 def placeholder(label, extra_class=""):
     return f'<div class="placeholder-block {extra_class}">{icon("droplet")}<span>{label}</span></div>'
 
+# Edit/add entries here to revise testimonials — each is (quote, name, town, star_count)
+TESTIMONIALS = [
+    ("[Insert a short, real customer quote here before launch — pull a strong line from a verified Google or Facebook review.]", "[Customer Name]", "[Town]", 5),
+    ("[Insert a second real, permission-cleared review here.]", "[Customer Name]", "[Town]", 5),
+    ("[Insert a third real, permission-cleared review here.]", "[Customer Name]", "[Town]", 5),
+]
+
+def testimonials(items=TESTIMONIALS):
+    cards = []
+    for quote, name, town, stars in items:
+        star_str = "&#9733;" * stars
+        cards.append(f'''      <div class="testi-card">
+        <div class="quote-mark">&ldquo;</div>
+        <div class="stars">{star_str}</div>
+        <p class="quote-body">{quote}</p>
+        <div class="who">{name}</div>
+        <div class="where">{town}, NJ</div>
+      </div>''')
+    grid = "\n".join(cards)
+    return f'<div class="testi-grid">\n{grid}\n    </div>\n    <p class="testi-note">Swap each card for a real, permission-cleared review before launch.</p>'
+
 print("build.py scaffold loaded")
 
 # ============================================================== HOME ====
@@ -241,8 +262,6 @@ home_body = f"""
     <img src="/images/hero-family.jpg" alt="Three generations of the Ace Cleaning Experts family" class="hero-visual hero-photo">
   </div>
 </section>
-
-{trust_strip()}
 
 <section id="before-after">
   <div class="wrap">
@@ -342,15 +361,11 @@ home_body = f"""
 
 <section style="background:var(--gray);">
   <div class="wrap">
-    <div class="testi-feature">
-      <div class="quote-mark">&ldquo;</div>
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="pull">[Your Best Review Headline Here]</div>
-      <p class="quote-body">[Insert a short, real customer quote here before launch &mdash; pull a strong line from a verified Google or Facebook review.]</p>
-      <div class="who">[Customer Name]</div>
-      <div class="where">[Town], NJ</div>
+    <div class="section-head center">
+      <span class="eyebrow">Reviews</span>
+      <h2>What South Jersey Says About Ace</h2>
     </div>
-    <p class="testi-note">Swap this for a real, permission-cleared review before launch.</p>
+    {testimonials()}
   </div>
 </section>
 
