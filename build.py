@@ -197,6 +197,13 @@ def trust_strip():
     lis = "\n    ".join(f'<div class="item">{icon(n)}<span>{t}</span></div>' for n, t in items)
     return f'<div class="trust-strip"><div class="wrap">\n    {lis}\n  </div></div>'
 
+def stats_bar():
+    return """<div class="stats-bar"><div class="wrap stats-grid">
+    <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Years Serving South Jersey</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Licensed &amp; Insured</div></div>
+    <div class="stat stat-placeholder"><div class="stat-num">[ ]</div><div class="stat-label">Add real review count once collected (e.g. &ldquo;4.8&#9733; &middot; 32 reviews&rdquo;)</div></div>
+  </div></div>"""
+
 def breadcrumb(trail):
     parts = " / ".join(f'<a href="{h}">{l}</a>' if h else l for l, h in trail)
     return f'<div class="breadcrumb">{parts}</div>'
@@ -217,6 +224,93 @@ def process_steps(steps):
 
 def placeholder(label, extra_class=""):
     return f'<div class="placeholder-block {extra_class}">{icon("droplet")}<span>{label}</span></div>'
+
+# ---------------------------------------------------------- location pages ----
+# Each town: slug, display name, county, zip, and a short paragraph of genuinely
+# specific local detail (verified facts, not generic filler) plus a services note.
+TOWNS = [
+    {
+        "slug": "sewell-nj",
+        "name": "Sewell",
+        "county": "Gloucester County",
+        "zip": "08080",
+        "about": "Sewell sits within Washington Township and Mantua Township in Gloucester County, "
+                 "just off Route 42 &mdash; home turf for us, and one of our most-requested towns for "
+                 "carpet and floor cleaning. Whether you're near Washington Township High School or "
+                 "closer to Rowan College of South Jersey, we're a short drive away.",
+    },
+    {
+        "slug": "deptford-nj",
+        "name": "Deptford Township",
+        "county": "Gloucester County",
+        "zip": "08096",
+        "about": "Deptford Township has been a Gloucester County hub since Route 42 opened it up to "
+                 "suburban growth in the late 1950s, and the Deptford Mall has anchored the area since "
+                 "1975. We handle carpet, tile and upholstery cleaning for homes and the businesses that "
+                 "keep this busy corridor running.",
+    },
+    {
+        "slug": "haddonfield-nj",
+        "name": "Haddonfield",
+        "county": "Camden County",
+        "zip": "08033",
+        "about": "Haddonfield's historic Kings Highway district &mdash; over 200 shops, restaurants and "
+                 "galleries along a National Register Historic District &mdash; means a lot of older homes "
+                 "and storefronts with floors worth taking care of properly. We're comfortable working "
+                 "carefully in Haddonfield's colonial-era homes as well as its busy downtown storefronts.",
+    },
+]
+
+def town_page(t):
+    name = t["name"]
+    body = f"""
+<section class="page-hero">
+  <div class="wrap">
+    {breadcrumb([("Home","/"),("Service Areas","/service-areas/"),(name, None)])}
+    <span class="eyebrow">{t["county"]} &middot; {t["zip"]}</span>
+    <h1>Carpet &amp; Floor Cleaning in {name}, NJ</h1>
+    <p class="lede">{t["about"]}</p>
+    <div class="btn-row">
+      <a href="/contact/" class="btn btn-primary">Get Free Quote</a>
+      <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What We Offer</span>
+      <h2>Services Available in {name}</h2>
+    </div>
+    <ul class="checklist grid-2" style="display:grid;">
+      <li>{icon('check')} <a href="/carpet-cleaning-service/">Carpet Cleaning</a> &mdash; deep steam extraction with Scotchgard protection</li>
+      <li>{icon('check')} <a href="/upholstery-cleaning/">Upholstery Cleaning</a> &mdash; fabric-safe cleaning for sofas &amp; chairs</li>
+      <li>{icon('check')} <a href="/tile-grout-cleaning/">Tile, Grout &amp; Hardwood</a> &mdash; kitchens, bathrooms &amp; floors</li>
+      <li>{icon('check')} <a href="/commercial-carpet-cleaning/">Commercial Floor Care</a> &mdash; offices, retail &amp; medical spaces</li>
+    </ul>
+  </div>
+</section>
+
+<section style="background:var(--gray);">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Common Questions</span>
+      <h2>{name} Cleaning FAQ</h2>
+    </div>
+    {faq([
+        (f"How fast can you get to {name}?", f"{name} is one of our regularly serviced areas, so scheduling is usually quick &mdash; call {PHONE} and we'll give you a real timeframe, not a runaround."),
+        ("Do you serve both homes and businesses here?", "Yes &mdash; residential and commercial jobs, from single rooms to full offices or storefronts."),
+        ("Is pricing different by town?", "No &mdash; our pricing is based on the job, not the zip code. You'll get the same honest, up-front quote wherever you're located in South Jersey."),
+    ])}
+  </div>
+</section>
+
+{cta_band(f"Ready to Book in {name}?", f"Fast response, honest pricing, and a crew that shows up when they say they will.")}
+"""
+    page(f"/service-areas/{t['slug']}/", f"Carpet Cleaning in {name}, NJ | Ace Cleaning Experts",
+         f"Professional carpet, tile and upholstery cleaning in {name}, NJ. EPA-certified products, honest pricing. Call {PHONE}.",
+         "areas", body)
 
 # Edit/add entries here to revise testimonials — each is (quote, name, town, star_count)
 TESTIMONIALS = [
@@ -262,6 +356,8 @@ home_body = f"""
     <img src="/images/hero-family.jpg" alt="Three generations of the Ace Cleaning Experts family" class="hero-visual hero-photo">
   </div>
 </section>
+
+{stats_bar()}
 
 <section id="before-after">
   <div class="wrap">
@@ -393,9 +489,9 @@ home_body = f"""
       <h2>Proudly Serving South Jersey</h2>
       <p class="lede">Home base in Sewell, Deptford and Haddonfield, with regular jobs throughout Gloucester and Camden counties &mdash; and beyond.</p>
       <div class="area-pill-grid">
-        <span class="area-pill priority">Sewell</span>
-        <span class="area-pill priority">Deptford</span>
-        <span class="area-pill priority">Haddonfield</span>
+        <a href="/service-areas/sewell-nj/" class="area-pill priority">Sewell</a>
+        <a href="/service-areas/deptford-nj/" class="area-pill priority">Deptford</a>
+        <a href="/service-areas/haddonfield-nj/" class="area-pill priority">Haddonfield</a>
         <span class="area-pill">West Deptford</span>
         <span class="area-pill">Cherry Hill</span>
         <span class="area-pill">Washington Township</span>
@@ -820,9 +916,9 @@ areas_body = f"""
       <h2>Priority Service Cities</h2>
     </div>
     <div class="area-pill-grid">
-      <span class="area-pill priority">Sewell</span>
-      <span class="area-pill priority">Deptford</span>
-      <span class="area-pill priority">Haddonfield</span>
+      <a href="/service-areas/sewell-nj/" class="area-pill priority">Sewell</a>
+      <a href="/service-areas/deptford-nj/" class="area-pill priority">Deptford</a>
+      <a href="/service-areas/haddonfield-nj/" class="area-pill priority">Haddonfield</a>
     </div>
   </div>
 </section>
@@ -873,6 +969,9 @@ page("/service-areas/", "Service Areas | Ace Cleaning Experts, South Jersey",
      "Ace Cleaning Experts serves Sewell, Deptford, Haddonfield and all of Atlantic, Camden, Gloucester and Cape May counties, plus Philadelphia and Wilmington, DE.",
      "areas", areas_body)
 
+for _t in TOWNS:
+    town_page(_t)
+
 # ==================================================== CONTACT ============
 contact_body = f"""
 <section class="page-hero">
@@ -900,24 +999,43 @@ contact_body = f"""
     </div>
     <div>
       <!-- Form posts to Formspree. Replace YOUR_FORM_ID with your real endpoint from formspree.io before launch. -->
-      <form class="form-grid" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required></div>
-        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required></div>
-        <div class="field full"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
-        <div class="field"><label for="town">Town</label><input id="town" name="town" type="text" placeholder="e.g. Sewell, NJ"></div>
-        <div class="field">
-          <label for="service">Service Needed</label>
-          <select id="service" name="service">
-            <option>Carpet Cleaning</option>
-            <option>Upholstery Cleaning</option>
-            <option>Tile, Grout &amp; Hardwood</option>
-            <option>Commercial Floor Care</option>
-            <option>Not Sure Yet</option>
-          </select>
+      <div class="quote-wizard" id="quoteWizard">
+        <div class="wizard-progress">Step <span id="wizStepNum">1</span> of 3</div>
+        <form class="form-grid wizard-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="quoteForm">
+          <div class="wizard-step" data-step="1">
+            <label class="wizard-question">What do you need cleaned?</label>
+            <div class="wizard-choices" role="group" aria-label="Service needed">
+              <button type="button" class="wizard-choice" data-value="Carpet Cleaning">Carpet Cleaning</button>
+              <button type="button" class="wizard-choice" data-value="Upholstery Cleaning">Upholstery Cleaning</button>
+              <button type="button" class="wizard-choice" data-value="Tile, Grout &amp; Hardwood">Tile, Grout &amp; Hardwood</button>
+              <button type="button" class="wizard-choice" data-value="Commercial Floor Care">Commercial Floor Care</button>
+              <button type="button" class="wizard-choice" data-value="Not Sure Yet">Not Sure Yet</button>
+            </div>
+            <input type="hidden" name="service" id="wizServiceInput">
+          </div>
+          <div class="wizard-step" data-step="2">
+            <div class="field full"><label for="town">What town are you in?</label><input id="town" name="town" type="text" placeholder="e.g. Sewell, NJ" required></div>
+            <div class="wizard-nav">
+              <button type="button" class="wizard-back">Back</button>
+              <button type="button" class="btn btn-primary wizard-next">Continue</button>
+            </div>
+          </div>
+          <div class="wizard-step" data-step="3">
+            <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required></div>
+            <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required></div>
+            <div class="field full"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+            <div class="field full"><label for="message">Message (optional)</label><textarea id="message" name="message" placeholder="Anything else we should know?"></textarea></div>
+            <div class="wizard-nav">
+              <button type="button" class="wizard-back">Back</button>
+              <button type="submit" class="btn btn-primary">Get My Free Quote</button>
+            </div>
+          </div>
+        </form>
+        <div class="wizard-success" id="wizardSuccess" hidden>
+          <h3>You're all set!</h3>
+          <p>We'll follow up shortly to schedule your free quote. Need it faster? Call <a href="tel:{PHONE_TEL}">{PHONE}</a>.</p>
         </div>
-        <div class="field full"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us a bit about the space and what you'd like cleaned."></textarea></div>
-        <div class="full"><button type="submit" class="btn btn-primary">Send &amp; Request Quote</button></div>
-      </form>
+      </div>
     </div>
   </div>
 </section>

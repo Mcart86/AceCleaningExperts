@@ -411,3 +411,40 @@ footer.site-footer a:hover { color: var(--white); }
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 20L20 0L40 20L20 40Z' fill='none' stroke='black' stroke-width='1'/%3E%3C/svg%3E") repeat;
   mask-size: 40px 40px;
 }
+
+/* ---------- Multi-step quote wizard ---------- */
+.wizard-progress { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); margin-bottom: 18px; display: none; }
+.wizard-question { display: block; font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; margin-bottom: 16px; grid-column: 1 / -1; }
+.wizard-step[data-step="1"], .wizard-step[data-step="2"], .wizard-step[data-step="3"] { grid-column: 1 / -1; }
+.wizard-choices { display: grid; gap: 10px; margin-bottom: 6px; }
+.wizard-choice {
+  text-align: left;
+  padding: 15px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  font-weight: 600;
+  font-size: 0.97rem;
+  color: var(--charcoal);
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+}
+.wizard-choice:hover { border-color: var(--red); transform: translateX(2px); }
+.wizard-choice.selected { border-color: var(--red); background: var(--red-tint); color: var(--red); }
+.wizard-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+.wizard-back { background: none; border: none; color: var(--charcoal-50); font-size: 0.88rem; text-decoration: underline; cursor: pointer; padding: 6px 0; }
+.wizard-step[data-step="1"] .wizard-nav { display: none; }
+/* Without JS, all steps show at once as one long form (progressive enhancement). */
+.quote-wizard.js-enabled .wizard-step { display: none; }
+.quote-wizard.js-enabled .wizard-step.is-active { display: block; }
+.quote-wizard.js-enabled .wizard-progress { display: block; }
+.wizard-success { text-align: center; padding: 40px 10px; }
+.wizard-success h3 { margin-bottom: 10px; }
+
+/* ---------- Stats bar (homepage, under hero) ---------- */
+.stats-bar { background: var(--gray); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); padding: 40px 0; }
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
+@media (max-width: 700px) { .stats-grid { grid-template-columns: 1fr; gap: 28px; } }
+.stat-num { font-family: var(--font-display); font-weight: 800; font-size: clamp(2rem, 4vw, 2.6rem); color: var(--red); line-height: 1; margin-bottom: 8px; }
+.stat-label { font-size: 0.9rem; font-weight: 600; color: var(--charcoal-70); }
+.stat-placeholder .stat-num { color: var(--charcoal-30); border: 1px dashed var(--charcoal-30); border-radius: var(--radius-sm); padding: 4px 14px; display: inline-block; font-size: clamp(1.2rem, 2.4vw, 1.5rem); }
+.stat-placeholder .stat-label { font-style: italic; color: var(--charcoal-50); }

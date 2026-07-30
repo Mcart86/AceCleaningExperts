@@ -64,4 +64,67 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     revealTargets.forEach(function (el) { io.observe(el); });
   }
+
+  // Multi-step quote wizard on the contact page.
+  var wizard = document.getElementById("quoteWizard");
+  if (wizard) {
+    wizard.classList.add("js-enabled");
+    var steps = wizard.querySelectorAll(".wizard-step");
+    var stepNumEl = document.getElementById("wizStepNum");
+    var current = 1;
+
+    function showStep(n) {
+      current = n;
+      steps.forEach(function (el) {
+        el.classList.toggle("is-active", Number(el.dataset.step) === n);
+      });
+      if (stepNumEl) stepNumEl.textContent = String(n);
+    }
+    showStep(1);
+
+    wizard.querySelectorAll(".wizard-choice").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        wizard.querySelectorAll(".wizard-choice").forEach(function (b) { b.classList.remove("selected"); });
+        btn.classList.add("selected");
+        var input = document.getElementById("wizServiceInput");
+        if (input) input.value = btn.dataset.value || "";
+        showStep(2);
+      });
+    });
+
+    wizard.querySelectorAll(".wizard-next").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var town = document.getElementById("town");
+        if (town && !town.reportValidity()) return;
+        showStep(3);
+      });
+    });
+
+    wizard.querySelectorAll(".wizard-back").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        showStep(Math.max(1, current - 1));
+      });
+    });
+
+    var form = document.getElementById("quoteForm");
+    var success = document.getElementById("wizardSuccess");
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var data = new FormData(form);
+        fetch(form.action, { method: "POST", body: data, headers: { Accept: "application/json" } })
+          .then(function (res) {
+            if (res.ok) {
+              form.hidden = true;
+              if (success) success.hidden = false;
+            } else {
+              form.submit();
+            }
+          })
+          .catch(function () {
+            form.submit();
+          });
+      });
+    }
+  }
 });
