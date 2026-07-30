@@ -259,15 +259,80 @@ TOWNS = [
                  "and storefronts with floors worth taking care of properly. We're comfortable working "
                  "carefully in Haddonfield's colonial-era homes as well as its busy downtown storefronts.",
     },
+    {
+        "slug": "west-deptford-nj",
+        "name": "West Deptford",
+        "county": "Gloucester County",
+        "zip": None,
+        "about": "[Placeholder &mdash; add specific local detail for West Deptford here: nearby "
+                 "neighborhoods, landmarks, or well-known streets Ace commonly serves. Replace before launch.]",
+    },
+    {
+        "slug": "logan-township-nj",
+        "name": "Logan Township",
+        "county": "Gloucester County",
+        "zip": "08085",
+        "about": "[Placeholder &mdash; add specific local detail for Logan Township here: nearby "
+                 "neighborhoods, landmarks, or well-known streets Ace commonly serves. Replace before launch.]",
+    },
+    {
+        "slug": "washington-township-nj",
+        "name": "Washington Township",
+        "county": "Gloucester County",
+        "zip": "08080",
+        "about": "[Placeholder &mdash; add specific local detail for Washington Township here: nearby "
+                 "neighborhoods, landmarks, or well-known streets Ace commonly serves. Replace before launch.]",
+    },
+    {
+        "slug": "franklin-township-nj",
+        "name": "Franklin Township",
+        "county": "Gloucester County",
+        "zip": "08322",
+        "about": "[Placeholder &mdash; add specific local detail for Franklin Township here: nearby "
+                 "neighborhoods, landmarks, or well-known streets Ace commonly serves. Replace before launch.]",
+    },
+    {
+        "slug": "cherry-hill-nj",
+        "name": "Cherry Hill",
+        "county": "Camden County",
+        "zip": "08003",
+        "about": "[Placeholder &mdash; add specific local detail for Cherry Hill here: nearby "
+                 "neighborhoods, landmarks, or well-known streets Ace commonly serves. Replace before launch.]",
+    },
+    {
+        "slug": "voorhees-nj",
+        "name": "Voorhees",
+        "county": "Camden County",
+        "zip": "08043",
+        "about": "[Placeholder &mdash; add specific local detail for Voorhees here: nearby "
+                 "neighborhoods, landmarks, or well-known streets Ace commonly serves. Replace before launch.]",
+    },
+    {
+        "slug": "blackwood-nj",
+        "name": "Blackwood",
+        "county": "Camden County",
+        "zip": "08012",
+        "about": "[Placeholder &mdash; add specific local detail for Blackwood here: nearby "
+                 "neighborhoods, landmarks, or well-known streets Ace commonly serves. Replace before launch.]",
+    },
+    {
+        "slug": "turnersville-nj",
+        "name": "Turnersville",
+        "county": "Gloucester County",
+        "zip": "08012",
+        "about": "[Placeholder &mdash; add specific local detail for Turnersville here: nearby "
+                 "neighborhoods, landmarks, or well-known streets Ace commonly serves. Replace before launch.]",
+    },
 ]
 
 def town_page(t):
     name = t["name"]
+    locality = f'{t["county"]} &middot; {t["zip"]}' if t.get("zip") else t["county"]
     body = f"""
 <section class="page-hero">
   <div class="wrap">
     {breadcrumb([("Home","/"),("Service Areas","/service-areas/"),(name, None)])}
-    <span class="eyebrow">{t["county"]} &middot; {t["zip"]}</span>
+    <span class="eyebrow">{locality}</span>
     <h1>Carpet &amp; Floor Cleaning in {name}, NJ</h1>
     <p class="lede">{t["about"]}</p>
     <div class="btn-row">
@@ -492,14 +557,14 @@ home_body = f"""
         <a href="/service-areas/sewell-nj/" class="area-pill priority">Sewell</a>
         <a href="/service-areas/deptford-nj/" class="area-pill priority">Deptford</a>
         <a href="/service-areas/haddonfield-nj/" class="area-pill priority">Haddonfield</a>
-        <span class="area-pill">West Deptford</span>
-        <span class="area-pill">Cherry Hill</span>
-        <span class="area-pill">Washington Township</span>
-        <span class="area-pill">Voorhees</span>
-        <span class="area-pill">Blackwood</span>
-        <span class="area-pill">Turnersville</span>
-        <span class="area-pill">Logan Township</span>
-        <span class="area-pill">Franklin Township</span>
+        <a href="/service-areas/west-deptford-nj/" class="area-pill">West Deptford</a>
+        <a href="/service-areas/cherry-hill-nj/" class="area-pill">Cherry Hill</a>
+        <a href="/service-areas/washington-township-nj/" class="area-pill">Washington Township</a>
+        <a href="/service-areas/voorhees-nj/" class="area-pill">Voorhees</a>
+        <a href="/service-areas/blackwood-nj/" class="area-pill">Blackwood</a>
+        <a href="/service-areas/turnersville-nj/" class="area-pill">Turnersville</a>
+        <a href="/service-areas/logan-township-nj/" class="area-pill">Logan Township</a>
+        <a href="/service-areas/franklin-township-nj/" class="area-pill">Franklin Township</a>
       </div>
       <p style="margin-top:26px;"><a href="/service-areas/" class="btn btn-outline">View All Service Areas</a></p>
     </div>
@@ -930,14 +995,14 @@ areas_body = f"""
       <h2>South Jersey Coverage</h2>
     </div>
     <div class="area-pill-grid">
-      <span class="area-pill">West Deptford</span>
-      <span class="area-pill">Cherry Hill</span>
-      <span class="area-pill">Washington Township</span>
-      <span class="area-pill">Voorhees</span>
-      <span class="area-pill">Blackwood</span>
-      <span class="area-pill">Turnersville</span>
-      <span class="area-pill">Logan Township</span>
-      <span class="area-pill">Franklin Township</span>
+      <a href="/service-areas/west-deptford-nj/" class="area-pill">West Deptford</a>
+      <a href="/service-areas/cherry-hill-nj/" class="area-pill">Cherry Hill</a>
+      <a href="/service-areas/washington-township-nj/" class="area-pill">Washington Township</a>
+      <a href="/service-areas/voorhees-nj/" class="area-pill">Voorhees</a>
+      <a href="/service-areas/blackwood-nj/" class="area-pill">Blackwood</a>
+      <a href="/service-areas/turnersville-nj/" class="area-pill">Turnersville</a>
+      <a href="/service-areas/logan-township-nj/" class="area-pill">Logan Township</a>
+      <a href="/service-areas/franklin-township-nj/" class="area-pill">Franklin Township</a>
     </div>
     <div class="grid-4" style="margin-top:40px;">
       <div class="county-card"><h3>Gloucester County</h3><p style="margin:0; color:var(--charcoal-70); font-size:0.92rem;">Including Sewell &amp; Deptford, and surrounding communities.</p></div>
