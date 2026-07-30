@@ -448,20 +448,15 @@ home_body = f"""
   <div class="wrap">
     <div class="hero-copy">
       <span class="eyebrow">Veteran-Owned &middot; Family-Operated</span>
-      <h1>South Jersey's Trusted Carpet Cleaning Experts</h1>
-      <p class="lede">Veteran-owned. Family-operated. Serving homes and businesses throughout South Jersey for 30+ years with honest pricing and a crew that shows up when they say they will.</p>
+      <h1>Your Family's Home Deserves a Family You Can Trust</h1>
+      <p class="lede">Serving South Jersey for 30+ years. Deep steam extraction, EPA-certified products, and a local crew that treats your home like their own.</p>
       <div class="btn-row">
         <a href="/contact/" class="btn btn-primary">Get Free Quote</a>
         <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
       </div>
-      <div class="hero-stars">
-        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span>[Add review count once collected]</span>
-      </div>
       <ul class="hero-trust">
         <li>{icon('shield')} Veteran-Owned</li>
         <li>{icon('clock')} 30+ Years Experience</li>
-        <li>{icon('check')} Fully Insured</li>
         <li>{icon('building')} Residential &amp; Commercial</li>
       </ul>
     </div>
