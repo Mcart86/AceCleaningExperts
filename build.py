@@ -235,6 +235,34 @@ def process_steps(steps):
     out.append('</div>')
     return "\n".join(out)
 
+GALLERY_IMAGES = [
+    ("gallery-01", "Red patterned commercial carpet cleaning in progress"),
+    ("gallery-02", "Commercial carpet before and after cleaning, dirt lifted"),
+    ("gallery-03", "Green carpet cleaned, stain treatment in progress"),
+    ("gallery-04", "Patterned commercial carpet cleaning"),
+    ("gallery-05", "Gray carpet before and after cleaning"),
+    ("gallery-06", "Upholstery fabric cleaning, before and after"),
+    ("gallery-07", "Restaurant carpet mid-clean, dirt lifted with hose"),
+    ("gallery-08", "Staircase carpet before and after cleaning, side by side"),
+    ("gallery-09", "Stained carpet before and after deep cleaning"),
+    ("gallery-10", "Tile floor being cleaned, grout restored"),
+    ("gallery-11", "Patterned commercial carpet cleaning, ice cream shop"),
+]
+
+def gallery_grid(images=GALLERY_IMAGES):
+    items = "\n    ".join(
+        f'<button type="button" class="gallery-item" data-full="/images/{name}.webp" aria-label="View larger: {alt}">'
+        f'<img src="/images/{name}-thumb.webp" alt="{alt}" loading="lazy"></button>'
+        for name, alt in images
+    )
+    return f'''<div class="gallery-grid">
+    {items}
+  </div>
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <img src="" alt="" id="lightboxImg">
+  </div>'''
+
 def quote_snippet(text, name, stars=5, inline=False):
     star_str = "&#9733;" * stars
     cls = "quote-snippet inline" if inline else "quote-snippet"
@@ -595,6 +623,16 @@ home_body = f"""
       {quote_snippet("Ace Cleaning Experts makes our marble tile <span class=\"qs-highlight\">look like new every time</span>.", "Fabrizio")}
     </div>
     <p style="text-align:center; margin-top:40px;"><a href="/services/" class="btn btn-outline">View All Services</a></p>
+  </div>
+</section>
+
+<section style="background:var(--gray);">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">See The Difference</span>
+      <h2>Our Work</h2>
+    </div>
+    {gallery_grid()}
   </div>
 </section>
 
