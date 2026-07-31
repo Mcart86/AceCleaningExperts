@@ -247,7 +247,7 @@ img.hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: 
 /* ---------- Before / after slider ---------- */
 .ba-slider { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); user-select: none; }
 .ba-after, .ba-before { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
-.ba-after { clip-path: inset(0 50% 0 0); }
+.ba-after { clip-path: inset(0 0 0 50%); }
 .ba-handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 0; z-index: 3; pointer-events: none; }
 .ba-handle::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 3px; background: var(--white); box-shadow: 0 0 0 1px rgba(0,0,0,0.12); transform: translateX(-50%); }
 .ba-handle::after { content: "\21D4"; position: absolute; top: 50%; left: 0; transform: translate(-50%, -50%); width: 44px; height: 44px; background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--charcoal); box-shadow: 0 4px 14px rgba(0,0,0,0.18); }

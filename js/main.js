@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!range || !after || !handle) return;
     function update() {
       var v = range.value;
-      after.style.clipPath = "inset(0 " + (100 - v) + "% 0 0)";
+      after.style.clipPath = "inset(0 0 0 " + v + "%)";
       handle.style.left = v + "%";
     }
     range.addEventListener("input", update);
