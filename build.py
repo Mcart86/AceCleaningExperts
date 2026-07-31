@@ -896,6 +896,21 @@ carpet_body = f"""
 <section style="background:var(--gray);">
   <div class="wrap">
     <div class="section-head center">
+      <span class="eyebrow">Real Results</span>
+      <h2>Recent Carpet Cleaning Work</h2>
+    </div>
+    {gallery_grid([
+        ("gallery-05", "Gray carpet before and after cleaning"),
+        ("gallery-09", "Stained carpet before and after deep cleaning"),
+        ("gallery-08", "Staircase carpet before and after cleaning, side by side"),
+        ("gallery-07", "Restaurant carpet mid-clean, dirt lifted with hose"),
+    ])}
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head center">
       <span class="eyebrow">Common Questions</span>
       <h2>Carpet Cleaning FAQ</h2>
     </div>
@@ -949,6 +964,20 @@ uphol_body = f"""
 <section style="background:var(--gray);">
   <div class="wrap">
     <div class="section-head center">
+      <span class="eyebrow">Real Results</span>
+      <h2>Recent Upholstery Cleaning Work</h2>
+    </div>
+    {gallery_grid([
+        ("gallery-06", "Upholstery fabric cleaning, before and after"),
+        ("upholstery-mini-before-v2", "Stained upholstery cushion before cleaning"),
+        ("upholstery-mini-after-v2", "Clean upholstery cushion after cleaning"),
+    ])}
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head center">
       <span class="eyebrow">Common Questions</span>
       <h2>Upholstery Cleaning FAQ</h2>
     </div>
@@ -1000,6 +1029,21 @@ tile_body = f"""
 </section>
 
 <section style="background:var(--gray);">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Real Results</span>
+      <h2>Recent Tile &amp; Grout Work</h2>
+    </div>
+    {gallery_grid([
+        ("gallery-10", "Tile floor being cleaned, grout restored"),
+        ("tile-service", "Mosaic tile floor cleaned, dirty grout restored to clean"),
+        ("tile-mini-before", "Dirty, stained grout before cleaning"),
+        ("tile-mini-after", "Same tile floor after cleaning, grout restored"),
+    ])}
+  </div>
+</section>
+
+<section>
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Common Questions</span>
@@ -1068,6 +1112,21 @@ commercial_body = f"""
 </section>
 
 <section>
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Real Results</span>
+      <h2>Recent Commercial Work</h2>
+    </div>
+    {gallery_grid([
+        ("gallery-01", "Red patterned commercial carpet cleaning in progress"),
+        ("gallery-02", "Commercial carpet before and after cleaning, dirt lifted"),
+        ("gallery-04", "Patterned commercial carpet cleaning"),
+        ("gallery-11", "Patterned commercial carpet cleaning, ice cream shop"),
+    ])}
+  </div>
+</section>
+
+<section style="background:var(--gray);">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Common Questions</span>
