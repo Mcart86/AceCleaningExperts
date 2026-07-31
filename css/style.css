@@ -119,21 +119,21 @@ h3 { font-size: 1.2rem; font-weight: 700; }
 .announce a:hover { color: var(--white); }
 
 /* ---------- Header / Nav ---------- */
-header.site-header { background: var(--white); border-bottom: 1px solid var(--border-soft); position: sticky; top: 0; z-index: 50; transition: box-shadow 0.2s ease; }
-header.site-header.scrolled { box-shadow: var(--shadow-sm); }
+header.site-header { background: var(--charcoal); border-bottom: 1px solid rgba(255,255,255,0.08); position: sticky; top: 0; z-index: 50; transition: box-shadow 0.2s ease; }
+header.site-header.scrolled { box-shadow: 0 4px 16px rgba(0,0,0,0.35); }
 .nav-row { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; gap: 24px; }
-.logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.2rem; color: var(--charcoal); white-space: nowrap; letter-spacing: -0.01em; }
-.logo-img { height: 56px; width: auto; display: block; }
+.logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.2rem; color: var(--white); white-space: nowrap; letter-spacing: -0.01em; }
+.logo-img { height: 56px; width: auto; display: block; border-radius: var(--radius-sm); }
 @media (max-width: 600px) { .logo-img { height: 46px; } }
 
 nav.primary-nav { display: flex; align-items: center; gap: 4px; flex: 1; justify-content: center; }
-nav.primary-nav a { padding: 10px 14px; font-size: 0.94rem; font-weight: 500; border-radius: var(--radius-sm); color: var(--charcoal-70); }
+nav.primary-nav a { padding: 10px 14px; font-size: 0.94rem; font-weight: 500; border-radius: var(--radius-sm); color: rgba(255,255,255,0.75); }
 nav.primary-nav a:hover, nav.primary-nav a[aria-current="page"] { color: var(--red); }
 .nav-cta { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
 .nav-phone { display: flex; flex-direction: column; text-align: right; }
-.nav-phone .call-label { font-size: 10.5px; font-weight: 600; letter-spacing: 0.04em; color: var(--charcoal-50); text-transform: uppercase; }
-.nav-phone .call-number { font-weight: 700; color: var(--charcoal); font-size: 0.98rem; }
-.nav-toggle { display: none; background: none; border: 1.5px solid var(--border); border-radius: var(--radius-sm); width: 42px; height: 42px; align-items: center; justify-content: center; }
+.nav-phone .call-label { font-size: 10.5px; font-weight: 600; letter-spacing: 0.04em; color: rgba(255,255,255,0.5); text-transform: uppercase; }
+.nav-phone .call-number { font-weight: 700; color: var(--white); font-size: 0.98rem; }
+.nav-toggle { display: none; background: none; border: 1.5px solid rgba(255,255,255,0.3); border-radius: var(--radius-sm); width: 42px; height: 42px; align-items: center; justify-content: center; color: var(--white); }
 
 /* ---------- Service Areas nav dropdown ---------- */
 .nav-dropdown { position: relative; display: flex; align-items: center; }
@@ -172,14 +172,14 @@ nav.primary-nav a:hover, nav.primary-nav a[aria-current="page"] { color: var(--r
 }
 
 @media (max-width: 980px) {
-  nav.primary-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; align-items: stretch; border-bottom: 1px solid var(--border-soft); padding: 8px 22px 20px; gap: 0; box-shadow: 0 12px 24px -12px rgba(0,0,0,0.15); }
+  nav.primary-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--charcoal); flex-direction: column; align-items: stretch; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 8px 22px 20px; gap: 0; box-shadow: 0 12px 24px -12px rgba(0,0,0,0.4); }
   nav.primary-nav.open { display: flex; }
-  nav.primary-nav a { padding: 13px 6px; border-bottom: 1px solid var(--border-soft); }
+  nav.primary-nav a { padding: 13px 6px; border-bottom: 1px solid rgba(255,255,255,0.1); }
   .nav-toggle { display: flex; }
   .nav-phone .call-label { display: none; }
 
   .nav-dropdown { flex-direction: column; align-items: stretch; }
-  .nav-dropdown-trigger { border-bottom: 1px solid var(--border-soft); }
+  .nav-dropdown-trigger { border-bottom: 1px solid rgba(255,255,255,0.1); }
   .nav-dropdown-panel {
     position: static;
     opacity: 1;
@@ -190,8 +190,9 @@ nav.primary-nav a:hover, nav.primary-nav a[aria-current="page"] { color: var(--r
     border-radius: 0;
     padding: 4px 0 4px 16px;
     min-width: 0;
+    background: transparent;
   }
-  .nav-dropdown-panel a { padding: 10px 6px; border-bottom: 1px solid var(--border-soft); font-size: 0.9rem; }
+  .nav-dropdown-panel a { padding: 10px 6px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: rgba(255,255,255,0.65); }
   .nav-dropdown-viewall { border-top: none; margin-top: 0; }
 }
 
