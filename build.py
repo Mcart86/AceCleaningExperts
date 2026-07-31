@@ -530,7 +530,7 @@ home_body = f"""
 
 <section id="why-ace">
   <div class="wrap why-row">
-    <div class="placeholder-block">{icon('home')}<span>Ace Team / Truck</span></div>
+    <img src="/images/why-ace-team.webp" alt="Ace Cleaning Experts owner and family in front of the company van" class="why-ace-photo">
     <div>
       <span class="eyebrow">Why Ace</span>
       <h2>Why South Jersey Chooses Ace</h2>
