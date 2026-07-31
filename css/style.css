@@ -535,6 +535,7 @@ footer.site-footer a:hover { color: var(--white); }
 .quote-snippet.inline { margin: 28px 0 0; max-width: none; }
 .qs-stars { color: var(--red); letter-spacing: 2px; font-size: 0.85rem; margin-bottom: 8px; }
 .qs-text { font-style: italic; font-size: 0.95rem; color: var(--charcoal-70); margin: 0 0 10px; line-height: 1.5; }
+.qs-highlight { font-style: normal; font-weight: 700; color: var(--red); }
 .qs-who { font-weight: 700; font-size: 0.85rem; color: var(--charcoal); }
 .quote-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 44px auto 0; max-width: 900px; }
 .quote-pair .quote-snippet { margin: 0; max-width: none; }

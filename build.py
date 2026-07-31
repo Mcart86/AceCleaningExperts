@@ -503,7 +503,7 @@ home_body = f"""
         <div class="ba-mini-label">Upholstery</div>
       </div>
     </div>
-    {quote_snippet("My carpets looked and smelled brand new after they were cleaned. They exceeded my expectations.", "Jeff")}
+    {quote_snippet("My carpets <span class=\"qs-highlight\">looked and smelled brand new</span> after they were cleaned. They exceeded my expectations.", "Jeff")}
   </div>
 </section>
 
@@ -520,7 +520,7 @@ home_body = f"""
         <li><span class="b-icon">{icon('star')}</span><span class="b-text">Experienced, Trained Technicians</span></li>
         <li><span class="b-icon">{icon('check')}</span><span class="b-text">Satisfaction Guaranteed</span></li>
       </ul>
-      {quote_snippet("I've been using Ace Cleaning Experts for over 20 years, and they consistently do a fantastic job. Professional, efficient, reasonably priced, and incredibly courteous.", "Karen", inline=True)}
+      {quote_snippet("I've been using Ace Cleaning Experts <span class=\"qs-highlight\">for over 20 years</span>, and they consistently do a fantastic job. Professional, efficient, reasonably priced, and incredibly courteous.", "Karen", inline=True)}
     </div>
   </div>
 </section>
@@ -570,8 +570,8 @@ home_body = f"""
       </div>
     </div>
     <div class="quote-pair">
-      {quote_snippet("Ace is my favorite carpet cleaner of all time. They are responsive, reliable and trustworthy.", "Anne")}
-      {quote_snippet("Ace Cleaning Experts makes our marble tile look like new every time.", "Fabrizio")}
+      {quote_snippet("Ace is <span class=\"qs-highlight\">my favorite carpet cleaner of all time</span>. They are responsive, reliable and trustworthy.", "Anne")}
+      {quote_snippet("Ace Cleaning Experts makes our marble tile <span class=\"qs-highlight\">look like new every time</span>.", "Fabrizio")}
     </div>
     <p style="text-align:center; margin-top:40px;"><a href="/services/" class="btn btn-outline">View All Services</a></p>
   </div>
@@ -583,7 +583,7 @@ home_body = f"""
       <span class="eyebrow">Meet Ace</span>
       <h2>The People Behind Ace</h2>
       <p class="lede">Veteran-owned and family-operated, serving South Jersey for 40+ years. The person who quotes your job is accountable for the crew that shows up to do it &mdash; no corporate hand-offs, no call centers.</p>
-      {quote_snippet("Nick and Jeff were professional, friendly, and thorough from start to finish. You can really tell they take pride in their work.", "Chris", inline=True)}
+      {quote_snippet("Nick and Jeff were professional, friendly, and thorough from start to finish. You can really tell <span class=\"qs-highlight\">they take pride in their work</span>.", "Chris", inline=True)}
     </div>
     <div class="placeholder-block">{icon('home')}<span>Team / Truck Photo</span></div>
   </div>
@@ -609,7 +609,7 @@ home_body = f"""
         <a href="/service-areas/franklin-township-nj/" class="area-pill">Franklin Township</a>
       </div>
       <p style="margin-top:26px;"><a href="/service-areas/" class="btn btn-outline">View All Service Areas</a></p>
-      {quote_snippet("I've used Ace for well over 10 years \u2014 not only to support a local company, but because they're always professional and always on-time.", "David", inline=True)}
+      {quote_snippet("I've used Ace for well over 10 years \u2014 not only to support a local company, but because <span class=\"qs-highlight\">they're always professional and always on-time</span>.", "David", inline=True)}
     </div>
     <div class="placeholder-block">{icon('pin')}<span>Service Area Map</span></div>
   </div>
@@ -634,7 +634,7 @@ home_body = f"""
 
 <section style="padding:0 0 100px;">
   <div class="wrap" style="max-width:640px;">
-    {quote_snippet("Great service and people. Been using them since 1990, never a complaint.", "Bob")}
+    {quote_snippet("Great service and people. Been using them <span class=\"qs-highlight\">since 1990, never a complaint</span>.", "Bob")}
   </div>
 </section>
 
