@@ -503,12 +503,12 @@ home_body = f"""
       </div>
       <div class="ba-mini">
         <div class="ba-slider ba-slider-mini">
-          <img src="/images/stairs-mini-before.webp" alt="Dirty, stained staircase carpet before Ace Cleaning Experts cleaning" class="ba-before">
-          <img src="/images/stairs-mini-after.webp" alt="Same staircase carpet after Ace Cleaning Experts cleaning" class="ba-after">
+          <img src="/images/tile-mini-before.webp" alt="Dirty, stained grout before Ace Cleaning Experts tile cleaning" class="ba-before">
+          <img src="/images/tile-mini-after.webp" alt="Same tile floor after Ace Cleaning Experts tile cleaning, grout restored" class="ba-after">
           <span class="ba-tag before-tag">Before</span>
           <span class="ba-tag after-tag">After</span>
           <div class="ba-handle"></div>
-          <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Drag to compare staircase carpet before and after">
+          <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Drag to compare tile before and after">
         </div>
         <div class="ba-mini-label">Tile</div>
       </div>
