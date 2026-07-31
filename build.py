@@ -581,7 +581,7 @@ home_body = f"""
         </div>
       </div>
       <div class="svc-card">
-        <div class="placeholder-block">{icon('building')}<span>Commercial Photo</span></div>
+        <img src="/images/commercial-service.webp" alt="Area rug being deep cleaned by Ace Cleaning Experts" class="svc-photo">
         <div class="svc-body">
           <div class="icon">{icon('building')}</div>
           <h3>Commercial Cleaning</h3>
@@ -774,7 +774,7 @@ services_body = f"""
         </div>
       </div>
       <div class="svc-card">
-        <div class="placeholder-block">{icon('building')}<span>Commercial Photo</span></div>
+        <img src="/images/commercial-service.webp" alt="Area rug being deep cleaned by Ace Cleaning Experts" class="svc-photo">
         <div class="svc-body">
           <div class="icon">{icon('building')}</div>
           <h3>Commercial Floor Care</h3>
