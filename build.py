@@ -482,8 +482,8 @@ home_body = f"""
       <h2>See the Ace Difference</h2>
     </div>
     <div class="ba-slider">
-      <div class="ba-before">Before</div>
-      <div class="ba-after">After</div>
+      <img src="/images/carpet-before.webp" alt="Dirty, stained carpet before Ace Cleaning Experts deep clean" class="ba-before">
+      <img src="/images/carpet-after.webp" alt="Same carpet after Ace Cleaning Experts deep clean, looking like new" class="ba-after">
       <span class="ba-tag before-tag">Before</span>
       <span class="ba-tag after-tag">After</span>
       <div class="ba-handle"></div>
