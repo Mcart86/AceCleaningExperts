@@ -1050,7 +1050,6 @@ tile_body = f"""
         ("tile-gallery-01", "Kitchen tile floor being cleaned, wet clean patches visible"),
         ("gallery-10-v2", "Rotary tile cleaning tool in action on stone floor"),
         ("tile-service", "Mosaic tile floor cleaned, dirty grout restored to clean"),
-        ("tile-mini-before", "Dirty, stained grout before cleaning"),
         ("tile-mini-after", "Same tile floor after cleaning, grout restored"),
     ])}
   </div>
