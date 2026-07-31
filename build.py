@@ -632,7 +632,7 @@ home_body = f"""
       <p style="margin-top:26px;"><a href="/service-areas/" class="btn btn-outline">View All Service Areas</a></p>
       {quote_snippet("I've used Ace for well over 10 years \u2014 not only to support a local company, but because <span class=\"qs-highlight\">they're always professional and always on-time</span>.", "David", inline=True)}
     </div>
-    <img src="/images/south-jersey-badge.webp" alt="Proudly Serving South Jersey badge" class="area-badge">
+    <img src="/images/south-jersey-badge-v2.webp" alt="Ace Cleaning Experts sponsors a local South Jersey youth sports team" class="area-badge">
   </div>
 </section>
 
