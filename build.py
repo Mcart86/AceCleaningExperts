@@ -235,6 +235,15 @@ def process_steps(steps):
     out.append('</div>')
     return "\n".join(out)
 
+def quote_snippet(text, name, stars=5, inline=False):
+    star_str = "&#9733;" * stars
+    cls = "quote-snippet inline" if inline else "quote-snippet"
+    return f'''<div class="{cls}">
+      <div class="qs-stars">{star_str}</div>
+      <p class="qs-text">&ldquo;{text}&rdquo;</p>
+      <div class="qs-who">&mdash; {name}</div>
+    </div>'''
+
 def placeholder(label, extra_class=""):
     return f'<div class="placeholder-block {extra_class}">{icon("droplet")}<span>{label}</span></div>'
 
@@ -494,6 +503,7 @@ home_body = f"""
         <div class="ba-mini-label">Upholstery</div>
       </div>
     </div>
+    {quote_snippet("My carpets looked and smelled brand new after they were cleaned. They exceeded my expectations.", "Jeff")}
   </div>
 </section>
 
@@ -510,6 +520,7 @@ home_body = f"""
         <li><span class="b-icon">{icon('star')}</span><span class="b-text">Experienced, Trained Technicians</span></li>
         <li><span class="b-icon">{icon('check')}</span><span class="b-text">Satisfaction Guaranteed</span></li>
       </ul>
+      {quote_snippet("I've been using Ace Cleaning Experts for over 20 years, and they consistently do a fantastic job. Professional, efficient, reasonably priced, and incredibly courteous.", "Karen", inline=True)}
     </div>
   </div>
 </section>
@@ -558,6 +569,10 @@ home_body = f"""
         </div>
       </div>
     </div>
+    <div class="quote-pair">
+      {quote_snippet("Ace is my favorite carpet cleaner of all time. They are responsive, reliable and trustworthy.", "Anne")}
+      {quote_snippet("Ace Cleaning Experts makes our marble tile look like new every time.", "Fabrizio")}
+    </div>
     <p style="text-align:center; margin-top:40px;"><a href="/services/" class="btn btn-outline">View All Services</a></p>
   </div>
 </section>
@@ -568,18 +583,9 @@ home_body = f"""
       <span class="eyebrow">Meet Ace</span>
       <h2>The People Behind Ace</h2>
       <p class="lede">Veteran-owned and family-operated, serving South Jersey for 40+ years. The person who quotes your job is accountable for the crew that shows up to do it &mdash; no corporate hand-offs, no call centers.</p>
+      {quote_snippet("Nick and Jeff were professional, friendly, and thorough from start to finish. You can really tell they take pride in their work.", "Chris", inline=True)}
     </div>
     <div class="placeholder-block">{icon('home')}<span>Team / Truck Photo</span></div>
-  </div>
-</section>
-
-<section style="background:var(--gray);">
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow">Reviews</span>
-      <h2>What South Jersey Says About Ace</h2>
-    </div>
-    {testimonial_carousel()}
   </div>
 </section>
 
@@ -603,6 +609,7 @@ home_body = f"""
         <a href="/service-areas/franklin-township-nj/" class="area-pill">Franklin Township</a>
       </div>
       <p style="margin-top:26px;"><a href="/service-areas/" class="btn btn-outline">View All Service Areas</a></p>
+      {quote_snippet("I've used Ace for well over 10 years \u2014 not only to support a local company, but because they're always professional and always on-time.", "David", inline=True)}
     </div>
     <div class="placeholder-block">{icon('pin')}<span>Service Area Map</span></div>
   </div>
@@ -622,6 +629,12 @@ home_body = f"""
         ("How long until I can walk on the carpet?", "Most carpets are dry to the touch within a few hours. We'll walk you through drying time before we leave."),
         ("Do I need to move my furniture?", "Our technicians move light furniture as part of the visit &mdash; just let us know about large or fragile pieces when you book."),
     ])}
+  </div>
+</section>
+
+<section style="padding:0 0 100px;">
+  <div class="wrap" style="max-width:640px;">
+    {quote_snippet("Great service and people. Been using them since 1990, never a complaint.", "Bob")}
   </div>
 </section>
 
