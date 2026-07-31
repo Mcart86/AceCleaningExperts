@@ -979,9 +979,10 @@ uphol_body = f"""
       <h2>Recent Upholstery Cleaning Work</h2>
     </div>
     {gallery_grid([
-        ("gallery-06", "Upholstery fabric cleaning, before and after"),
         ("upholstery-mini-before-v2", "Stained upholstery cushion before cleaning"),
-        ("upholstery-mini-after-v2", "Clean upholstery cushion after cleaning"),
+        ("upholstery-gallery-01", "Recliner cushion with stain before cleaning"),
+        ("upholstery-gallery-02", "Recliner cushion before and after cleaning, side by side"),
+        ("upholstery-gallery-03", "Living room sofa and carpet after cleaning"),
     ])}
   </div>
 </section>
