@@ -758,7 +758,7 @@ about_body = f"""
   <div class="wrap" style="max-width:820px; text-align:center;">
     <span class="eyebrow">What We Solve</span>
     <h2>Problems Big and Small, Solved Right</h2>
-    <p class="lede" style="margin:0 auto;">Whether it's one stubborn stain or odor you can't get out, or a full-home deep clean, we've got 40+ years of experience figuring out the right fix. Our staff keeps learning the newest techniques so every job gets the highest-quality clean at a fair price &mdash; and we'll always tell you honestly what your carpet, tile or upholstery actually needs.</p>
+    <p class="lede" style="margin:0 auto;">Whether it's one stubborn stain or odor you can't get out, a full-home deep clean, or something larger like water damage restoration, we've got 40+ years of experience figuring out the right fix. Our staff keeps learning the newest techniques so every job gets the highest-quality clean at a fair price &mdash; and we'll always tell you honestly what your carpet, tile or upholstery actually needs.</p>
   </div>
 </section>
 
