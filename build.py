@@ -491,7 +491,14 @@ home_body = f"""
     </div>
     <div class="ba-mini-grid">
       <div class="ba-mini">
-        <div class="placeholder-block">{icon('rug')}<span>Before &amp; After</span></div>
+        <div class="ba-slider ba-slider-mini">
+          <img src="/images/carpet-mini-before.webp" alt="Dirty carpet before Ace Cleaning Experts cleaning" class="ba-before">
+          <img src="/images/carpet-mini-after.webp" alt="Same carpet after Ace Cleaning Experts cleaning" class="ba-after">
+          <span class="ba-tag before-tag">Before</span>
+          <span class="ba-tag after-tag">After</span>
+          <div class="ba-handle"></div>
+          <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Drag to compare carpet before and after">
+        </div>
         <div class="ba-mini-label">Carpet</div>
       </div>
       <div class="ba-mini">
