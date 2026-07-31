@@ -97,14 +97,7 @@ def header(active):
         else:
             links.append(f'<a href="{href}"{cur}>{label}</a>')
     nav_links = "\n      ".join(links)
-    return f"""<div class="announce">
-  <div class="wrap">
-    <span>{icon('star')} Veteran-Owned &amp; Family-Operated</span>
-    <span class="center-item">Serving South Jersey for 40+ Years</span>
-    <span>Residential &amp; Commercial Cleaning</span>
-  </div>
-</div>
-<header class="site-header">
+    return f"""<header class="site-header">
   <div class="wrap nav-row">
     <a href="/" class="logo">
       <img src="/images/ace-logo.jpg" alt="Ace Cleaning Experts - Veteran-Owned Carpet &amp; Floor Cleaning, South Jersey" class="logo-img">
