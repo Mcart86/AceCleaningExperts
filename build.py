@@ -1047,7 +1047,7 @@ tile_body = f"""
       <h2>Recent Tile &amp; Grout Work</h2>
     </div>
     {gallery_grid([
-        ("gallery-10", "Tile floor being cleaned, grout restored"),
+        ("tile-gallery-01", "Kitchen tile floor being cleaned, wet clean patches visible"),
         ("tile-service", "Mosaic tile floor cleaned, dirty grout restored to clean"),
         ("tile-mini-before", "Dirty, stained grout before cleaning"),
         ("tile-mini-after", "Same tile floor after cleaning, grout restored"),
