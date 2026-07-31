@@ -64,6 +64,11 @@ def head(title, desc, canonical):
 """
 
 def header(active):
+    SERVICE_LINKS = [
+        ("/carpet-cleaning-service/", "Carpet Cleaning"),
+        ("/upholstery-cleaning/", "Upholstery Cleaning"),
+        ("/tile-grout-cleaning/", "Tile &amp; Grout Cleaning"),
+    ]
     links = []
     for label, href, key in NAV:
         cur = ' aria-current="page"' if key == active else ""
@@ -76,6 +81,17 @@ def header(active):
         <div class="nav-dropdown-panel">
           {town_links}
           <a href="/service-areas/" class="nav-dropdown-viewall">View All Service Areas</a>
+        </div>
+      </div>''')
+        elif key == "services":
+            svc_links = "\n          ".join(
+                f'<a href="{s_href}">{s_label}</a>' for s_href, s_label in SERVICE_LINKS
+            )
+            links.append(f'''<div class="nav-dropdown">
+        <a href="{href}"{cur} class="nav-dropdown-trigger">{label} {icon('chevron')}</a>
+        <div class="nav-dropdown-panel">
+          {svc_links}
+          <a href="/services/" class="nav-dropdown-viewall">View All Services</a>
         </div>
       </div>''')
         else:
