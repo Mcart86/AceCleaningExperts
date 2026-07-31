@@ -514,8 +514,8 @@ home_body = f"""
       </div>
       <div class="ba-mini">
         <div class="ba-slider ba-slider-mini">
-          <img src="/images/upholstery-mini-before.webp" alt="Stained upholstery before Ace Cleaning Experts cleaning" class="ba-before">
-          <img src="/images/upholstery-mini-after.webp" alt="Same upholstery after Ace Cleaning Experts cleaning" class="ba-after">
+          <img src="/images/upholstery-mini-before-v2.webp" alt="Stained upholstery before Ace Cleaning Experts cleaning" class="ba-before">
+          <img src="/images/upholstery-mini-after-v2.webp" alt="Same upholstery after Ace Cleaning Experts cleaning" class="ba-after">
           <span class="ba-tag before-tag">Before</span>
           <span class="ba-tag after-tag">After</span>
           <div class="ba-handle"></div>
