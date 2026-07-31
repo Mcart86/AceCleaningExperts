@@ -690,7 +690,7 @@ about_body = f"""
         <h3>The Same Care We'd Want in Our Own Homes</h3>
         <p class="lede" style="font-size:1.05rem;">Every technician is trained on EPA-certified cleaning agents and modern extraction equipment, and every job wraps up with a walkthrough so you know exactly what was done.</p>
       </div>
-      <div class="feature-visual placeholder-block">{icon('droplet')}<span>Technician Photo</span></div>
+      <div class="feature-visual"><img src="/images/technician-care.webp" alt="Ace Cleaning Experts technicians at work cleaning carpets" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);"></div>
     </div>
   </div>
 </section>
