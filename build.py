@@ -563,7 +563,7 @@ home_body = f"""
         </div>
       </div>
       <div class="svc-card">
-        <div class="placeholder-block">{icon('tile')}<span>Tile Photo</span></div>
+        <img src="/images/tile-service.webp" alt="Mosaic tile floor cleaned by Ace Cleaning Experts, dirty grout restored to clean" class="svc-photo">
         <div class="svc-body">
           <div class="icon">{icon('tile')}</div>
           <h3>Tile &amp; Grout</h3>
@@ -765,7 +765,7 @@ services_body = f"""
         </div>
       </div>
       <div class="svc-card">
-        <div class="placeholder-block">{icon('tile')}<span>Tile Photo</span></div>
+        <img src="/images/tile-service.webp" alt="Mosaic tile floor cleaned by Ace Cleaning Experts, dirty grout restored to clean" class="svc-photo">
         <div class="svc-body">
           <div class="icon">{icon('tile')}</div>
           <h3>Tile, Grout &amp; Hardwood</h3>
