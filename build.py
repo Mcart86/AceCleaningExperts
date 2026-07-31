@@ -513,7 +513,7 @@ home_body = f"""
     <div class="hero-copy">
       <span class="eyebrow">South Jersey's Carpet, Tile &amp; Upholstery Cleaning Experts</span>
       <h1>Your Family's Home Deserves a Family You Can Trust</h1>
-      <p class="lede">Serving homes and businesses for 40+ years with deep steam extraction, EPA-certified products, and a local crew that treats your home like their own.</p>
+      <p class="lede">Serving homes and businesses across South Jersey for 40+ years with deep steam extraction, EPA-certified products, and a crew that treats your home like their own. No upsells, no runaround &mdash; just honest carpet, tile and upholstery cleaning, done right the first time.</p>
       <div class="btn-row">
         <a href="/contact/" class="btn btn-primary">Get Free Quote</a>
         <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
@@ -589,6 +589,7 @@ home_body = f"""
     <div>
       <span class="eyebrow">Why Ace</span>
       <h2>Why South Jersey Chooses Ace</h2>
+      <p class="lede" style="font-size:1.05rem;">We've been doing this for 40+ years &mdash; not because it's trendy, but because South Jersey homes and businesses keep calling us back.</p>
       <ul class="benefit-list">
         <li><span class="b-icon">{icon('shield')}</span><span class="b-text">Veteran-Owned</span></li>
         <li><span class="b-icon">{icon('home')}</span><span class="b-text">Family-Owned &amp; Operated</span></li>
@@ -605,7 +606,7 @@ home_body = f"""
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">What We Do</span>
-      <h2>Featured Services</h2>
+      <h2>Carpet, Tile &amp; Upholstery Cleaning Done Right</h2>
     </div>
     <div class="grid-4">
       <div class="svc-card">
@@ -613,7 +614,7 @@ home_body = f"""
         <div class="svc-body">
           <div class="icon">{icon('rug')}</div>
           <h3>Carpet Cleaning</h3>
-          <p>Deep steam extraction that lifts dirt, allergens and stains.</p>
+          <p>Deep steam extraction that pulls out dirt, allergens and stains most vacuums never touch.</p>
           <a href="/carpet-cleaning-service/" class="go">Learn More {icon('arrow')}</a>
         </div>
       </div>
@@ -622,7 +623,7 @@ home_body = f"""
         <div class="svc-body">
           <div class="icon">{icon('tile')}</div>
           <h3>Tile &amp; Grout</h3>
-          <p>Grout deep-cleaned back toward its original color.</p>
+          <p>Grout scrubbed back toward its original color &mdash; no bleach shortcuts.</p>
           <a href="/tile-grout-cleaning/" class="go">Learn More {icon('arrow')}</a>
         </div>
       </div>
@@ -631,7 +632,7 @@ home_body = f"""
         <div class="svc-body">
           <div class="icon">{icon('sofa')}</div>
           <h3>Upholstery</h3>
-          <p>Fabric-safe cleaning for sofas, sectionals and chairs.</p>
+          <p>Fabric-safe cleaning that lifts stains without soaking, over-wetting or fading your furniture.</p>
           <a href="/upholstery-cleaning/" class="go">Learn More {icon('arrow')}</a>
         </div>
       </div>
@@ -640,7 +641,7 @@ home_body = f"""
         <div class="svc-body">
           <div class="icon">{icon('building')}</div>
           <h3>Commercial Cleaning</h3>
-          <p>Flexible scheduling for offices, retail and medical spaces.</p>
+          <p>Flexible scheduling that works around your business hours, not ours.</p>
           <a href="/commercial-carpet-cleaning/" class="go">Learn More {icon('arrow')}</a>
         </div>
       </div>
@@ -680,7 +681,7 @@ home_body = f"""
     <div>
       <span class="eyebrow">Where We Work</span>
       <h2>Proudly Serving South Jersey</h2>
-      <p class="lede">Home base in Sewell, Deptford and Haddonfield, with regular jobs throughout Gloucester and Camden counties &mdash; and beyond.</p>
+      <p class="lede">Home base in Sewell, Deptford and Haddonfield &mdash; with crews out across Gloucester and Camden counties, and beyond, every week.</p>
       <div class="area-pill-grid">
         <a href="/service-areas/sewell-nj/" class="area-pill priority">Sewell</a>
         <a href="/service-areas/deptford-nj/" class="area-pill priority">Deptford</a>
@@ -724,7 +725,7 @@ home_body = f"""
   </div>
 </section>
 
-{cta_band("Ready to Love Your Floors Again?", "Veteran-Owned. Family-Operated. Serving South Jersey Since 1983.")}
+{cta_band("Ready to Love Your Floors Again?", "Veteran-owned. Family-operated. No upsells, no runaround &mdash; just honest work, every time.")}
 """
 page("/", "Ace Cleaning Experts | South Jersey's Trusted Carpet Cleaning Experts",
      "Veteran-owned, family-operated carpet, tile and upholstery cleaning serving Sewell, Deptford, Haddonfield and all of South Jersey for 40+ years. Call 856-582-1711.",
@@ -816,7 +817,7 @@ services_body = f"""
         <div class="svc-body">
           <div class="icon">{icon('rug')}</div>
           <h3>Carpet Cleaning</h3>
-          <p>Deep steam extraction that lifts dirt, allergens and stains.</p>
+          <p>Deep steam extraction that pulls out dirt, allergens and stains most vacuums never touch.</p>
           <a href="/carpet-cleaning-service/" class="go">Learn More {icon('arrow')}</a>
         </div>
       </div>
@@ -834,7 +835,7 @@ services_body = f"""
         <div class="svc-body">
           <div class="icon">{icon('tile')}</div>
           <h3>Tile, Grout &amp; Hardwood</h3>
-          <p>Grout deep-cleaned back toward its original color.</p>
+          <p>Grout scrubbed back toward its original color &mdash; no bleach shortcuts.</p>
           <a href="/tile-grout-cleaning/" class="go">Learn More {icon('arrow')}</a>
         </div>
       </div>
