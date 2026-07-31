@@ -606,7 +606,7 @@ home_body = f"""
       <p class="lede">Veteran-owned and family-operated, serving South Jersey for 40+ years. The person who quotes your job is accountable for the crew that shows up to do it &mdash; no corporate hand-offs, no call centers.</p>
       {quote_snippet("Nick and Jeff were professional, friendly, and thorough from start to finish. You can really tell <span class=\"qs-highlight\">they take pride in their work</span>.", "Chris", inline=True)}
     </div>
-    <div class="placeholder-block">{icon('home')}<span>Team / Truck Photo</span></div>
+    <img src="/images/meet-ace-team.webp" alt="Ace Cleaning Experts team in front of the company van" class="meet-ace-photo">
   </div>
 </section>
 

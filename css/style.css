@@ -290,6 +290,7 @@ img.hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: 
 .meet-ace-row { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
 @media (max-width: 900px) { .meet-ace-row { grid-template-columns: 1fr; gap: 30px; } }
 .meet-ace-row .placeholder-block { aspect-ratio: 4/3; }
+.meet-ace-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow-sm); }
 .benefit-list li { display: flex; align-items: flex-start; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--border-soft); }
 .benefit-list li:last-child { border-bottom: none; }
 .benefit-list .b-icon { width: 34px; height: 34px; border-radius: var(--radius-sm); background: var(--red-tint); color: var(--red); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
