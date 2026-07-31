@@ -261,7 +261,7 @@ GALLERY_IMAGES = [
     ("gallery-07", "Restaurant carpet mid-clean, dirt lifted with hose"),
     ("gallery-08", "Staircase carpet before and after cleaning, side by side"),
     ("gallery-09", "Stained carpet before and after deep cleaning"),
-    ("gallery-10", "Tile floor being cleaned, grout restored"),
+    ("gallery-10-v2", "Rotary tile cleaning tool in action on stone floor"),
     ("gallery-11", "Patterned commercial carpet cleaning, ice cream shop"),
     ("gallery-12", "Area rug cleaning, dirty and clean sides compared"),
     ("gallery-13", "Beige patterned carpet before and after cleaning"),
