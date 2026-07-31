@@ -263,6 +263,17 @@ GALLERY_IMAGES = [
     ("gallery-09", "Stained carpet before and after deep cleaning"),
     ("gallery-10", "Tile floor being cleaned, grout restored"),
     ("gallery-11", "Patterned commercial carpet cleaning, ice cream shop"),
+    ("gallery-12", "Area rug cleaning, dirty and clean sides compared"),
+    ("gallery-13", "Beige patterned carpet before and after cleaning"),
+    ("gallery-14", "Pink carpet before and after deep cleaning"),
+    ("gallery-15", "Carpet close-up showing dirty and clean sections"),
+    ("gallery-16", "Large room carpet before and after cleaning"),
+    ("gallery-17", "Striped commercial carpet cleaning"),
+    ("gallery-18", "Ornate patterned commercial carpet cleaning"),
+    ("gallery-19", "Polka-dot patterned commercial carpet cleaning"),
+    ("gallery-20", "Diamond-patterned commercial carpet cleaning"),
+    ("gallery-21", "Triangle-patterned commercial carpet cleaning"),
+    ("gallery-22", "Star-patterned commercial carpet cleaning"),
 ]
 
 def gallery_grid(images=GALLERY_IMAGES):
