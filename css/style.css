@@ -572,6 +572,7 @@ footer.site-footer a:hover { color: var(--white); }
   display: flex; align-items: center; justify-content: center;
   padding: 40px;
 }
+.lightbox[hidden] { display: none; }
 .lightbox img { max-width: 100%; max-height: 100%; border-radius: var(--radius-sm); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
 .lightbox-close {
   position: absolute; top: 20px; right: 24px;
