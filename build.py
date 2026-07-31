@@ -621,7 +621,7 @@ home_body = f"""
         </div>
       </div>
       <div class="svc-card">
-        <div class="placeholder-block">{icon('sofa')}<span>Upholstery Photo</span></div>
+        <img src="/images/upholstery-gallery-02.webp" alt="Recliner cushion before and after Ace Cleaning Experts upholstery cleaning" class="svc-photo">
         <div class="svc-body">
           <div class="icon">{icon('sofa')}</div>
           <h3>Upholstery</h3>
@@ -815,7 +815,7 @@ services_body = f"""
         </div>
       </div>
       <div class="svc-card">
-        <div class="placeholder-block">{icon('sofa')}<span>Upholstery Photo</span></div>
+        <img src="/images/upholstery-gallery-02.webp" alt="Recliner cushion before and after Ace Cleaning Experts upholstery cleaning" class="svc-photo">
         <div class="svc-body">
           <div class="icon">{icon('sofa')}</div>
           <h3>Upholstery Cleaning</h3>
