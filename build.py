@@ -502,7 +502,14 @@ home_body = f"""
         <div class="ba-mini-label">Carpet</div>
       </div>
       <div class="ba-mini">
-        <div class="placeholder-block">{icon('tile')}<span>Before &amp; After</span></div>
+        <div class="ba-slider ba-slider-mini">
+          <img src="/images/hallway-mini-before.webp" alt="Dirty hallway carpet before Ace Cleaning Experts cleaning" class="ba-before">
+          <img src="/images/hallway-mini-after.webp" alt="Same hallway carpet after Ace Cleaning Experts cleaning" class="ba-after">
+          <span class="ba-tag before-tag">Before</span>
+          <span class="ba-tag after-tag">After</span>
+          <div class="ba-handle"></div>
+          <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Drag to compare hallway carpet before and after">
+        </div>
         <div class="ba-mini-label">Tile</div>
       </div>
       <div class="ba-mini">
