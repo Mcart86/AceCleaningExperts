@@ -365,44 +365,10 @@ def gallery_grid(images=GALLERY_IMAGES):
   </div>'''
 
 def quote_snippet(text, name, stars=5, inline=False, photo=None, photo_alt=""):
-    star_str = "&#9733;" * stars
-    footer = f'''<div class="qc-footer">
-      <div class="qc-person">
-        <div class="qc-avatar">{icon('users')}</div>
-        <div>
-          <strong>{name}</strong>
-          <div class="qc-verified">{icon('check')} Verified Customer</div>
-        </div>
-      </div>
-      <div class="qc-vdivider"></div>
-      <div class="qc-badge-block">
-        {icon('shield')}
-        <div>
-          <strong>Veteran Owned</strong>
-          <div class="sub">Family Operated Since 1983</div>
-        </div>
-      </div>
-    </div>'''
-
-    if photo and not inline:
-        return f'''<div class="quote-card">
-      <div class="qc-photo">
-        <div class="placeholder-block" style="width:100%; height:100%; border-radius:0; border:none;">{icon('rug')}<span>Photo</span></div>
-        <span class="qc-quote-mark">&ldquo;</span>
-        <div class="qc-veteran-badge">{icon('shield')}<span>Veteran Owned &amp; Proud to Serve</span></div>
-      </div>
-      <div class="qc-content">
-        <div class="qc-stars">{star_str}</div>
-        <p class="qc-headline">&ldquo;{text}&rdquo;</p>
-        {footer}
-      </div>
-    </div>'''
-
-    cls = "quote-card-simple inline" if inline else "quote-card-simple"
+    cls = "quote-strip-card inline" if inline else "quote-strip-card"
     return f'''<div class="{cls}">
-      <div class="qc-stars">{star_str}</div>
-      <p class="qc-headline">&ldquo;{text}&rdquo;</p>
-      {footer}
+      <blockquote>&ldquo;{text}&rdquo;</blockquote>
+      <div class="quote-strip-attrib">&mdash; {name}, Google Review</div>
     </div>'''
 
 def placeholder(label, extra_class=""):

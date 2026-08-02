@@ -546,6 +546,14 @@ footer.site-footer a:hover { color: var(--white); }
 }
 .quote-strip-attrib { margin-top: 22px; font-size: 0.9rem; font-weight: 600; color: var(--red); text-transform: uppercase; letter-spacing: 0.04em; }
 
+.quote-strip-card { background: var(--charcoal); border-radius: var(--radius); padding: 44px 40px; text-align: center; margin-top: 32px; }
+.quote-strip-card.inline { margin-top: 24px; padding: 36px 32px; }
+.quote-strip-card blockquote {
+  margin: 0 auto; max-width: 620px; font-family: var(--font-display); font-weight: 600; font-style: italic;
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem); line-height: 1.5; color: var(--white);
+}
+.quote-strip-card .quote-strip-attrib { margin-top: 16px; font-size: 0.78rem; }
+
 .related-split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
 .related-panel { border-radius: var(--radius); padding: 36px 32px; }
 .related-panel h3 { font-size: 1.05rem; margin-bottom: 16px; }
