@@ -518,6 +518,15 @@ TOWNS = [
     },
 ]
 
+# Real customer reviews reused across town pages that don't have a dedicated one yet.
+TOWN_REVIEW_POOL = [
+    ("By far the best carpet cleaning and upholstery cleaning company in the area. They're extremely professional and <span class=\"qs-highlight\">pay attention to the finest details</span>. I highly recommend Ace.", "Andrea"),
+    ("<span class=\"qs-highlight\">Very professional from start to finish</span>. Great price, and I'll be using their services again.", "Barbara D."),
+    ("Our dog had an accident and our robot vacuum rolled it all over the home office. Team came out ASAP and <span class=\"qs-highlight\">cleaned up a disaster</span>. Friendly, accommodating and reasonably priced.", "Ema"),
+    ("Will definitely use them again &mdash; <span class=\"qs-highlight\">couldn't be happier with their work</span>!", "Leslie"),
+    ("Wonderful family business &mdash; they do a great job and <span class=\"qs-highlight\">are always on time</span>.", "Cyndi"),
+]
+
 def town_page(t):
     name = t["name"]
     state = t.get("state", "NJ")
@@ -528,6 +537,7 @@ def town_page(t):
         else "county-badge-neutral"
     )
     hero_variant = "" if t["county"] == "Gloucester County" else " dark"
+    review_text, review_name = TOWN_REVIEW_POOL[TOWNS.index(t) % len(TOWN_REVIEW_POOL)]
     pricing_line = (
         "wherever you're located in South Jersey" if state == "NJ"
         else f"wherever you're located in the {name} area"
@@ -604,6 +614,8 @@ def town_page(t):
     ])}
   </div>
 </section>
+
+{quote_snippet(review_text, review_name)}
 
 {cta_band(f"Ready to Book in {name}?", f"Fast response, honest pricing, and a crew that shows up when they say they will.")}
 """
@@ -892,6 +904,8 @@ our_work_body = f"""
   </div>
 </section>
 
+{quote_snippet("Will definitely use them again &mdash; <span class=\"qs-highlight\">couldn't be happier with their work</span>!", "Leslie")}
+
 {cta_band("Ready to See Results Like This in Your Home?", "Fast response, honest pricing, and a crew that shows up when they say they will.")}
 """
 page("/our-work/", "Our Work | Real Before & After Photos | Ace Cleaning Experts",
@@ -1061,6 +1075,8 @@ services_body = f"""
   </div>
 </section>
 
+{quote_snippet("Wonderful family business &mdash; they do a great job and <span class=\"qs-highlight\">are always on time</span>.", "Cyndi")}
+
 {cta_band()}
 """
 page("/services/", "Cleaning Services | Ace Cleaning Experts, South Jersey",
@@ -1115,6 +1131,8 @@ carpet_body = f"""
     ])}
   </div>
 </section>
+
+{quote_snippet("Our dog had an accident and our robot vacuum rolled over it and all over the home office. Team came out ASAP, within 2 hrs of me calling, and <span class=\"qs-highlight\">cleaned up a disaster</span>. Friendly, accommodating and reasonably priced.", "Ema")}
 
 <section class="section-red">
   <div class="wrap">
@@ -1188,6 +1206,8 @@ uphol_body = f"""
   </div>
 </section>
 
+{quote_snippet("By far the best carpet cleaning and upholstery cleaning company in the area. They're extremely professional and <span class=\"qs-highlight\">pay attention to the finest details</span>. Quick to get back to you regarding appointments. I highly recommend Ace.", "Andrea")}
+
 <section class="section-red">
   <div class="wrap">
     <div class="section-head center">
@@ -1259,6 +1279,8 @@ tile_body = f"""
     ])}
   </div>
 </section>
+
+{quote_snippet("<span class=\"qs-highlight\">Very professional from start to finish</span>. Great price, and I'll be using their services again.", "Barbara D.")}
 
 <section class="section-red">
   <div class="wrap">
@@ -1498,6 +1520,8 @@ areas_body = f"""
   </div>
 </section>
 
+{quote_snippet("Will definitely use them again &mdash; <span class=\"qs-highlight\">couldn't be happier with their work</span>!", "Leslie")}
+
 {card_divider()}
 
 <section class="areas-support">
@@ -1562,6 +1586,7 @@ contact_body = f"""
       <div style="margin-top:32px; padding:22px; background:var(--red); border-radius:var(--radius); font-size:0.92rem; color:var(--white);">
         <strong>Fastest way to reach us:</strong> call {PHONE}. Most quotes take less than five minutes over the phone.
       </div>
+      {quote_snippet("<span class=\"qs-highlight\">Very professional from start to finish</span>. Great price, and I'll be using their services again.", "Barbara D.", inline=True)}
     </div>
     <div>
       <!-- Form posts to Formspree. Replace YOUR_FORM_ID with your real endpoint from formspree.io before launch. -->
