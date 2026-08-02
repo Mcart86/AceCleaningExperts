@@ -329,13 +329,45 @@ def gallery_grid(images=GALLERY_IMAGES):
     <img src="" alt="" id="lightboxImg">
   </div>'''
 
-def quote_snippet(text, name, stars=5, inline=False):
+def quote_snippet(text, name, stars=5, inline=False, photo=None, photo_alt=""):
     star_str = "&#9733;" * stars
-    cls = "quote-snippet inline" if inline else "quote-snippet"
+    footer = f'''<div class="qc-footer">
+      <div class="qc-person">
+        <div class="qc-avatar">{icon('users')}</div>
+        <div>
+          <strong>{name}</strong>
+          <div class="qc-verified">{icon('check')} Verified Customer</div>
+        </div>
+      </div>
+      <div class="qc-vdivider"></div>
+      <div class="qc-badge-block">
+        {icon('shield')}
+        <div>
+          <strong>Veteran Owned</strong>
+          <div class="sub">Family Operated Since 1983</div>
+        </div>
+      </div>
+    </div>'''
+
+    if photo and not inline:
+        return f'''<div class="quote-card">
+      <div class="qc-photo">
+        <img src="{photo}" alt="{photo_alt}">
+        <span class="qc-quote-mark">&ldquo;</span>
+        <div class="qc-veteran-badge">{icon('shield')}<span>Veteran Owned &amp; Proud to Serve</span></div>
+      </div>
+      <div class="qc-content">
+        <div class="qc-stars">{star_str}</div>
+        <p class="qc-headline">&ldquo;{text}&rdquo;</p>
+        {footer}
+      </div>
+    </div>'''
+
+    cls = "quote-card-simple inline" if inline else "quote-card-simple"
     return f'''<div class="{cls}">
-      <div class="qs-stars">{star_str}</div>
-      <p class="qs-text">&ldquo;{text}&rdquo;</p>
-      <div class="qs-who">&mdash; {name}</div>
+      <div class="qc-stars">{star_str}</div>
+      <p class="qc-headline">&ldquo;{text}&rdquo;</p>
+      {footer}
     </div>'''
 
 def placeholder(label, extra_class=""):
@@ -662,7 +694,7 @@ home_body = f"""
         <div class="ba-mini-label">Upholstery</div>
       </div>
     </div>
-    {quote_snippet("My carpets <span class=\"qs-highlight\">looked and smelled brand new</span> after they were cleaned. They exceeded my expectations.", "Jeff")}
+    {quote_snippet("My carpets <span class=\"qs-highlight\">looked and smelled brand new</span> after they were cleaned. They exceeded my expectations.", "Jeff", photo="/images/carpet-after-v2.webp", photo_alt="Clean carpet after Ace Cleaning Experts service")}
   </div>
 </section>
 
@@ -729,9 +761,9 @@ home_body = f"""
         </div>
       </div>
     </div>
-    <div class="quote-pair">
-      {quote_snippet("Ace is <span class=\"qs-highlight\">my favorite carpet cleaner of all time</span>. They are responsive, reliable and trustworthy.", "Anne")}
-      {quote_snippet("Ace Cleaning Experts makes our marble tile <span class=\"qs-highlight\">look like new every time</span>.", "Fabrizio")}
+    <div style="display:flex; flex-direction:column; gap:28px;">
+      {quote_snippet("Ace is <span class=\"qs-highlight\">my favorite carpet cleaner of all time</span>. They are responsive, reliable and trustworthy.", "Anne", photo="/images/carpet-mini-after.webp", photo_alt="Clean carpet after Ace Cleaning Experts service")}
+      {quote_snippet("Ace Cleaning Experts makes our marble tile <span class=\"qs-highlight\">look like new every time</span>.", "Fabrizio", photo="/images/tile-service.webp", photo_alt="Clean tile floor after Ace Cleaning Experts service")}
     </div>
     <p style="text-align:center; margin-top:40px;"><a href="/services/" class="btn btn-outline">View All Services</a></p>
   </div>
@@ -803,8 +835,8 @@ home_body = f"""
 </section>
 
 <section style="padding:0 0 100px;">
-  <div class="wrap" style="max-width:640px;">
-    {quote_snippet("Great service and people. Been using them <span class=\"qs-highlight\">since 1990, never a complaint</span>.", "Bob")}
+  <div class="wrap" style="max-width:960px;">
+    {quote_snippet("Great service and people. Been using them <span class=\"qs-highlight\">since 1990, never a complaint</span>.", "Bob", photo="/images/gallery-09.webp", photo_alt="Stained carpet before and after Ace Cleaning Experts deep cleaning")}
   </div>
 </section>
 
