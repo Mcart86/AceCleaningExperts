@@ -773,27 +773,24 @@ footer.site-footer a:hover { color: var(--white); }
   .areas-hero-tag { left: 16px; bottom: 16px; }
 }
 
-/* ---------- Featured: horizontal scroll, varied card sizes (not pills) ---------- */
+/* ---------- Featured: static 2-row grid of 4 ---------- */
 .areas-featured { padding-bottom: 0; }
-.areas-feat-track { overflow-x: auto; padding: 6px 0 44px; scrollbar-width: none; }
-.areas-feat-track::-webkit-scrollbar { display: none; }
-.areas-feat-track-inner { display: flex; gap: 18px; padding-right: 32px; }
+.areas-feat-track { padding: 6px 0 96px; }
+.areas-feat-track-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .areas-feat-card {
-  flex-shrink: 0; scroll-snap-align: start;
   display: flex; flex-direction: column; justify-content: space-between;
   background: var(--white); border: 1px solid var(--border-soft); border-radius: var(--radius);
   padding: 26px 24px; min-height: 148px; box-shadow: var(--shadow-sm);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
-.areas-feat-card.lg { width: 250px; }
-.areas-feat-card.md { width: 200px; background: var(--gray); }
+.areas-feat-card.md { background: var(--gray); }
 .areas-feat-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--red); }
 .afc-name { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--charcoal); }
 .afc-meta { font-size: 0.78rem; color: var(--charcoal-50); margin-top: 4px; font-weight: 600; }
 .afc-arrow { align-self: flex-end; color: var(--red); margin-top: 14px; transition: transform 0.2s ease; }
 .areas-feat-card:hover .afc-arrow { transform: translateX(4px); }
-.areas-feat-track { scroll-snap-type: x proximity; }
-@media (max-width: 600px) { .areas-feat-track-inner { padding-left: 22px; } }
+@media (max-width: 900px) { .areas-feat-track-inner { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .areas-feat-track-inner { grid-template-columns: 1fr; } }
 
 /* ---------- Browse by County: asymmetric editorial grid ---------- */
 .areas-county-grid {

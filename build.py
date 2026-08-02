@@ -1360,7 +1360,7 @@ def _featured_card(t, size):
       <span class="afc-arrow">{icon('arrow')}</span>
     </a>'''
 
-_sizes = ["lg", "md", "md", "lg", "md", "lg", "md", "md"]
+_sizes = ["lg" if (i // 4 + i % 4) % 2 == 0 else "md" for i in range(8)]
 _featured_cards = "\n    ".join(
     _featured_card(t, s) for t, s in zip(_FEATURED_TOWNS, _sizes)
 )
