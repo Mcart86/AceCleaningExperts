@@ -1393,7 +1393,7 @@ areas_body = f"""
       <script type="application/json" id="areaSearchData">{_AREA_SEARCH_DATA}</script>
     </div>
     <div class="areas-hero-photo">
-      <img src="/images/hero-family.jpg" alt="Ace Cleaning Experts van outside a South Jersey home">
+      <img src="/images/areas-hero-van-v1.webp" alt="Ace Cleaning Experts service van parked outside a South Jersey home">
       <span class="areas-hero-tag">Est. 1983</span>
     </div>
   </div>
