@@ -18,6 +18,7 @@ ICONS = {
 "sofa": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/><rect x="3" y="11" width="18" height="6" rx="1.5"/><path d="M4 17v2M20 17v2"/></svg>',
 "tile": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="0.5"/><rect x="13" y="3" width="8" height="8" rx="0.5"/><rect x="3" y="13" width="8" height="8" rx="0.5"/><rect x="13" y="13" width="8" height="8" rx="0.5"/></svg>',
 "building": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 8h1M14 8h1M9 12h1M14 12h1M9 16h1M14 16h1"/><path d="M10 21v-4h4v4"/></svg>',
+"flag": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h14l-2.5 4L19 12H5"/></svg>',
 "shield": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>',
 "star": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.2 6.1-.6z"/></svg>',
 "home": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9"/></svg>',
@@ -224,11 +225,12 @@ def trust_strip():
     return f'<div class="trust-strip"><div class="wrap">\n    {lis}\n  </div></div>'
 
 def stats_bar():
-    return """<div class="stats-float-card"><div class="stats-grid stats-grid-4">
+    return f"""<div class="stats-float-card"><div class="stats-grid stats-grid-5">
     <div class="stat"><div class="stat-num">40+</div><div class="stat-label">Years Experience</div></div>
     <div class="stat"><div class="stat-num">10,000+</div><div class="stat-label">Homes Cleaned</div></div>
     <div class="stat"><div class="stat-num stat-num-bold">5&#9733;</div><div class="stat-label">Star Rating</div></div>
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Satisfaction Guaranteed</div></div>
+    <div class="stat"><div class="stat-num stat-icon">{icon('flag')}</div><div class="stat-label">Veteran Owned</div></div>
   </div></div>"""
 
 def breadcrumb(trail):
