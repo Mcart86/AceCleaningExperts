@@ -205,6 +205,10 @@ nav.primary-nav .nav-dropdown-panel a:hover { background: var(--gray); color: va
   nav.primary-nav .nav-dropdown-panel a { padding: 10px 6px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: rgba(255,255,255,0.65); }
   .nav-dropdown-viewall { border-top: none; margin-top: 0; }
 }
+@media (max-width: 480px) {
+  .nav-phone { display: none; }
+  .nav-cta .btn { padding: 10px 16px; font-size: 0.88rem; }
+}
 
 /* ---------- Trust bar ---------- */
 .trust-strip { background: var(--white); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); padding: 34px 0; }
@@ -583,6 +587,9 @@ footer.site-footer a:hover { color: var(--white); }
   font-size: clamp(1.05rem, 1.8vw, 1.3rem); line-height: 1.5; color: var(--white);
 }
 .quote-strip-card .quote-strip-attrib { margin-top: 16px; font-size: 0.78rem; }
+
+.contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: flex-start; }
+@media (max-width: 800px) { .contact-grid { grid-template-columns: 1fr; gap: 32px; } }
 
 .related-split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
 .related-panel { border-radius: var(--radius); padding: 36px 32px; }

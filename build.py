@@ -1779,7 +1779,7 @@ contact_body = f"""
 </div>
 
 <section>
-  <div class="wrap" style="display:grid; grid-template-columns: 0.9fr 1.1fr; gap:60px; align-items:flex-start;">
+  <div class="wrap contact-grid">
     <div>
       <h3>Contact Details</h3>
       <ul style="margin-top:20px;">
