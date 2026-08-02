@@ -818,7 +818,7 @@ home_body = f"""
       )}
       {service_showcase_card(
           "/tile-grout-cleaning/", "Residential Service", "Restore Tile &amp; Grout",
-          "Grout scrubbed and sealed to remove years of buildup and bring back the original beauty of your tile.",
+          "Grout scrubbed back toward its original color &mdash; deep cleaning only, no upsells.",
           [("sparkle", "Deep Cleaning"), ("shield", "Protects Longer"), ("check", "No Harsh Chemicals")],
           "/images/tile-service.webp", "Mosaic tile floor cleaned by Ace Cleaning Experts, dirty grout restored to clean",
       )}
@@ -1123,6 +1123,29 @@ carpet_body = f"""
 {quote_snippet("Our dog had an accident and our robot vacuum rolled over it and all over the home office. Team came out ASAP, within 2 hrs of me calling, and <span class=\"qs-highlight\">cleaned up a disaster</span>. Friendly, accommodating and reasonably priced.", "Ema")}
 </div>
 
+<section style="background:var(--gray);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Our Process</span>
+      <h2>How We Clean Every Carpet</h2>
+    </div>
+    <div class="grid-2" style="gap:32px;">
+      <div>
+        <h3 style="font-size:1.15rem;">We Assess Before We Clean</h3>
+        <p style="color:var(--charcoal-70);">Before any equipment comes out, we walk the space and look for heavily soiled areas and visible stains that need spot pre-treatment first. That assessment shapes the rest of the job &mdash; we don't run the same generic pass over every carpet.</p>
+      </div>
+      <div>
+        <h3 style="font-size:1.15rem;">Built for Every Fiber Type</h3>
+        <p style="color:var(--charcoal-70);">Berber, frieze, wool, cut pile, loop pile &mdash; every fiber reacts differently to heat, moisture and agitation. We adjust our equipment settings to match your specific carpet, so it gets cleaned effectively without getting damaged in the process.</p>
+      </div>
+    </div>
+    <div style="margin-top:28px; max-width:760px;">
+      <h3 style="font-size:1.15rem;">Pet Stains &amp; Odor: Our Enzyme Enhancer</h3>
+      <p style="color:var(--charcoal-70); margin:0;">Standard shampoo covers up pet odor instead of removing it. We use a patented enzyme enhancer that breaks down the organic compounds causing the smell at the source &mdash; not just the surface &mdash; so the odor doesn't come back once the carpet dries.</p>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
@@ -1199,6 +1222,25 @@ uphol_body = f"""
 {quote_snippet("By far the best carpet cleaning and upholstery cleaning company in the area. They're extremely professional and <span class=\"qs-highlight\">pay attention to the finest details</span>. Quick to get back to you regarding appointments. I highly recommend Ace.", "Andrea", color="red")}
 </div>
 
+<section style="background:var(--gray);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Our Process</span>
+      <h2>Leather or Fabric, Tested Before We Clean</h2>
+    </div>
+    <div class="grid-2" style="gap:32px;">
+      <div>
+        <h3 style="font-size:1.15rem;">We Clean Both Leather and Fabric</h3>
+        <p style="color:var(--charcoal-70);">Sofas, sectionals, dining chairs, accent pieces &mdash; whether it's fabric or leather, we match our method to the material instead of using one generic approach on everything that comes through the door.</p>
+      </div>
+      <div>
+        <h3 style="font-size:1.15rem;">We Test First, Always</h3>
+        <p style="color:var(--charcoal-70);">Where it applies, we test an inconspicuous spot before starting the full clean &mdash; checking how the material responds before we commit to a method, so there are no surprises on the piece you care about.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head">
@@ -1241,7 +1283,7 @@ uphol_body = f"""
         ("Will cleaning shrink or fade my furniture?", "We test each fabric first and choose a method suited to it, which is exactly why we avoid the over-wetting that causes shrinking or color bleed with DIY machines."),
         ("Can you get pet odor out of a couch?", "In most cases, yes. Odor treatment is a standard part of our upholstery process, not an upcharge."),
         ("How long does a sofa take to dry?", "Most pieces are dry within a few hours thanks to our low-moisture approach and extraction equipment."),
-        ("Do you clean leather?", "Our current process is built for fabric upholstery. Call us and we can talk through what your specific piece needs."),
+        ("Do you clean leather?", "Yes &mdash; we clean both leather and fabric upholstery. We test the piece first and match our method to the material rather than using the same approach on everything."),
     ])}
   </div>
 </section>
@@ -1274,6 +1316,16 @@ tile_body = f"""
 <div class="wrap">
 {quote_snippet("On time and did a good job cleaning tile and grout for a <span class=\"qs-highlight\">reasonable price</span>.", "Mark")}
 </div>
+
+<section style="background:var(--gray);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What We Do</span>
+      <h2>Deep Cleaning, Done Honestly</h2>
+    </div>
+    <p class="lede" style="max-width:760px;">We focus on one thing and do it well: deep cleaning tile and grout back toward its original color. We don't apply sealer after cleaning, and we don't offer grout recoloring or staining as an add-on. If your grout needs one of those services, we'll tell you honestly instead of upselling something outside our specialty &mdash; so you know exactly what you're getting before we start.</p>
+  </div>
+</section>
 
 <section>
   <div class="wrap">
@@ -1314,10 +1366,10 @@ tile_body = f"""
       <h2>Tile, Grout &amp; Hardwood FAQ</h2>
     </div>
     {faq([
-        ("Can you make old grout look new again?", "Deep cleaning brings most grout back significantly lighter and more even in color. Severely stained or damaged grout may need sealing or re-grouting, and we'll tell you honestly which applies."),
+        ("Can you make old grout look new again?", "Deep cleaning brings most grout back significantly lighter and more even in color. Severely stained or damaged grout may need sealing or re-grouting from a specialist &mdash; we'll tell you honestly when that's the case rather than trying to clean past the point it'll help."),
         ("Is the process safe for hardwood floors?", "Yes &mdash; we match our approach to your floor's finish and avoid the over-wetting that causes warping or dulling."),
         ("How long before I can walk on the floor?", "Tile and grout are typically usable within an hour or two; hardwood dry times vary slightly by finish, and we'll confirm before we leave."),
-        ("Do you seal grout after cleaning?", "We can discuss sealing as part of your visit &mdash; ask when you book so we can plan the time needed."),
+        ("Do you seal grout after cleaning?", "No &mdash; we focus on deep cleaning only and don't offer sealing as part of our service. If sealing is something you're looking for, we can point you toward it honestly rather than upsell something we don't specialize in."),
     ])}
   </div>
 </section>
@@ -1367,6 +1419,21 @@ commercial_body = f"""
         </ul>
       </div>
       <div class="feature-visual"><img class="card-edge" src="/images/commercial-service.webp" alt="Commercial floor cleaning by Ace Cleaning Experts" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="grid-2" style="gap:32px;">
+      <div>
+        <h3 style="font-size:1.15rem;">Trusted by South Jersey Businesses</h3>
+        <p style="color:var(--charcoal-70);">We hold recurring contract service with businesses including Adelphia, Otts, and Villari's, among others &mdash; the kind of long-term relationships that come from showing up on schedule, every time, without surprises.</p>
+      </div>
+      <div>
+        <h3 style="font-size:1.15rem;">How We Price Commercial Jobs</h3>
+        <p style="color:var(--charcoal-70);">Pricing is based on square footage and, for larger or more complex spaces, a walkthrough so we can quote accurately before we start &mdash; no guessing, no surprise line items on the invoice.</p>
+      </div>
     </div>
   </div>
 </section>
