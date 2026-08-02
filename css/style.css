@@ -410,6 +410,9 @@ footer.site-footer a:hover { color: var(--white); }
   padding: 90px 0; position: relative; overflow: hidden;
   background: var(--red);
 }
+.page-hero.dark { background: var(--charcoal); }
+.page-hero.dark .btn-primary { background: var(--red); }
+.page-hero.dark .btn-primary:hover { background: var(--red-dark); }
 .page-hero::before {
   content: ""; position: absolute; inset: 0; z-index: 0;
   background-color: rgba(255,255,255,1); opacity: 0.07;
@@ -420,7 +423,7 @@ footer.site-footer a:hover { color: var(--white); }
 }
 .page-hero::after {
   content: ""; position: absolute; z-index: 0; width: 300px; height: 300px;
-  right: 40px; bottom: 30px; transform: rotate(-8deg);
+  left: 56%; top: 50%; transform: translateY(-50%) rotate(-8deg);
   background-color: rgba(255,255,255,1); opacity: 0.1;
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C12 2 4 10 4 15a5 5 0 0 0 8 4c-.3 1.5-1 2.5-2 3.3V23h4v-.7c-1-.8-1.7-1.8-2-3.3a5 5 0 0 0 8-4C20 10 12 2 12 2z'/%3E%3C/svg%3E") no-repeat center / contain;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C12 2 4 10 4 15a5 5 0 0 0 8 4c-.3 1.5-1 2.5-2 3.3V23h4v-.7c-1-.8-1.7-1.8-2-3.3a5 5 0 0 0 8-4C20 10 12 2 12 2z'/%3E%3C/svg%3E") no-repeat center / contain;
@@ -436,7 +439,8 @@ footer.site-footer a:hover { color: var(--white); }
 .page-hero .btn-primary:hover { background: #000; }
 .page-hero .btn-outline { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.5); }
 .page-hero .btn-outline:hover { background: rgba(255,255,255,0.12); border-color: var(--white); }
-@media (max-width: 900px) { .page-hero { padding: 64px 0; } .page-hero::after { width: 190px; height: 190px; right: 20px; bottom: 20px; } }
+.page-hero .county-badge { background: rgba(255,255,255,0.18); color: var(--white); }
+@media (max-width: 900px) { .page-hero { padding: 64px 0; } .page-hero::after { width: 170px; height: 170px; left: auto; top: auto; right: 20px; bottom: 20px; transform: rotate(-8deg); } }
 .county-badge {
   display: inline-block; padding: 7px 16px; border-radius: 999px;
   font-size: 12.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;

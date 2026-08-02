@@ -522,12 +522,13 @@ def town_page(t):
         else "county-badge-charcoal" if t["county"] == "Camden County"
         else "county-badge-neutral"
     )
+    hero_variant = "" if t["county"] == "Gloucester County" else " dark"
     pricing_line = (
         "wherever you're located in South Jersey" if state == "NJ"
         else f"wherever you're located in the {name} area"
     )
     body = f"""
-<section class="page-hero">
+<section class="page-hero{hero_variant}">
   <div class="wrap">
     <div class="page-hero-copy">
       {breadcrumb([("Home","/"),("Service Areas","/service-areas/"),(name, None)])}
@@ -950,7 +951,7 @@ page("/about-us/", "About Ace Cleaning Experts | Veteran-Owned, Family-Operated 
 
 # ============================================================ SERVICES ==
 services_body = f"""
-<section class="page-hero">
+<section class="page-hero dark">
   <div class="wrap">
     <div class="page-hero-copy">
       {breadcrumb([("Home","/"),("Services", None)])}
@@ -1099,7 +1100,7 @@ page("/carpet-cleaning-service/", "Carpet Cleaning in South Jersey | Ace Cleanin
 
 # ================================================= UPHOLSTERY CLEANING ==
 uphol_body = f"""
-<section class="page-hero">
+<section class="page-hero dark">
   <div class="wrap">
     <div class="page-hero-copy">
       {breadcrumb([("Home","/"),("Services","/services/"),("Upholstery Cleaning", None)])}
@@ -1243,7 +1244,7 @@ page("/tile-grout-cleaning/", "Tile, Grout &amp; Hardwood Floor Cleaning | Ace C
 
 # ==================================================== COMMERCIAL =========
 commercial_body = f"""
-<section class="page-hero">
+<section class="page-hero dark">
   <div class="wrap">
     <div class="page-hero-copy">
       {breadcrumb([("Home","/"),("Commercial Floor Care", None)])}
@@ -1494,7 +1495,7 @@ for _t in TOWNS:
 
 # ==================================================== CONTACT ============
 contact_body = f"""
-<section class="page-hero">
+<section class="page-hero dark">
   <div class="wrap">
     <div class="page-hero-copy">
       {breadcrumb([("Home","/"),("Contact", None)])}
