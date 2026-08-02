@@ -400,6 +400,9 @@ TOWNS = [
                  "just off Route 42 &mdash; home turf for us, and one of our most-requested towns for "
                  "carpet and floor cleaning. Whether you're near Washington Township High School or "
                  "closer to Rowan College of South Jersey, we're a short drive away.",
+        "local_note": "As one of our home-base towns, we're in and out of Sewell multiple times a week &mdash; "
+                       "carpet cleaning for homes along Route 42, plus tile and grout work for the businesses "
+                       "near Rowan College of South Jersey.",
     },
     {
         "slug": "deptford-nj",
@@ -410,6 +413,9 @@ TOWNS = [
                  "suburban growth in the late 1950s, and the Deptford Mall has anchored the area since "
                  "1975. We handle carpet, tile and upholstery cleaning for homes and the businesses that "
                  "keep this busy corridor running.",
+        "local_note": "With the Deptford Mall corridor as one of Gloucester County's busiest retail stretches, "
+                       "commercial floor care is a big part of what we do here, alongside residential carpet "
+                       "cleaning throughout the township's neighborhoods.",
     },
     {
         "slug": "haddonfield-nj",
@@ -420,6 +426,9 @@ TOWNS = [
                  "galleries along a National Register Historic District &mdash; means a lot of older homes "
                  "and storefronts with floors worth taking care of properly. We're comfortable working "
                  "carefully in Haddonfield's colonial-era homes as well as its busy downtown storefronts.",
+        "local_note": "Haddonfield's mix of colonial-era homes and Kings Highway storefronts means we do a "
+                       "lot of careful upholstery and tile work here &mdash; older homes and antique furniture "
+                       "call for a gentler touch than newer construction.",
     },
     {
         "slug": "west-deptford-nj",
@@ -431,6 +440,8 @@ TOWNS = [
                  "Community Center's waterfront trails and golf course. From the Green-Fields neighborhood "
                  "to the streets around Thorofare, we handle carpet, tile and upholstery cleaning for homes "
                  "and businesses throughout the township.",
+        "local_note": "Between the riverfront homes near RiverWinds and the neighborhoods around Thorofare, "
+                       "carpet and tile cleaning make up most of our West Deptford calls.",
     },
     {
         "slug": "logan-township-nj",
@@ -441,6 +452,9 @@ TOWNS = [
                  "the first Swedish settlers in the Repaupo section along the Delaware River meadowlands. "
                  "It's a mix of quiet farmland and newer development, and we're a regular stop for carpet, "
                  "tile and upholstery cleaning across the township.",
+        "local_note": "Logan Township's mix of farmland and newer development means we see everything from "
+                       "older farmhouse carpets to fresh-build tile floors &mdash; we adjust our approach to "
+                       "match either.",
     },
     {
         "slug": "washington-township-nj",
@@ -451,6 +465,9 @@ TOWNS = [
                  "village and later a 19th-century industrial hub near Grenloch Lake &mdash; out through Sewell "
                  "and Turnersville. It's one of the most populous townships in Gloucester County, and one of "
                  "the areas we serve most often for carpet, tile and upholstery cleaning.",
+        "local_note": "As one of Gloucester County's most populous townships, Washington Township keeps us "
+                       "busy across all four services &mdash; from carpet cleaning in Grenloch Terrace to "
+                       "commercial work in the retail corridors near Turnersville.",
     },
     {
         "slug": "franklin-township-nj",
@@ -462,6 +479,9 @@ TOWNS = [
                  "to 1814, and Franklinville still has its historic railroad station. We serve homes and "
                  "businesses across the township's more spread-out communities for carpet, tile and "
                  "upholstery cleaning.",
+        "local_note": "Franklin Township's spread-out communities, from Franklinville to Malaga, mean more "
+                       "driving between jobs &mdash; but we treat every stop the same: same pricing, same "
+                       "process, no matter how far off the main road you are.",
     },
     {
         "slug": "cherry-hill-nj",
@@ -473,6 +493,9 @@ TOWNS = [
                  "first enclosed shopping centers in the country. It's one of the largest townships in South "
                  "Jersey, and we handle carpet, tile and upholstery cleaning for homes and businesses "
                  "throughout it.",
+        "local_note": "Cherry Hill's size and mix of retail and residential means we handle everything from "
+                       "mall-adjacent commercial floor care to carpet and upholstery cleaning in neighborhoods "
+                       "throughout the township.",
     },
     {
         "slug": "voorhees-nj",
@@ -483,6 +506,9 @@ TOWNS = [
                  "township in 1899, and today it's home to the Flyers Skate Zone, the Philadelphia Flyers' "
                  "training facility. From the neighborhoods around Voorhees Town Center to the quieter streets "
                  "further out, we're a regular for carpet, tile and upholstery cleaning across the township.",
+        "local_note": "From the shops around Voorhees Town Center to the residential streets further out, we "
+                       "handle a mix of commercial and residential carpet, tile and upholstery work throughout "
+                       "Voorhees.",
     },
     {
         "slug": "blackwood-nj",
@@ -493,6 +519,9 @@ TOWNS = [
                  "along with Pennco Tech and a mix of longtime residential streets. It's part of Gloucester "
                  "Township, and we serve homes and businesses throughout the area for carpet, tile and "
                  "upholstery cleaning.",
+        "local_note": "With Camden County College and Pennco Tech nearby, we do a fair amount of commercial "
+                       "and light-institutional floor care in Blackwood, alongside residential carpet cleaning "
+                       "throughout the neighborhood.",
     },
     {
         "slug": "turnersville-nj",
@@ -503,6 +532,9 @@ TOWNS = [
                  "busiest commercial hubs, right at the intersection of Route 42 and the Atlantic City "
                  "Expressway. Between the retail corridor and the neighborhoods around it, it's one of our "
                  "most frequent stops for carpet, tile and upholstery cleaning.",
+        "local_note": "Turnersville's retail corridor at Route 42 and the Atlantic City Expressway means "
+                       "commercial floor care is a regular part of our work here, alongside carpet cleaning "
+                       "in the surrounding neighborhoods.",
     },
     {
         "slug": "philadelphia-pa",
@@ -513,6 +545,9 @@ TOWNS = [
         "about": "Just across the Delaware River from our South Jersey home base, Philadelphia is one of "
                  "the extended areas we regularly take appointments in &mdash; call ahead to confirm your "
                  "address and schedule, and we'll let you know honestly if it's a fit for the day you need.",
+        "local_note": "We take Philadelphia appointments closest to the bridges and river crossings from South "
+                       "Jersey &mdash; call ahead and we'll confirm honestly whether your specific address fits "
+                       "into that day's schedule.",
     },
     {
         "slug": "wilmington-de",
@@ -523,6 +558,9 @@ TOWNS = [
         "about": "Wilmington and the surrounding New Castle County area are part of our extended service "
                  "zone beyond South Jersey. Give us a call to confirm your address and we'll schedule "
                  "honestly around drive time &mdash; no runaround about whether we can make it work.",
+        "local_note": "Wilmington appointments work the same way as anywhere in our extended area &mdash; "
+                       "we'll confirm your address and schedule around drive time before committing to a day, "
+                       "so there's no guessing on either end.",
     },
 ]
 
@@ -626,13 +664,23 @@ def town_page(t):
 
 <section style="background:var(--gray);">
   <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Local to {name}</span>
+      <h2>What We Clean Most Here</h2>
+    </div>
+    <p class="lede" style="max-width:760px;">{t["local_note"]}</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Common Questions</span>
       <h2>{name} Cleaning FAQ</h2>
     </div>
     {faq([
         (f"How fast can you get to {name}?", f"{name} is one of our regularly serviced areas, so scheduling is usually quick &mdash; call {PHONE} and we'll give you a real timeframe, not a runaround."),
-        ("Do you serve both homes and businesses here?", "Yes &mdash; residential and commercial jobs, from single rooms to full offices or storefronts."),
+        (f"Do you serve both homes and businesses in {name}?", f"Yes &mdash; residential and commercial jobs throughout {name}, from single rooms to full offices or storefronts."),
         ("Is pricing different by town?", f"No &mdash; our pricing is based on the job, not the zip code. You'll get the same honest, up-front quote {pricing_line}."),
     ])}
   </div>
