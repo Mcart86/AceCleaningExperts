@@ -549,12 +549,40 @@ def town_page(t):
       <span class="eyebrow">What We Offer</span>
       <h2>Services Available in {name}</h2>
     </div>
-    <ul class="checklist grid-2" style="display:grid;">
-      <li>{icon('check')} <a href="/carpet-cleaning-service/">Carpet Cleaning</a> &mdash; deep steam extraction with Scotchgard protection</li>
-      <li>{icon('check')} <a href="/upholstery-cleaning/">Upholstery Cleaning</a> &mdash; fabric-safe cleaning for sofas &amp; chairs</li>
-      <li>{icon('check')} <a href="/tile-grout-cleaning/">Tile, Grout &amp; Hardwood</a> &mdash; kitchens, bathrooms &amp; floors</li>
-      <li>{icon('check')} <a href="/commercial-carpet-cleaning/">Commercial Floor Care</a> &mdash; offices, retail &amp; medical spaces</li>
-    </ul>
+    <div class="grid-4">
+      <div class="svc-card">
+        <div class="svc-body">
+          <div class="icon">{icon('rug')}</div>
+          <h3>Carpet Cleaning</h3>
+          <p>Deep steam extraction with Scotchgard protection.</p>
+          <a href="/carpet-cleaning-service/" class="go">Learn More {icon('arrow')}</a>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-body">
+          <div class="icon">{icon('sofa')}</div>
+          <h3>Upholstery Cleaning</h3>
+          <p>Fabric-safe cleaning for sofas &amp; chairs.</p>
+          <a href="/upholstery-cleaning/" class="go">Learn More {icon('arrow')}</a>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-body">
+          <div class="icon">{icon('tile')}</div>
+          <h3>Tile, Grout &amp; Hardwood</h3>
+          <p>Kitchens, bathrooms &amp; floors.</p>
+          <a href="/tile-grout-cleaning/" class="go">Learn More {icon('arrow')}</a>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-body">
+          <div class="icon">{icon('building')}</div>
+          <h3>Commercial Floor Care</h3>
+          <p>Offices, retail &amp; medical spaces.</p>
+          <a href="/commercial-carpet-cleaning/" class="go">Learn More {icon('arrow')}</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
