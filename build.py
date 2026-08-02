@@ -528,6 +528,14 @@ TOWN_REVIEW_POOL = [
     ("<span class=\"qs-highlight\">Fantastic job</span>!!!!", "Christine"),
     ("Great place and <span class=\"qs-highlight\">great people</span>!", "Diane"),
     ("<span class=\"qs-highlight\">Only the best</span> by Ace Cleaners!!", "Diane"),
+    ("Ace Cleaning Experts makes our marble tile <span class=\"qs-highlight\">look like new every time</span>.", "Fabrizio"),
+    ("Having a home with 2 young children our carpets were a mess. One call and they had us scheduled quickly, arrived early and <span class=\"qs-highlight\">had the job done within the time frame they gave</span>. We'll definitely be repeat customers.", "Dan"),
+    ("They are the best around! <span class=\"qs-highlight\">My carpets and my couches came out amazing</span>.", "Joe"),
+    ("My carpets <span class=\"qs-highlight\">looked and smelled brand new</span> after they were cleaned. They exceeded my expectations.", "Jeff"),
+    ("Ace is <span class=\"qs-highlight\">my favorite carpet cleaner of all time</span>. They are responsive, reliable and trustworthy.", "Anne"),
+    ("Nick and Jeff were professional, friendly, and thorough from start to finish. You can really tell <span class=\"qs-highlight\">they take pride in their work</span>.", "Chris"),
+    ("I've used Ace for well over 10 years &mdash; not only to support a local company, but because <span class=\"qs-highlight\">they're always professional and always on-time</span>.", "David"),
+    ("Great service and people. Been using them <span class=\"qs-highlight\">since 1990, never a complaint</span>.", "Bob"),
 ]
 
 def town_page(t):
@@ -697,17 +705,7 @@ home_body = f"""
   </div>
 </section>
 
-{quote_snippet("My carpets <span class=\"qs-highlight\">looked and smelled brand new</span> after they were cleaned. They exceeded my expectations.", "Jeff")}
-
 {quote_snippet("I've been using Ace Cleaning Experts <span class=\"qs-highlight\">for over 20 years</span>, and they consistently do a fantastic job. Professional, efficient, reasonably priced, and incredibly courteous.", "Karen")}
-
-{quote_snippet("Ace is <span class=\"qs-highlight\">my favorite carpet cleaner of all time</span>. They are responsive, reliable and trustworthy.", "Anne")}
-
-{quote_snippet("Nick and Jeff were professional, friendly, and thorough from start to finish. You can really tell <span class=\"qs-highlight\">they take pride in their work</span>.", "Chris")}
-
-{quote_snippet("I've used Ace for well over 10 years \u2014 not only to support a local company, but because <span class=\"qs-highlight\">they're always professional and always on-time</span>.", "David")}
-
-{quote_snippet("Great service and people. Been using them <span class=\"qs-highlight\">since 1990, never a complaint</span>.", "Bob")}
 
 {stats_bar()}
 
@@ -929,8 +927,6 @@ about_body = f"""
 
 {quote_snippet("Consistent, quality workmanship and price point <span class=\"qs-highlight\">for decades</span>. There is no other competition that comes close.", "Glenn")}
 
-{quote_snippet("Ace Cleaning Experts makes our marble tile <span class=\"qs-highlight\">look like new every time</span>.", "Fabrizio")}
-
 <section>
   <div class="wrap">
     <div class="feature-row">
@@ -1024,8 +1020,6 @@ services_body = f"""
 
 {quote_snippet("Ace cleaned the tile in my kitchen and two bathrooms, plus two area rugs and my basement carpeting and stairs. <span class=\"qs-highlight\">Everything looks great</span>, they were on time, and pricing was fair. Will use them again for my floor cleaning needs!", "Christopher")}
 
-{quote_snippet("Wonderful family business &mdash; they do a great job and <span class=\"qs-highlight\">are always on time</span>.", "Cyndi")}
-
 <section>
   <div class="wrap">
     <div class="grid-4">
@@ -1107,8 +1101,6 @@ carpet_body = f"""
   </div>
 </section>
 
-{quote_snippet("Having a home with 2 young children our carpets were a mess. One call and they had us scheduled quickly, arrived early and <span class=\"qs-highlight\">had the job done within the time frame they gave</span>. We'll definitely be repeat customers.", "Dan")}
-
 {quote_snippet("Our dog had an accident and our robot vacuum rolled over it and all over the home office. Team came out ASAP, within 2 hrs of me calling, and <span class=\"qs-highlight\">cleaned up a disaster</span>. Friendly, accommodating and reasonably priced.", "Ema")}
 
 <section>
@@ -1182,8 +1174,6 @@ uphol_body = f"""
     </div>
   </div>
 </section>
-
-{quote_snippet("They are the best around! <span class=\"qs-highlight\">My carpets and my couches came out amazing</span>.", "Joe")}
 
 {quote_snippet("By far the best carpet cleaning and upholstery cleaning company in the area. They're extremely professional and <span class=\"qs-highlight\">pay attention to the finest details</span>. Quick to get back to you regarding appointments. I highly recommend Ace.", "Andrea")}
 
