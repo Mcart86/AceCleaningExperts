@@ -557,15 +557,18 @@ def town_page(t):
     )
     body = f"""
 <section class="page-hero">
-  <div class="wrap">
-    {breadcrumb([("Home","/"),("Service Areas","/service-areas/"),(name, None)])}
-    <span class="eyebrow">{locality}</span>
-    <h1>Carpet &amp; Floor Cleaning in {name}, {state}</h1>
-    <p class="lede">{t["about"]}</p>
-    <div class="btn-row">
-      <a href="/contact/" class="btn btn-primary">Get Free Quote</a>
-      <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
+  <div class="wrap page-hero-grid">
+    <div class="page-hero-copy">
+      {breadcrumb([("Home","/"),("Service Areas","/service-areas/"),(name, None)])}
+      <span class="eyebrow">{locality}</span>
+      <h1>Carpet &amp; Floor Cleaning in {name}, {state}</h1>
+      <p class="lede">{t["about"]}</p>
+      <div class="btn-row">
+        <a href="/contact/" class="btn btn-primary">Get Free Quote</a>
+        <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
+      </div>
     </div>
+    <div class="page-hero-photo">{placeholder(f"Recent Job in {name}, {state}")}</div>
   </div>
 </section>
 
@@ -862,11 +865,14 @@ page("/", "Ace Cleaning Experts | South Jersey's Trusted Carpet Cleaning Experts
 # ============================================================ OUR WORK ===
 our_work_body = f"""
 <section class="page-hero">
-  <div class="wrap">
-    {breadcrumb([("Home","/"),("Our Work", None)])}
-    <span class="eyebrow">See The Difference</span>
-    <h1>Our Work</h1>
-    <p class="lede">Real before-and-after results from carpet, tile and upholstery jobs across South Jersey &mdash; no stock photos, just our own work.</p>
+  <div class="wrap page-hero-grid">
+    <div class="page-hero-copy">
+      {breadcrumb([("Home","/"),("Our Work", None)])}
+      <span class="eyebrow">See The Difference</span>
+      <h1>Our Work</h1>
+      <p class="lede">Real before-and-after results from carpet, tile and upholstery jobs across South Jersey &mdash; no stock photos, just our own work.</p>
+    </div>
+    <div class="page-hero-photo">{placeholder("Featured Job Photo")}</div>
   </div>
 </section>
 
@@ -885,11 +891,14 @@ page("/our-work/", "Our Work | Real Before & After Photos | Ace Cleaning Experts
 # ============================================================== ABOUT ===
 about_body = f"""
 <section class="page-hero">
-  <div class="wrap">
-    {breadcrumb([("Home","/"),("About Us", None)])}
-    <span class="eyebrow">Our Story</span>
-    <h1>Four Decades of Clean Carpets and Floors</h1>
-    <p class="lede">Ace Cleaning Experts started the way most good local businesses do &mdash; with a family, a van, and a determination to do the job right. For over 40 years, we've helped South Jersey families and businesses restore carpets, tile, upholstery and grout &mdash; eliminating stubborn dirt, stains and odors along the way. We're still locally owned and operated: not a franchise, not a national call center, just the same commitment to honest pricing and work you can trust.</p>
+  <div class="wrap page-hero-grid">
+    <div class="page-hero-copy">
+      {breadcrumb([("Home","/"),("About Us", None)])}
+      <span class="eyebrow">Our Story</span>
+      <h1>Four Decades of Clean Carpets and Floors</h1>
+      <p class="lede">Ace Cleaning Experts started the way most good local businesses do &mdash; with a family, a van, and a determination to do the job right. For over 40 years, we've helped South Jersey families and businesses restore carpets, tile, upholstery and grout &mdash; eliminating stubborn dirt, stains and odors along the way. We're still locally owned and operated: not a franchise, not a national call center, just the same commitment to honest pricing and work you can trust.</p>
+    </div>
+    <div class="page-hero-photo">{placeholder("Ace Team Photo")}</div>
   </div>
 </section>
 
@@ -974,11 +983,14 @@ page("/about-us/", "About Ace Cleaning Experts | Veteran-Owned, Family-Operated 
 # ============================================================ SERVICES ==
 services_body = f"""
 <section class="page-hero">
-  <div class="wrap">
-    {breadcrumb([("Home","/"),("Services", None)])}
-    <span class="eyebrow">What We Do</span>
-    <h1>Cleaning Services for Every Room and Every Business</h1>
-    <p class="lede">Carpet, upholstery, tile, grout, hardwood and commercial floor care &mdash; all handled by the same local crew, with EPA-certified products and 40+ years of hands-on experience behind every job.</p>
+  <div class="wrap page-hero-grid">
+    <div class="page-hero-copy">
+      {breadcrumb([("Home","/"),("Services", None)])}
+      <span class="eyebrow">What We Do</span>
+      <h1>Cleaning Services for Every Room and Every Business</h1>
+      <p class="lede">Carpet, upholstery, tile, grout, hardwood and commercial floor care &mdash; all handled by the same local crew, with EPA-certified products and 40+ years of hands-on experience behind every job.</p>
+    </div>
+    <div class="page-hero-photo">{placeholder("Services Photo")}</div>
   </div>
 </section>
 
@@ -1049,15 +1061,18 @@ page("/services/", "Cleaning Services | Ace Cleaning Experts, South Jersey",
 # ==================================================== CARPET CLEANING ===
 carpet_body = f"""
 <section class="page-hero">
-  <div class="wrap">
-    {breadcrumb([("Home","/"),("Services","/services/"),("Carpet Cleaning", None)])}
-    <span class="eyebrow">Residential &amp; Light Commercial</span>
-    <h1>Carpet Cleaning That Actually Lasts</h1>
-    <p class="lede">Deep steam extraction pulls dirt, allergens and set-in stains out of the fibers &mdash; not just off the surface &mdash; and every job finishes with a Scotchgard application.</p>
-    <div class="btn-row">
-      <a href="/contact/" class="btn btn-primary">Get Free Quote</a>
-      <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
+  <div class="wrap page-hero-grid">
+    <div class="page-hero-copy">
+      {breadcrumb([("Home","/"),("Services","/services/"),("Carpet Cleaning", None)])}
+      <span class="eyebrow">Residential &amp; Light Commercial</span>
+      <h1>Carpet Cleaning That Actually Lasts</h1>
+      <p class="lede">Deep steam extraction pulls dirt, allergens and set-in stains out of the fibers &mdash; not just off the surface &mdash; and every job finishes with a Scotchgard application.</p>
+      <div class="btn-row">
+        <a href="/contact/" class="btn btn-primary">Get Free Quote</a>
+        <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
+      </div>
     </div>
+    <div class="page-hero-photo">{placeholder("Carpet Cleaning Photo")}</div>
   </div>
 </section>
 
@@ -1119,15 +1134,18 @@ page("/carpet-cleaning-service/", "Carpet Cleaning in South Jersey | Ace Cleanin
 # ================================================= UPHOLSTERY CLEANING ==
 uphol_body = f"""
 <section class="page-hero">
-  <div class="wrap">
-    {breadcrumb([("Home","/"),("Services","/services/"),("Upholstery Cleaning", None)])}
-    <span class="eyebrow">Sofas &middot; Sectionals &middot; Dining Chairs</span>
-    <h1>Upholstery Cleaning That Respects the Fabric</h1>
-    <p class="lede">Every fabric is different, so we test and match our method to the material before we start &mdash; lifting stains and odor without soaking, over-wetting or fading the piece you care about.</p>
-    <div class="btn-row">
-      <a href="/contact/" class="btn btn-primary">Get Free Quote</a>
-      <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
+  <div class="wrap page-hero-grid">
+    <div class="page-hero-copy">
+      {breadcrumb([("Home","/"),("Services","/services/"),("Upholstery Cleaning", None)])}
+      <span class="eyebrow">Sofas &middot; Sectionals &middot; Dining Chairs</span>
+      <h1>Upholstery Cleaning That Respects the Fabric</h1>
+      <p class="lede">Every fabric is different, so we test and match our method to the material before we start &mdash; lifting stains and odor without soaking, over-wetting or fading the piece you care about.</p>
+      <div class="btn-row">
+        <a href="/contact/" class="btn btn-primary">Get Free Quote</a>
+        <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
+      </div>
     </div>
+    <div class="page-hero-photo">{placeholder("Upholstery Cleaning Photo")}</div>
   </div>
 </section>
 
@@ -1189,15 +1207,18 @@ page("/upholstery-cleaning/", "Upholstery Cleaning in South Jersey | Ace Cleanin
 # ============================================== TILE / GROUT / HARDWOOD =
 tile_body = f"""
 <section class="page-hero">
-  <div class="wrap">
-    {breadcrumb([("Home","/"),("Services","/services/"),("Tile, Grout &amp; Hardwood", None)])}
-    <span class="eyebrow">Kitchens &middot; Bathrooms &middot; Hardwood Floors</span>
-    <h1>Tile, Grout &amp; Hardwood Floor Cleaning</h1>
-    <p class="lede">Grout holds onto dirt long after mopping stops working. We deep-clean it back toward its original color, and we clean hardwood floors the right way &mdash; without soaking or dulling the finish.</p>
-    <div class="btn-row">
-      <a href="/contact/" class="btn btn-primary">Get Free Quote</a>
-      <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
+  <div class="wrap page-hero-grid">
+    <div class="page-hero-copy">
+      {breadcrumb([("Home","/"),("Services","/services/"),("Tile, Grout &amp; Hardwood", None)])}
+      <span class="eyebrow">Kitchens &middot; Bathrooms &middot; Hardwood Floors</span>
+      <h1>Tile, Grout &amp; Hardwood Floor Cleaning</h1>
+      <p class="lede">Grout holds onto dirt long after mopping stops working. We deep-clean it back toward its original color, and we clean hardwood floors the right way &mdash; without soaking or dulling the finish.</p>
+      <div class="btn-row">
+        <a href="/contact/" class="btn btn-primary">Get Free Quote</a>
+        <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
+      </div>
     </div>
+    <div class="page-hero-photo">{placeholder("Tile &amp; Grout Cleaning Photo")}</div>
   </div>
 </section>
 
@@ -1259,15 +1280,18 @@ page("/tile-grout-cleaning/", "Tile, Grout &amp; Hardwood Floor Cleaning | Ace C
 # ==================================================== COMMERCIAL =========
 commercial_body = f"""
 <section class="page-hero">
-  <div class="wrap">
-    {breadcrumb([("Home","/"),("Commercial Floor Care", None)])}
-    <span class="eyebrow">Offices &middot; Retail &middot; Medical &middot; Restaurants</span>
-    <h1>Commercial Carpet &amp; Floor Care</h1>
-    <p class="lede">We work around your business, not the other way around. Evening and weekend appointments keep cleaning off your customers' radar and off your staff's schedule &mdash; for carpet and hard floors alike.</p>
-    <div class="btn-row">
-      <a href="/contact/" class="btn btn-primary">Request a Commercial Quote</a>
-      <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
+  <div class="wrap page-hero-grid">
+    <div class="page-hero-copy">
+      {breadcrumb([("Home","/"),("Commercial Floor Care", None)])}
+      <span class="eyebrow">Offices &middot; Retail &middot; Medical &middot; Restaurants</span>
+      <h1>Commercial Carpet &amp; Floor Care</h1>
+      <p class="lede">We work around your business, not the other way around. Evening and weekend appointments keep cleaning off your customers' radar and off your staff's schedule &mdash; for carpet and hard floors alike.</p>
+      <div class="btn-row">
+        <a href="/contact/" class="btn btn-primary">Request a Commercial Quote</a>
+        <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
+      </div>
     </div>
+    <div class="page-hero-photo">{placeholder("Commercial Job Photo")}</div>
   </div>
 </section>
 
@@ -1489,11 +1513,14 @@ for _t in TOWNS:
 # ==================================================== CONTACT ============
 contact_body = f"""
 <section class="page-hero">
-  <div class="wrap">
-    {breadcrumb([("Home","/"),("Contact", None)])}
-    <span class="eyebrow">Get In Touch</span>
-    <h1>Let's Get Your Space Looking Its Best</h1>
-    <p class="lede">Call us directly for the fastest response, or send over a few details and we'll follow up to schedule your free quote.</p>
+  <div class="wrap page-hero-grid">
+    <div class="page-hero-copy">
+      {breadcrumb([("Home","/"),("Contact", None)])}
+      <span class="eyebrow">Get In Touch</span>
+      <h1>Let's Get Your Space Looking Its Best</h1>
+      <p class="lede">Call us directly for the fastest response, or send over a few details and we'll follow up to schedule your free quote.</p>
+    </div>
+    <div class="page-hero-photo">{placeholder("Contact Photo")}</div>
   </div>
 </section>
 
