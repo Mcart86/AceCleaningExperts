@@ -772,7 +772,6 @@ home_body = f"""
     </div>
     <div style="display:flex; flex-direction:column; gap:28px; margin-top:56px;">
       {quote_snippet("Ace is <span class=\"qs-highlight\">my favorite carpet cleaner of all time</span>. They are responsive, reliable and trustworthy.", "Anne", photo="/images/carpet-mini-after.webp", photo_alt="Clean carpet after Ace Cleaning Experts service")}
-      {quote_snippet("Ace Cleaning Experts makes our marble tile <span class=\"qs-highlight\">look like new every time</span>.", "Fabrizio", photo="/images/tile-service.webp", photo_alt="Clean tile floor after Ace Cleaning Experts service")}
     </div>
     <p style="text-align:center; margin-top:40px;"><a href="/services/" class="btn btn-outline">View All Services</a></p>
   </div>
@@ -942,6 +941,7 @@ about_body = f"""
       <img src="/images/equipment-01.webp" alt="HydraMaster Titan truck-mounted carpet cleaning system" style="width:100%; border-radius:var(--radius); box-shadow:var(--shadow-sm); aspect-ratio:3/4; object-fit:cover;">
       <img src="/images/equipment-02.webp" alt="Professional cleaning hoses and equipment organized in the Ace Cleaning Experts van" style="width:100%; border-radius:var(--radius); box-shadow:var(--shadow-sm); aspect-ratio:3/4; object-fit:cover;">
     </div>
+    {quote_snippet("Ace Cleaning Experts makes our marble tile <span class=\"qs-highlight\">look like new every time</span>.", "Fabrizio")}
   </div>
 </section>
 
