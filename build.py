@@ -269,6 +269,52 @@ GALLERY_IMAGES = [
     ("gallery-22", "Star-patterned commercial carpet cleaning"),
 ]
 
+ALL_SERVICES = [
+    ("/carpet-cleaning-service/", "Carpet Cleaning"),
+    ("/upholstery-cleaning/", "Upholstery Cleaning"),
+    ("/tile-grout-cleaning/", "Tile, Grout &amp; Hardwood"),
+    ("/commercial-carpet-cleaning/", "Commercial Floor Care"),
+]
+
+PRIORITY_AREAS = [
+    ("/service-areas/sewell-nj/", "Sewell, NJ"),
+    ("/service-areas/deptford-nj/", "Deptford, NJ"),
+    ("/service-areas/haddonfield-nj/", "Haddonfield, NJ"),
+]
+
+def related_links(current_href):
+    other_services = "\n          ".join(
+        f'<li>{icon("check")} <a href="{href}">{label}</a></li>'
+        for href, label in ALL_SERVICES if href != current_href
+    )
+    areas = "\n          ".join(
+        f'<li>{icon("check")} <a href="{href}">{label}</a></li>'
+        for href, label in PRIORITY_AREAS
+    )
+    return f'''<section style="background:var(--gray);">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Explore More</span>
+      <h2>More Ways We Can Help</h2>
+    </div>
+    <div class="grid-2" style="gap:48px;">
+      <div>
+        <h3 style="font-size:1.05rem; margin-bottom:16px;">Other Services</h3>
+        <ul class="checklist">
+          {other_services}
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:1.05rem; margin-bottom:16px;">Popular Service Areas</h3>
+        <ul class="checklist">
+          {areas}
+        </ul>
+        <p style="margin-top:16px;"><a href="/service-areas/" class="go">View All Service Areas {icon('arrow')}</a></p>
+      </div>
+    </div>
+  </div>
+</section>'''
+
 def gallery_grid(images=GALLERY_IMAGES):
     items = "\n    ".join(
         f'<button type="button" class="gallery-item" data-full="/images/{name}.webp" aria-label="View larger: {alt}">'
@@ -994,6 +1040,8 @@ carpet_body = f"""
   </div>
 </section>
 
+{related_links("/carpet-cleaning-service/")}
+
 {cta_band()}
 """
 page("/carpet-cleaning-service/", "Carpet Cleaning in South Jersey | Ace Cleaning Experts",
@@ -1062,6 +1110,8 @@ uphol_body = f"""
   </div>
 </section>
 
+{related_links("/upholstery-cleaning/")}
+
 {cta_band()}
 """
 page("/upholstery-cleaning/", "Upholstery Cleaning in South Jersey | Ace Cleaning Experts",
@@ -1129,6 +1179,8 @@ tile_body = f"""
     ])}
   </div>
 </section>
+
+{related_links("/tile-grout-cleaning/")}
 
 {cta_band()}
 """
@@ -1211,6 +1263,8 @@ commercial_body = f"""
     ])}
   </div>
 </section>
+
+{related_links("/commercial-carpet-cleaning/")}
 
 {cta_band("Keep Your Space Looking Its Best", "Tell us about your space and schedule &mdash; we'll build a cleaning plan around it.")}
 """
