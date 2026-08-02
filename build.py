@@ -280,6 +280,9 @@ GALLERY_IMAGES = [
     ("gallery-20", "Diamond-patterned commercial carpet cleaning"),
     ("gallery-21", "Triangle-patterned commercial carpet cleaning"),
     ("gallery-22", "Star-patterned commercial carpet cleaning"),
+    ("gallery-23", "Restaurant stone-look tile floor being deep cleaned, dirt lifted"),
+    ("gallery-24", "Staircase carpet mid-clean, dirty and freshly cleaned sections side by side"),
+    ("gallery-25", "Restaurant entry mat before and after cleaning, logo colors restored"),
 ]
 
 ALL_SERVICES = [
