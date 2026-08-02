@@ -649,3 +649,26 @@ footer.site-footer a:hover { color: var(--white); }
 .quote-card-simple .qc-headline { font-size: 0.88rem; margin-bottom: 6px; }
 .quote-card-simple .qc-rest { font-size: 0.8rem; margin-bottom: 10px; }
 .quote-card-simple.inline { margin: 20px 0 0; }
+
+/* ---------- Redesigned service showcase cards (Our Cleaning Services) ---------- */
+.svc-showcase-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.svc-showcase-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+.svc-showcase-card .ba-slider-mini { border-radius: 0; }
+.svc-showcase-card .svc-body { padding: 22px 20px 24px; }
+.svc-category { display: block; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+.svc-showcase-card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+.svc-showcase-card p { font-size: 0.9rem; color: var(--charcoal-70); margin: 0 0 16px; }
+.svc-chip-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; padding-top: 16px; border-top: 1px solid var(--border-soft); margin-bottom: 18px; }
+.svc-chip { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; }
+.svc-chip svg { color: var(--red); width: 20px; height: 20px; }
+.svc-chip span { font-size: 10.5px; font-weight: 700; color: var(--charcoal-70); line-height: 1.25; }
+.svc-explore { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--red); }
+.explore-arrow { display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--red); color: var(--white); flex-shrink: 0; transition: background 0.15s ease; }
+.explore-arrow svg { width: 15px; height: 15px; }
+.svc-explore:hover .explore-arrow { background: var(--red-dark); }
+
+.trust-badge-box { display: flex; align-items: center; gap: 16px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 28px; margin-top: 44px; }
+.trust-badge-box > svg { color: var(--red); width: 30px; height: 30px; flex-shrink: 0; }
+.trust-badge-box strong { display: block; font-size: 0.98rem; }
+.trust-badge-box .sub { font-size: 0.86rem; color: var(--charcoal-50); margin-top: 4px; }
+@media (max-width: 700px) { .trust-badge-box { flex-direction: column; text-align: center; } }

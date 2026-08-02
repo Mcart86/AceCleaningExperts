@@ -9,6 +9,11 @@ DOMAIN = "https://www.acecleaningexpertsnj.com"
 
 # ---------------------------------------------------------------- icons ----
 ICONS = {
+"paw": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="9" r="1.6"/><circle cx="12" cy="6.5" r="1.6"/><circle cx="17" cy="9" r="1.6"/><path d="M12 12c-3 0-5.5 2-5.5 4.5S8.5 20 12 20s5.5-1 5.5-3.5S15 12 12 12z"/></svg>',
+"leaf": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c8 0 14-6 14-14-8 0-14 6-14 14z"/><path d="M5 19c2-4 5-7 9-9"/></svg>',
+"sparkle": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6z"/><path d="M18.5 15l.8 2.2L21.5 18l-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg>',
+"steam": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21c-1.5-2 1.5-3 0-5"/><path d="M12 21c-1.5-2 1.5-3 0-5"/><path d="M18 21c-1.5-2 1.5-3 0-5"/></svg>',
+"calendar": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
 "rug": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="1.5"/><rect x="6.5" y="7.5" width="11" height="6" rx="0.5"/><path d="M4 20h2M8 20h2M12 20h2M16 20h2"/></svg>',
 "sofa": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/><rect x="3" y="11" width="18" height="6" rx="1.5"/><path d="M4 17v2M20 17v2"/></svg>',
 "tile": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="0.5"/><rect x="13" y="3" width="8" height="8" rx="0.5"/><rect x="3" y="13" width="8" height="8" rx="0.5"/><rect x="13" y="13" width="8" height="8" rx="0.5"/></svg>',
@@ -314,6 +319,36 @@ def related_links(current_href):
     </div>
   </div>
 </section>'''
+
+def mini_ba_slider(before_src, after_src, before_alt, after_alt, placeholder=False):
+    if placeholder:
+        return f'<div class="ba-slider ba-slider-mini"><div class="placeholder-block" style="width:100%; height:100%; border:none; border-radius:0;">{icon("rug")}<span>Before &amp; After</span></div></div>'
+    return f'''<div class="ba-slider ba-slider-mini">
+      <img src="{before_src}" alt="{before_alt}" class="ba-before">
+      <img src="{after_src}" alt="{after_alt}" class="ba-after">
+      <span class="ba-tag before-tag">Before</span>
+      <span class="ba-tag after-tag">After</span>
+      <div class="ba-handle"></div>
+      <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Drag to compare before and after">
+    </div>'''
+
+def service_showcase_card(href, category, headline, description, chips, before_src=None, after_src=None, before_alt="", after_alt="", placeholder=False):
+    photo = mini_ba_slider(before_src, after_src, before_alt, after_alt, placeholder=placeholder)
+    chip_html = "\n          ".join(
+        f'<div class="svc-chip">{icon(ic)}<span>{label}</span></div>' for ic, label in chips
+    )
+    return f'''<div class="svc-showcase-card">
+      {photo}
+      <div class="svc-body">
+        <span class="svc-category">{category}</span>
+        <h3>{headline}</h3>
+        <p>{description}</p>
+        <div class="svc-chip-row">
+          {chip_html}
+        </div>
+        <a href="{href}" class="svc-explore">Explore Service <span class="explore-arrow">{icon('arrow')}</span></a>
+      </div>
+    </div>'''
 
 def gallery_grid(images=GALLERY_IMAGES):
     items = "\n    ".join(
@@ -720,48 +755,47 @@ home_body = f"""
 <section style="background:var(--gray);">
   <div class="wrap">
     <div class="section-head center">
-      <span class="eyebrow">What We Do</span>
-      <h2>Carpet, Tile &amp; Upholstery Cleaning Done Right</h2>
+      <span class="eyebrow">Our Cleaning Services</span>
+      <h2>Professional Cleaning. Proven Results.</h2>
+      <p class="lede" style="margin:0 auto;">Advanced cleaning solutions for a healthier, cleaner space.</p>
     </div>
     <div class="grid-4">
-      <div class="svc-card">
-        <img src="/images/carpet-service.webp" alt="Clean carpet after Ace Cleaning Experts service" class="svc-photo">
-        <div class="svc-body">
-          <div class="icon">{icon('rug')}</div>
-          <h3>Carpet Cleaning</h3>
-          <p>Deep steam extraction that pulls out dirt, allergens and stains most vacuums never touch.</p>
-          <a href="/carpet-cleaning-service/" class="go">Learn More {icon('arrow')}</a>
-        </div>
-      </div>
-      <div class="svc-card">
-        <img src="/images/tile-service.webp" alt="Mosaic tile floor cleaned by Ace Cleaning Experts, dirty grout restored to clean" class="svc-photo">
-        <div class="svc-body">
-          <div class="icon">{icon('tile')}</div>
-          <h3>Tile &amp; Grout</h3>
-          <p>Grout scrubbed back toward its original color &mdash; no bleach shortcuts.</p>
-          <a href="/tile-grout-cleaning/" class="go">Learn More {icon('arrow')}</a>
-        </div>
-      </div>
-      <div class="svc-card">
-        <img src="/images/upholstery-gallery-02.webp" alt="Recliner cushion before and after Ace Cleaning Experts upholstery cleaning" class="svc-photo">
-        <div class="svc-body">
-          <div class="icon">{icon('sofa')}</div>
-          <h3>Upholstery</h3>
-          <p>Fabric-safe cleaning that lifts stains without soaking, over-wetting or fading your furniture.</p>
-          <a href="/upholstery-cleaning/" class="go">Learn More {icon('arrow')}</a>
-        </div>
-      </div>
-      <div class="svc-card">
-        <img src="/images/commercial-service.webp" alt="Area rug being deep cleaned by Ace Cleaning Experts" class="svc-photo">
-        <div class="svc-body">
-          <div class="icon">{icon('building')}</div>
-          <h3>Commercial Cleaning</h3>
-          <p>Flexible scheduling that works around your business hours, not ours.</p>
-          <a href="/commercial-carpet-cleaning/" class="go">Learn More {icon('arrow')}</a>
-        </div>
+      {service_showcase_card(
+          "/carpet-cleaning-service/", "Residential Service", "Revive Your Carpets",
+          "Deep steam extraction removes embedded dirt, allergens and stubborn stains for a fresher, healthier home.",
+          [("paw", "Safe for Kids &amp; Pets"), ("clock", "Fast Dry Time"), ("leaf", "Eco Friendly")],
+          before_src="/images/carpet-before-v2.webp", after_src="/images/carpet-after-v2.webp",
+          before_alt="Dirty carpet before Ace Cleaning Experts cleaning", after_alt="Clean carpet after Ace Cleaning Experts cleaning",
+      )}
+      {service_showcase_card(
+          "/tile-grout-cleaning/", "Residential Service", "Restore Tile &amp; Grout",
+          "Grout scrubbed and sealed to remove years of buildup and bring back the original beauty of your tile.",
+          [("sparkle", "Deep Cleaning"), ("shield", "Protects Longer"), ("check", "No Harsh Chemicals")],
+          before_src="/images/tile-mini-before.webp", after_src="/images/tile-mini-after.webp",
+          before_alt="Dirty, stained grout before Ace Cleaning Experts tile cleaning", after_alt="Clean tile floor after Ace Cleaning Experts tile cleaning",
+      )}
+      {service_showcase_card(
+          "/upholstery-cleaning/", "Residential Service", "Refresh Your Furniture",
+          "Fabric-safe cleaning lifts stains and odors without soaking, over-wetting or fading your furniture.",
+          [("steam", "Odor Removal"), ("shield", "Stain Protection"), ("sofa", "Extends Life")],
+          before_src="/images/upholstery-mini-before-v2.webp", after_src="/images/upholstery-mini-after-v2.webp",
+          before_alt="Stained upholstery before Ace Cleaning Experts cleaning", after_alt="Clean upholstery after Ace Cleaning Experts cleaning",
+      )}
+      {service_showcase_card(
+          "/commercial-carpet-cleaning/", "Commercial Service", "Keep Your Business Looking Its Best",
+          "Flexible scheduling that works around your business hours, not ours.",
+          [("building", "Flexible Scheduling"), ("shield", "Trusted by Businesses"), ("calendar", "Custom Solutions")],
+          placeholder=True,
+      )}
+    </div>
+    <div class="trust-badge-box">
+      {icon('shield')}
+      <div>
+        <strong>Veteran-Owned. Family-Operated. Serving South Jersey Since 1983.</strong>
+        <div class="sub">Fully Insured &bull; Professional Equipment &bull; 100% Satisfaction Guaranteed</div>
       </div>
     </div>
-    <div style="display:flex; flex-direction:column; gap:28px;">
+    <div style="display:flex; flex-direction:column; gap:28px; margin-top:56px;">
       {quote_snippet("Ace is <span class=\"qs-highlight\">my favorite carpet cleaner of all time</span>. They are responsive, reliable and trustworthy.", "Anne", photo="/images/carpet-mini-after.webp", photo_alt="Clean carpet after Ace Cleaning Experts service")}
       {quote_snippet("Ace Cleaning Experts makes our marble tile <span class=\"qs-highlight\">look like new every time</span>.", "Fabrizio", photo="/images/tile-service.webp", photo_alt="Clean tile floor after Ace Cleaning Experts service")}
     </div>
