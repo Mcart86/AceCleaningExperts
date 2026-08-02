@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 import os
 import json
+import re
+import html
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PHONE = "856-582-1711"
@@ -57,6 +59,25 @@ NAV = [
     ("Contact", "/contact/", "contact"),
 ]
 
+def local_business_schema():
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Ace Cleaning Experts",
+        "image": f"{DOMAIN}/images/ace-logo.jpg",
+        "url": DOMAIN,
+        "telephone": PHONE,
+        "email": EMAIL,
+        "areaServed": [{"@type": "City", "name": f'{t["name"]}, {t.get("state","NJ")}'} for t in TOWNS],
+        "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "09:00", "closes": "17:00",
+        }],
+        "sameAs": ["https://www.facebook.com/AceCleaningExperts/"],
+    }
+    return f'<script type="application/ld+json">{json.dumps(schema)}</script>'
+
 def head(title, desc, canonical):
     return f"""<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,11 +89,16 @@ def head(title, desc, canonical):
 <meta property="og:type" content="website">
 <meta property="og:url" content="{DOMAIN}{canonical}">
 <meta property="og:image" content="{DOMAIN}/images/ace-logo.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{desc}">
+<meta name="twitter:image" content="{DOMAIN}/images/ace-logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 <link rel="icon" href="/images/ace-logo.jpg">
+{local_business_schema()}
 """
 
 def header(active):
@@ -239,15 +265,35 @@ def stats_bar():
     <div class="stat"><div class="stat-num stat-icon"><img loading="lazy" src="/images/us-flag-v1.webp" alt="American flag" style="width:44px;height:auto;border-radius:2px;box-shadow:var(--shadow-sm);"></div><div class="stat-label">Veteran Owned</div></div>
   </div></div>"""
 
+def _clean_text(s):
+    """Strip HTML tags and decode entities, for use inside JSON-LD text fields."""
+    return html.unescape(re.sub(r"<[^>]+>", "", s)).strip()
+
 def breadcrumb(trail):
     parts = " / ".join(f'<a href="{h}">{l}</a>' if h else l for l, h in trail)
-    return f'<div class="breadcrumb">{parts}</div>'
+    items = []
+    for i, (label, href) in enumerate(trail, 1):
+        entry = {"@type": "ListItem", "position": i, "name": _clean_text(label)}
+        if href:
+            entry["item"] = f"{DOMAIN}{href}"
+        items.append(entry)
+    schema = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items}
+    schema_tag = f'<script type="application/ld+json">{json.dumps(schema)}</script>'
+    return f'<div class="breadcrumb">{parts}</div>{schema_tag}'
 
 def faq(items):
     out = ['<div class="faq-list">']
+    faq_entities = []
     for q, a in items:
         out.append(f'<details class="faq-item"><summary>{q} {icon("chevron")}</summary><p>{a}</p></details>')
+        faq_entities.append({
+            "@type": "Question",
+            "name": _clean_text(q),
+            "acceptedAnswer": {"@type": "Answer", "text": _clean_text(a)},
+        })
     out.append('</div>')
+    schema = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faq_entities}
+    out.append(f'<script type="application/ld+json">{json.dumps(schema)}</script>')
     return "\n".join(out)
 
 def process_steps(steps):
