@@ -820,6 +820,7 @@ home_body = f"""
       <span class="eyebrow">Meet Ace</span>
       <h2>The People Behind Ace</h2>
       <p class="lede">Veteran-owned and family-operated, serving South Jersey for 40+ years. The person who quotes your job is accountable for the crew that shows up to do it &mdash; no corporate hand-offs, no call centers.</p>
+      <p style="margin:22px 0 0;"><a href="/about-us/" class="btn btn-outline">Learn More About Us {icon('arrow')}</a></p>
       {quote_snippet("Nick and Jeff were professional, friendly, and thorough from start to finish. You can really tell <span class=\"qs-highlight\">they take pride in their work</span>.", "Chris", inline=True)}
     </div>
     <img src="/images/meet-ace-team-v2.webp" alt="The Ace Cleaning Experts family washing the company van together" class="meet-ace-photo">
