@@ -1088,13 +1088,18 @@ services_body = f"""
 
 <section>
   <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">One Company, Every Surface</span>
+      <h2>Why Homeowners Use Ace for More Than One Room</h2>
+      <p class="lede" style="margin:0 auto;">Most cleaning companies specialize in one thing. We handle carpet, upholstery, tile, grout, hardwood and commercial floors with the same crew, the same pricing approach, and the same point of contact &mdash; so you're not juggling three different companies and three different invoices to get your whole home or business done.</p>
+    </div>
     <div class="grid-4">
       <div class="svc-card">
         <img src="/images/carpet-service.webp" alt="Clean carpet after Ace Cleaning Experts service" class="svc-photo">
         <div class="svc-body">
           <div class="icon">{icon('rug')}</div>
           <h3>Carpet Cleaning</h3>
-          <p>Deep steam extraction that pulls out dirt, allergens and stains most vacuums never touch.</p>
+          <p>Deep steam extraction pulls out dirt, allergens and set-in stains most vacuums never touch &mdash; with settings adjusted to your specific carpet's fiber type.</p>
           <a href="/carpet-cleaning-service/" class="go">Learn More {icon('arrow')}</a>
         </div>
       </div>
@@ -1103,7 +1108,7 @@ services_body = f"""
         <div class="svc-body">
           <div class="icon">{icon('sofa')}</div>
           <h3>Upholstery Cleaning</h3>
-          <p>Fabric-safe treatment for sofas, sectionals and dining chairs.</p>
+          <p>Fabric-safe treatment for sofas, sectionals and dining chairs &mdash; leather included, tested first so there are no surprises.</p>
           <a href="/upholstery-cleaning/" class="go">Learn More {icon('arrow')}</a>
         </div>
       </div>
@@ -1112,7 +1117,7 @@ services_body = f"""
         <div class="svc-body">
           <div class="icon">{icon('tile')}</div>
           <h3>Tile, Grout &amp; Hardwood</h3>
-          <p>Grout scrubbed back toward its original color &mdash; no bleach shortcuts.</p>
+          <p>Grout scrubbed back toward its original color &mdash; deep cleaning only, and we'll tell you honestly if something needs more than that.</p>
           <a href="/tile-grout-cleaning/" class="go">Learn More {icon('arrow')}</a>
         </div>
       </div>
@@ -1121,7 +1126,7 @@ services_body = f"""
         <div class="svc-body">
           <div class="icon">{icon('building')}</div>
           <h3>Commercial Floor Care</h3>
-          <p>Flexible after-hours scheduling for offices and retail.</p>
+          <p>Flexible after-hours scheduling for offices and retail, priced by square footage or a walkthrough quote.</p>
           <a href="/commercial-carpet-cleaning/" class="go">Learn More {icon('arrow')}</a>
         </div>
       </div>
@@ -1141,6 +1146,14 @@ services_body = f"""
         ("Deep clean with certified equipment", "EPA-certified solutions and professional-grade extraction equipment do the heavy lifting."),
         ("Scotchgard, walkthrough &amp; done", "We protect the finish, walk you through the results, and leave the space ready to use."),
     ])}
+  </div>
+</section>
+
+<section class="section-red">
+  <div class="wrap" style="max-width:780px; text-align:center;">
+    <span class="eyebrow">Our Guarantee</span>
+    <h2>If You're Not Satisfied, We'll Make It Right</h2>
+    <p class="lede" style="margin:0 auto;">No hedging, no fine print. Customers are often surprised to find that a cleaning company can still feel personable and locally owned &mdash; we're the same crew every visit, committed to getting the job done right the first time, not a call-center dispatching whoever's available.</p>
   </div>
 </section>
 
