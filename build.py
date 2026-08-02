@@ -663,11 +663,6 @@ home_body = f"""
         <a href="/contact/" class="btn btn-primary">Get Free Quote</a>
         <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
       </div>
-      <ul class="hero-trust">
-        <li>{icon('shield')} Veteran-Owned</li>
-        <li>{icon('clock')} 40+ Years Experience</li>
-        <li>{icon('building')} Residential &amp; Commercial</li>
-      </ul>
     </div>
     <div class="hero-image-wrap">
       <img src="/images/hero-family.jpg" alt="Three generations of the Ace Cleaning Experts family" class="hero-visual hero-photo">
