@@ -716,3 +716,158 @@ footer.site-footer a:hover { color: var(--white); }
 .benefit-item strong { display: block; font-size: 0.92rem; margin-bottom: 2px; }
 .benefit-item span { font-size: 0.82rem; color: var(--charcoal-50); line-height: 1.4; }
 @media (max-width: 600px) { .benefit-grid { grid-template-columns: 1fr; } }
+
+/* =========================================================
+   SERVICE AREAS — editorial redesign
+   ========================================================= */
+.text-red { color: var(--red); }
+
+/* ---------- Hero: split, search built in ---------- */
+.areas-hero { padding: 56px 0 88px; }
+.areas-hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: center; }
+.areas-hero-copy h1 { margin-bottom: 22px; }
+.areas-hero-copy .btn-row { margin: 30px 0 26px; }
+
+.areas-search { position: relative; max-width: 460px; }
+.areas-search-box {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: 999px; padding: 15px 22px; box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.areas-search-box:focus-within { border-color: var(--red); box-shadow: var(--shadow-red); }
+.areas-search-box svg { color: var(--charcoal-50); flex-shrink: 0; }
+.areas-search-box input {
+  border: none; outline: none; background: transparent; width: 100%;
+  font-family: var(--font); font-size: 0.98rem; color: var(--charcoal);
+}
+.areas-search-results {
+  position: absolute; top: calc(100% + 8px); left: 0; right: 0; z-index: 5;
+  background: var(--white); border-radius: var(--radius-sm); box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-soft); overflow: hidden; max-height: 280px; overflow-y: auto;
+}
+.areas-search-results a {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  padding: 13px 20px; font-size: 0.94rem; font-weight: 600; color: var(--charcoal);
+  border-bottom: 1px solid var(--border-soft);
+}
+.areas-search-results a:last-child { border-bottom: none; }
+.areas-search-results a:hover { background: var(--gray); color: var(--red); }
+.areas-search-results a span { font-size: 0.78rem; font-weight: 500; color: var(--charcoal-50); }
+.areas-search-empty { padding: 16px 20px; font-size: 0.9rem; color: var(--charcoal-70); line-height: 1.5; }
+.areas-search-empty a { color: var(--red); font-weight: 700; }
+
+.areas-search-helper { margin-top: 16px; font-size: 0.92rem; color: var(--charcoal-70); display: flex; align-items: center; gap: 9px; }
+.areas-search-helper svg { color: var(--red); flex-shrink: 0; }
+
+.areas-hero-photo { position: relative; }
+.areas-hero-photo img { border-radius: var(--radius); box-shadow: var(--shadow-md); width: 100%; height: 460px; object-fit: cover; }
+.areas-hero-tag {
+  position: absolute; bottom: -18px; left: -18px; background: var(--charcoal); color: var(--white);
+  font-family: var(--font-display); font-weight: 700; font-size: 0.95rem;
+  padding: 12px 22px; border-radius: 999px; box-shadow: var(--shadow-md); letter-spacing: 0.01em;
+}
+@media (max-width: 980px) {
+  .areas-hero-grid { grid-template-columns: 1fr; gap: 36px; }
+  .areas-hero-photo img { height: 320px; }
+  .areas-hero-tag { left: 16px; bottom: 16px; }
+}
+
+/* ---------- Featured: horizontal scroll, varied card sizes (not pills) ---------- */
+.areas-featured { padding-bottom: 0; }
+.areas-feat-track { overflow-x: auto; padding: 6px 0 44px; scrollbar-width: none; }
+.areas-feat-track::-webkit-scrollbar { display: none; }
+.areas-feat-track-inner { display: flex; gap: 18px; padding-right: 32px; }
+.areas-feat-card {
+  flex-shrink: 0; scroll-snap-align: start;
+  display: flex; flex-direction: column; justify-content: space-between;
+  background: var(--white); border: 1px solid var(--border-soft); border-radius: var(--radius);
+  padding: 26px 24px; min-height: 148px; box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.areas-feat-card.lg { width: 250px; }
+.areas-feat-card.md { width: 200px; background: var(--gray); }
+.areas-feat-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--red); }
+.afc-name { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--charcoal); }
+.afc-meta { font-size: 0.78rem; color: var(--charcoal-50); margin-top: 4px; font-weight: 600; }
+.afc-arrow { align-self: flex-end; color: var(--red); margin-top: 14px; transition: transform 0.2s ease; }
+.areas-feat-card:hover .afc-arrow { transform: translateX(4px); }
+.areas-feat-track { scroll-snap-type: x proximity; }
+@media (max-width: 600px) { .areas-feat-track-inner { padding-left: 22px; } }
+
+/* ---------- Browse by County: asymmetric editorial grid ---------- */
+.areas-county-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 22px;
+}
+.areas-county-card {
+  background: var(--white); border: 1px solid var(--border-soft); border-radius: var(--radius);
+  padding: 34px 32px; box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex; flex-direction: column;
+}
+.areas-county-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+.areas-county-card.size-lg { grid-column: span 7; }
+.areas-county-card.size-md { grid-column: span 5; }
+.areas-county-card.size-sm { grid-column: span 6; }
+.areas-county-card.muted { background: var(--gray); box-shadow: none; }
+.acc-top { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.acc-top svg { color: var(--red); flex-shrink: 0; }
+.acc-top h3 { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; }
+.areas-county-card > p { color: var(--charcoal-70); font-size: 0.96rem; margin-bottom: 20px; }
+.acc-towns {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px;
+  margin: 0 0 22px; flex-grow: 1;
+}
+.acc-towns li { font-size: 0.92rem; }
+.acc-towns a { color: var(--charcoal); font-weight: 600; }
+.acc-towns a:hover { color: var(--red); }
+.acc-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.92rem; color: var(--red); margin-top: auto; }
+.acc-link svg { transition: transform 0.2s ease; }
+.acc-link:hover svg { transform: translateX(3px); }
+@media (max-width: 900px) {
+  .areas-county-card.size-lg, .areas-county-card.size-md, .areas-county-card.size-sm { grid-column: span 12; }
+}
+
+/* ---------- Can't-find-your-town support band ---------- */
+.areas-support { background: var(--charcoal); padding: 56px 0; }
+.areas-support-inner { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; }
+.areas-support-icon {
+  width: 56px; height: 56px; border-radius: 50%; background: rgba(200,16,46,0.16);
+  display: flex; align-items: center; justify-content: center; color: var(--red); flex-shrink: 0;
+}
+.areas-support-copy { flex: 1; min-width: 240px; }
+.areas-support-copy h3 { color: var(--white); margin-bottom: 6px; }
+.areas-support-copy p { color: rgba(255,255,255,0.7); margin: 0; font-size: 0.96rem; }
+
+/* ---------- Just Across the Bridge: split gradient banner ---------- */
+.areas-bridge { padding: 0; }
+.areas-bridge-grid {
+  max-width: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; min-height: 420px;
+}
+.areas-bridge-copy {
+  background: linear-gradient(135deg, var(--red-dark), var(--red) 70%);
+  color: var(--white); padding: 72px 56px; display: flex; flex-direction: column; justify-content: center;
+}
+.eyebrow-light { color: rgba(255,255,255,0.85); }
+.eyebrow-light::before { background-color: rgba(255,255,255,0.85); }
+.areas-bridge-copy h2 { color: var(--white); }
+.areas-bridge-copy > p { color: rgba(255,255,255,0.85); font-size: 1.05rem; max-width: 42ch; margin-bottom: 30px; }
+.areas-bridge-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.areas-bridge-note {
+  font-family: "Caveat", cursive; font-size: 1.5rem; margin: 30px 0 0; color: rgba(255,255,255,0.92);
+  transform: rotate(-1.5deg); display: inline-block;
+}
+.areas-bridge-art {
+  background: var(--charcoal); position: relative; overflow: hidden;
+  display: flex; align-items: flex-end; justify-content: center;
+}
+.skyline-svg { width: 100%; height: 100%; opacity: 0.9; }
+.skyline-svg rect, .skyline-svg path { fill: none; stroke: rgba(255,255,255,0.35); }
+.skyline-svg rect { fill: rgba(255,255,255,0.07); }
+@media (max-width: 900px) {
+  .areas-bridge-grid { grid-template-columns: 1fr; min-height: 0; }
+  .areas-bridge-copy { padding: 56px 28px; }
+  .areas-bridge-art { height: 220px; }
+}

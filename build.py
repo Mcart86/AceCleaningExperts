@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os
+import json
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 PHONE = "856-582-1711"
@@ -37,6 +38,8 @@ ICONS = {
 "book": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H12v16H5.5A1.5 1.5 0 0 1 4 18.5v-13z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H12v16h6.5a1.5 1.5 0 0 0 1.5-1.5v-13z"/></svg>',
 "hardhat": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16a8 8 0 0 1 16 0z"/><path d="M2 16h20M11 5v5M9 5h6"/></svg>',
 "facebook": '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 8h2V5h-2a4 4 0 0 0-4 4v2H9v3h2v7h3v-7h2.2l.8-3H14V9c0-.6.4-1 1-1z"/></svg>',
+"search": '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>',
+"compass": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9l-2 6-4-2 2-6z"/></svg>',
 }
 
 def icon(name):
@@ -64,7 +67,7 @@ def head(title, desc, canonical):
 <meta property="og:image" content="{DOMAIN}/images/ace-logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 <link rel="icon" href="/images/ace-logo.jpg">
 """
@@ -1338,64 +1341,161 @@ page("/commercial-carpet-cleaning/", "Commercial Carpet &amp; Floor Cleaning | S
      "commercial", commercial_body)
 
 # ==================================================== SERVICE AREAS ======
+_GLOUCESTER = [t for t in TOWNS if t["county"] == "Gloucester County"]
+_CAMDEN = [t for t in TOWNS if t["county"] == "Camden County"]
+_FEATURED_SLUGS = [
+    "sewell-nj", "deptford-nj", "washington-township-nj", "cherry-hill-nj",
+    "voorhees-nj", "haddonfield-nj", "blackwood-nj", "turnersville-nj",
+]
+_FEATURED_TOWNS = [next(t for t in TOWNS if t["slug"] == s) for s in _FEATURED_SLUGS]
+_AREA_SEARCH_DATA = json.dumps([
+    {"name": t["name"], "slug": t["slug"], "county": t["county"], "zip": t["zip"]} for t in TOWNS
+])
+
+def _featured_card(t, size):
+    short = t["name"].replace(" Township", "")
+    return f'''<a href="/service-areas/{t["slug"]}/" class="areas-feat-card {size}">
+      <span class="afc-name">{short}</span>
+      <span class="afc-meta">{t["county"]}</span>
+      <span class="afc-arrow">{icon('arrow')}</span>
+    </a>'''
+
+_sizes = ["lg", "md", "md", "lg", "md", "lg", "md", "md"]
+_featured_cards = "\n    ".join(
+    _featured_card(t, s) for t, s in zip(_FEATURED_TOWNS, _sizes)
+)
+
+def _county_town_list(towns):
+    return "\n        ".join(
+        f'<li><a href="/service-areas/{t["slug"]}/">{t["name"]}</a></li>' for t in towns
+    )
+
 areas_body = f"""
-<section class="page-hero">
-  <div class="wrap">
-    {breadcrumb([("Home","/"),("Service Areas", None)])}
-    <span class="eyebrow">Where We Work</span>
-    <h1>Serving South Jersey, Philadelphia &amp; Delaware</h1>
-    <p class="lede">Our home base is Sewell, Deptford and Haddonfield, with regular jobs across Atlantic, Camden, Gloucester and Cape May counties. We also take appointments in Philadelphia, Delaware and Wilmington &mdash; just give us a call to confirm your address.</p>
+<section class="areas-hero">
+  <div class="wrap areas-hero-grid">
+    <div class="areas-hero-copy">
+      {breadcrumb([("Home","/"),("Service Areas", None)])}
+      <span class="eyebrow">South Jersey, Done Right</span>
+      <h1>Proudly Serving<br><span class="text-red">South Jersey</span></h1>
+      <p class="lede">We bring professional carpet, tile and upholstery cleaning to homeowners and businesses throughout Gloucester, Camden, Atlantic and Cape May Counties &mdash; and we take appointments across the bridge in Philadelphia and Delaware, too.</p>
+      <div class="btn-row">
+        <a href="tel:{PHONE_TEL}" class="btn btn-primary">{icon('phone')} Call {PHONE}</a>
+        <a href="/contact/" class="btn btn-outline">Request a Free Quote</a>
+      </div>
+      <div class="areas-search" id="areasSearch">
+        <label class="areas-search-box" for="areaSearchInput">
+          {icon('search')}
+          <input type="text" id="areaSearchInput" placeholder="Search your city or ZIP code&hellip;" autocomplete="off" aria-label="Search your city or ZIP code">
+        </label>
+        <div class="areas-search-results" id="areaSearchResults" hidden></div>
+      </div>
+      <p class="areas-search-helper">{icon('phone')} Not sure if we service your town? Give us a call &mdash; we&rsquo;re happy to check.</p>
+      <script type="application/json" id="areaSearchData">{_AREA_SEARCH_DATA}</script>
+    </div>
+    <div class="areas-hero-photo">
+      <img src="/images/hero-family.jpg" alt="Ace Cleaning Experts van outside a South Jersey home">
+      <span class="areas-hero-tag">Est. 1983</span>
+    </div>
   </div>
 </section>
 
-<section>
+<section class="areas-featured">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Home Base</span>
-      <h2>Priority Service Cities</h2>
+      <span class="eyebrow">Home Turf</span>
+      <h2>Where We Work Most Often</h2>
+      <p class="lede">These are the towns that keep our vans busiest, week to week.</p>
     </div>
-    <div class="area-pill-grid">
-      <a href="/service-areas/sewell-nj/" class="area-pill priority">Sewell</a>
-      <a href="/service-areas/deptford-nj/" class="area-pill priority">Deptford</a>
-      <a href="/service-areas/haddonfield-nj/" class="area-pill priority">Haddonfield</a>
-    </div>
-
-    <div style="background:var(--gray); border-radius:var(--radius); padding:36px 32px; margin-top:48px;">
-      <div class="section-head" style="margin-bottom:26px;">
-        <span class="eyebrow">Towns We Cover</span>
-        <h2>South Jersey Coverage</h2>
-      </div>
-      <div class="area-pill-grid">
-        <a href="/service-areas/west-deptford-nj/" class="area-pill">West Deptford</a>
-        <a href="/service-areas/cherry-hill-nj/" class="area-pill">Cherry Hill</a>
-        <a href="/service-areas/washington-township-nj/" class="area-pill">Washington Township</a>
-        <a href="/service-areas/voorhees-nj/" class="area-pill">Voorhees</a>
-        <a href="/service-areas/blackwood-nj/" class="area-pill">Blackwood</a>
-        <a href="/service-areas/turnersville-nj/" class="area-pill">Turnersville</a>
-        <a href="/service-areas/logan-township-nj/" class="area-pill">Logan Township</a>
-        <a href="/service-areas/franklin-township-nj/" class="area-pill">Franklin Township</a>
-      </div>
-      <div class="grid-4" style="margin-top:28px;">
-        <div class="county-card"><h3>Gloucester County</h3><p style="margin:0; color:var(--charcoal-70); font-size:0.92rem;">Including Sewell &amp; Deptford, and surrounding communities.</p></div>
-        <div class="county-card"><h3>Camden County</h3><p style="margin:0; color:var(--charcoal-70); font-size:0.92rem;">Including Haddonfield, and surrounding communities.</p></div>
-        <div class="county-card"><h3>Atlantic County</h3><p style="margin:0; color:var(--charcoal-70); font-size:0.92rem;">Residential and commercial jobs throughout the county.</p></div>
-        <div class="county-card"><h3>Cape May County</h3><p style="margin:0; color:var(--charcoal-70); font-size:0.92rem;">Residential and commercial jobs throughout the county.</p></div>
-      </div>
-    </div>
-
-    <div class="section-head" style="margin-top:48px; margin-bottom:22px;">
-      <span class="eyebrow">Extended Area</span>
-      <h2>Just Across the Bridge</h2>
-      <p class="lede">We also schedule appointments in Philadelphia, PA and in Wilmington and the surrounding Delaware area.</p>
-    </div>
-    <div class="area-pill-grid">
-      <a href="/service-areas/philadelphia-pa/" class="area-pill">Philadelphia, PA</a>
-      <a href="/service-areas/wilmington-de/" class="area-pill">Wilmington, DE</a>
+  </div>
+  <div class="areas-feat-track">
+    <div class="wrap areas-feat-track-inner">
+    {_featured_cards}
     </div>
   </div>
 </section>
 
-{cta_band("Don't See Your Town Listed?", "Give us a call &mdash; there's a good chance we already cover it.")}
+<section class="areas-counties">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">All Service Areas</span>
+      <h2>Browse by County</h2>
+      <p class="lede">Our home counties, and the counties we're expanding into as we take on more South Jersey shore-area work.</p>
+    </div>
+    <div class="areas-county-grid">
+      <div class="areas-county-card size-lg">
+        <div class="acc-top">{icon('home')}<h3>Gloucester County</h3></div>
+        <p>Our home county &mdash; Sewell and Deptford Township are where Ace got its start in 1983, and it's still where we run the most jobs every week.</p>
+        <ul class="acc-towns">
+        {_county_town_list(_GLOUCESTER)}
+        </ul>
+        <a href="/service-areas/sewell-nj/" class="acc-link">View Local Page {icon('arrow')}</a>
+      </div>
+      <div class="areas-county-card size-md">
+        <div class="acc-top">{icon('building')}<h3>Camden County</h3></div>
+        <p>From Haddonfield to Cherry Hill, we're a regular sight in driveways and loading docks across Camden County.</p>
+        <ul class="acc-towns">
+        {_county_town_list(_CAMDEN)}
+        </ul>
+        <a href="/service-areas/haddonfield-nj/" class="acc-link">View Local Page {icon('arrow')}</a>
+      </div>
+      <div class="areas-county-card size-sm muted">
+        <div class="acc-top">{icon('leaf')}<h3>Atlantic County</h3></div>
+        <p>We take on shore-area jobs by request throughout Atlantic County. Give us a call to confirm your town and get on the schedule.</p>
+        <a href="tel:{PHONE_TEL}" class="acc-link">{icon('phone')} Call {PHONE}</a>
+      </div>
+      <div class="areas-county-card size-sm muted">
+        <div class="acc-top">{icon('flag')}<h3>Cape May County</h3></div>
+        <p>Cape May County jobs are scheduled by request. Call ahead and we'll confirm we can make it out to you.</p>
+        <a href="tel:{PHONE_TEL}" class="acc-link">{icon('phone')} Call {PHONE}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="areas-support">
+  <div class="wrap areas-support-inner">
+    <div class="areas-support-icon">{icon('mail')}</div>
+    <div class="areas-support-copy">
+      <h3>Can&rsquo;t find your town?</h3>
+      <p>We may still service your area &mdash; our town pages don't cover every last street. Give us a call and we'll be happy to confirm.</p>
+    </div>
+    <a href="tel:{PHONE_TEL}" class="btn btn-primary">{icon('phone')} Call {PHONE}</a>
+  </div>
+</section>
+
+<section class="areas-bridge">
+  <div class="wrap areas-bridge-grid">
+    <div class="areas-bridge-copy">
+      <span class="eyebrow eyebrow-light">Extended Area</span>
+      <h2>Just Across the Bridge</h2>
+      <p>We also schedule appointments in Philadelphia, PA and in Wilmington and the surrounding Delaware area &mdash; just give us a call first to confirm.</p>
+      <div class="areas-bridge-btns">
+        <a href="/service-areas/philadelphia-pa/" class="btn btn-outline-light">Philadelphia {icon('arrow')}</a>
+        <a href="/service-areas/wilmington-de/" class="btn btn-outline-light">Wilmington {icon('arrow')}</a>
+      </div>
+      <p class="areas-bridge-note">Give us a call &mdash; we're happy to check!</p>
+    </div>
+    <div class="areas-bridge-art" aria-hidden="true">
+      <svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" class="skyline-svg">
+        <rect x="20" y="150" width="26" height="120" />
+        <rect x="52" y="110" width="30" height="160" />
+        <rect x="88" y="170" width="22" height="100" />
+        <rect x="116" y="70" width="34" height="200" />
+        <rect x="156" y="130" width="24" height="140" />
+        <rect x="186" y="95" width="28" height="175" />
+        <rect x="220" y="150" width="20" height="120" />
+        <path d="M244 270 L244 60 M200 100 L288 100" stroke-width="3" fill="none" />
+        <rect x="270" y="140" width="26" height="130" />
+        <rect x="302" y="180" width="22" height="90" />
+        <rect x="330" y="115" width="30" height="155" />
+        <rect x="366" y="160" width="24" height="110" />
+        <rect x="396" y="90" width="32" height="180" />
+        <rect x="434" y="145" width="24" height="125" />
+        <path d="M0 270h480" stroke-width="2" />
+      </svg>
+    </div>
+  </div>
+</section>
 """
 page("/service-areas/", "Service Areas | Ace Cleaning Experts, South Jersey",
      "Ace Cleaning Experts serves Sewell, Deptford, Haddonfield and all of Atlantic, Camden, Gloucester and Cape May counties, plus Philadelphia and Wilmington, DE.",

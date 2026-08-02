@@ -13,7 +13,7 @@
 <meta property="og:image" content="https://www.acecleaningexpertsnj.com/images/ace-logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 <link rel="icon" href="/images/ace-logo.jpg">
 
@@ -71,75 +71,176 @@
 
 <main>
 
-<section class="page-hero">
-  <div class="wrap">
-    <div class="breadcrumb"><a href="/">Home</a> / Service Areas</div>
-    <span class="eyebrow">Where We Work</span>
-    <h1>Serving South Jersey, Philadelphia &amp; Delaware</h1>
-    <p class="lede">Our home base is Sewell, Deptford and Haddonfield, with regular jobs across Atlantic, Camden, Gloucester and Cape May counties. We also take appointments in Philadelphia, Delaware and Wilmington &mdash; just give us a call to confirm your address.</p>
+<section class="areas-hero">
+  <div class="wrap areas-hero-grid">
+    <div class="areas-hero-copy">
+      <div class="breadcrumb"><a href="/">Home</a> / Service Areas</div>
+      <span class="eyebrow">South Jersey, Done Right</span>
+      <h1>Proudly Serving<br><span class="text-red">South Jersey</span></h1>
+      <p class="lede">We bring professional carpet, tile and upholstery cleaning to homeowners and businesses throughout Gloucester, Camden, Atlantic and Cape May Counties &mdash; and we take appointments across the bridge in Philadelphia and Delaware, too.</p>
+      <div class="btn-row">
+        <a href="tel:8565821711" class="btn btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.6c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> Call 856-582-1711</a>
+        <a href="/contact/" class="btn btn-outline">Request a Free Quote</a>
+      </div>
+      <div class="areas-search" id="areasSearch">
+        <label class="areas-search-box" for="areaSearchInput">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="text" id="areaSearchInput" placeholder="Search your city or ZIP code&hellip;" autocomplete="off" aria-label="Search your city or ZIP code">
+        </label>
+        <div class="areas-search-results" id="areaSearchResults" hidden></div>
+      </div>
+      <p class="areas-search-helper"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.6c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> Not sure if we service your town? Give us a call &mdash; we&rsquo;re happy to check.</p>
+      <script type="application/json" id="areaSearchData">[{"name": "Sewell", "slug": "sewell-nj", "county": "Gloucester County", "zip": "08080"}, {"name": "Deptford Township", "slug": "deptford-nj", "county": "Gloucester County", "zip": "08096"}, {"name": "Haddonfield", "slug": "haddonfield-nj", "county": "Camden County", "zip": "08033"}, {"name": "West Deptford", "slug": "west-deptford-nj", "county": "Gloucester County", "zip": null}, {"name": "Logan Township", "slug": "logan-township-nj", "county": "Gloucester County", "zip": "08085"}, {"name": "Washington Township", "slug": "washington-township-nj", "county": "Gloucester County", "zip": "08080"}, {"name": "Franklin Township", "slug": "franklin-township-nj", "county": "Gloucester County", "zip": "08322"}, {"name": "Cherry Hill", "slug": "cherry-hill-nj", "county": "Camden County", "zip": "08003"}, {"name": "Voorhees", "slug": "voorhees-nj", "county": "Camden County", "zip": "08043"}, {"name": "Blackwood", "slug": "blackwood-nj", "county": "Camden County", "zip": "08012"}, {"name": "Turnersville", "slug": "turnersville-nj", "county": "Gloucester County", "zip": "08012"}, {"name": "Philadelphia", "slug": "philadelphia-pa", "county": "Philadelphia County", "zip": null}, {"name": "Wilmington", "slug": "wilmington-de", "county": "New Castle County", "zip": null}]</script>
+    </div>
+    <div class="areas-hero-photo">
+      <img src="/images/hero-family.jpg" alt="Ace Cleaning Experts van outside a South Jersey home">
+      <span class="areas-hero-tag">Est. 1983</span>
+    </div>
   </div>
 </section>
 
-<section>
+<section class="areas-featured">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Home Base</span>
-      <h2>Priority Service Cities</h2>
+      <span class="eyebrow">Home Turf</span>
+      <h2>Where We Work Most Often</h2>
+      <p class="lede">These are the towns that keep our vans busiest, week to week.</p>
     </div>
-    <div class="area-pill-grid">
-      <a href="/service-areas/sewell-nj/" class="area-pill priority">Sewell</a>
-      <a href="/service-areas/deptford-nj/" class="area-pill priority">Deptford</a>
-      <a href="/service-areas/haddonfield-nj/" class="area-pill priority">Haddonfield</a>
-    </div>
-
-    <div style="background:var(--gray); border-radius:var(--radius); padding:36px 32px; margin-top:48px;">
-      <div class="section-head" style="margin-bottom:26px;">
-        <span class="eyebrow">Towns We Cover</span>
-        <h2>South Jersey Coverage</h2>
-      </div>
-      <div class="area-pill-grid">
-        <a href="/service-areas/west-deptford-nj/" class="area-pill">West Deptford</a>
-        <a href="/service-areas/cherry-hill-nj/" class="area-pill">Cherry Hill</a>
-        <a href="/service-areas/washington-township-nj/" class="area-pill">Washington Township</a>
-        <a href="/service-areas/voorhees-nj/" class="area-pill">Voorhees</a>
-        <a href="/service-areas/blackwood-nj/" class="area-pill">Blackwood</a>
-        <a href="/service-areas/turnersville-nj/" class="area-pill">Turnersville</a>
-        <a href="/service-areas/logan-township-nj/" class="area-pill">Logan Township</a>
-        <a href="/service-areas/franklin-township-nj/" class="area-pill">Franklin Township</a>
-      </div>
-      <div class="grid-4" style="margin-top:28px;">
-        <div class="county-card"><h3>Gloucester County</h3><p style="margin:0; color:var(--charcoal-70); font-size:0.92rem;">Including Sewell &amp; Deptford, and surrounding communities.</p></div>
-        <div class="county-card"><h3>Camden County</h3><p style="margin:0; color:var(--charcoal-70); font-size:0.92rem;">Including Haddonfield, and surrounding communities.</p></div>
-        <div class="county-card"><h3>Atlantic County</h3><p style="margin:0; color:var(--charcoal-70); font-size:0.92rem;">Residential and commercial jobs throughout the county.</p></div>
-        <div class="county-card"><h3>Cape May County</h3><p style="margin:0; color:var(--charcoal-70); font-size:0.92rem;">Residential and commercial jobs throughout the county.</p></div>
-      </div>
-    </div>
-
-    <div class="section-head" style="margin-top:48px; margin-bottom:22px;">
-      <span class="eyebrow">Extended Area</span>
-      <h2>Just Across the Bridge</h2>
-      <p class="lede">We also schedule appointments in Philadelphia, PA and in Wilmington and the surrounding Delaware area.</p>
-    </div>
-    <div class="area-pill-grid">
-      <a href="/service-areas/philadelphia-pa/" class="area-pill">Philadelphia, PA</a>
-      <a href="/service-areas/wilmington-de/" class="area-pill">Wilmington, DE</a>
+  </div>
+  <div class="areas-feat-track">
+    <div class="wrap areas-feat-track-inner">
+    <a href="/service-areas/sewell-nj/" class="areas-feat-card lg">
+      <span class="afc-name">Sewell</span>
+      <span class="afc-meta">Gloucester County</span>
+      <span class="afc-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a href="/service-areas/deptford-nj/" class="areas-feat-card md">
+      <span class="afc-name">Deptford</span>
+      <span class="afc-meta">Gloucester County</span>
+      <span class="afc-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a href="/service-areas/washington-township-nj/" class="areas-feat-card md">
+      <span class="afc-name">Washington</span>
+      <span class="afc-meta">Gloucester County</span>
+      <span class="afc-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a href="/service-areas/cherry-hill-nj/" class="areas-feat-card lg">
+      <span class="afc-name">Cherry Hill</span>
+      <span class="afc-meta">Camden County</span>
+      <span class="afc-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a href="/service-areas/voorhees-nj/" class="areas-feat-card md">
+      <span class="afc-name">Voorhees</span>
+      <span class="afc-meta">Camden County</span>
+      <span class="afc-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a href="/service-areas/haddonfield-nj/" class="areas-feat-card lg">
+      <span class="afc-name">Haddonfield</span>
+      <span class="afc-meta">Camden County</span>
+      <span class="afc-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a href="/service-areas/blackwood-nj/" class="areas-feat-card md">
+      <span class="afc-name">Blackwood</span>
+      <span class="afc-meta">Camden County</span>
+      <span class="afc-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a href="/service-areas/turnersville-nj/" class="areas-feat-card md">
+      <span class="afc-name">Turnersville</span>
+      <span class="afc-meta">Gloucester County</span>
+      <span class="afc-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
     </div>
   </div>
 </section>
 
-<section class="cta-band">
+<section class="areas-counties">
   <div class="wrap">
-    <h2>Don't See Your Town Listed?</h2>
-    <p class="lede">Give us a call &mdash; there's a good chance we already cover it.</p>
-    <div class="btn-row">
-      <a href="/contact/" class="btn btn-dark">Get Free Quote</a>
-      <a href="tel:8565821711" class="btn btn-outline-light"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.6c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> Call 856-582-1711</a>
+    <div class="section-head">
+      <span class="eyebrow">All Service Areas</span>
+      <h2>Browse by County</h2>
+      <p class="lede">Our home counties, and the counties we're expanding into as we take on more South Jersey shore-area work.</p>
     </div>
-    <div class="cta-strip">
-      <span>Fast Response</span>
-      <span>Veteran-Owned</span>
-      <span>Deep Cleaning Guaranteed</span>
-      <span>Serving South Jersey for 40+ Years</span>
+    <div class="areas-county-grid">
+      <div class="areas-county-card size-lg">
+        <div class="acc-top"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9"/></svg><h3>Gloucester County</h3></div>
+        <p>Our home county &mdash; Sewell and Deptford Township are where Ace got its start in 1983, and it's still where we run the most jobs every week.</p>
+        <ul class="acc-towns">
+        <li><a href="/service-areas/sewell-nj/">Sewell</a></li>
+        <li><a href="/service-areas/deptford-nj/">Deptford Township</a></li>
+        <li><a href="/service-areas/west-deptford-nj/">West Deptford</a></li>
+        <li><a href="/service-areas/logan-township-nj/">Logan Township</a></li>
+        <li><a href="/service-areas/washington-township-nj/">Washington Township</a></li>
+        <li><a href="/service-areas/franklin-township-nj/">Franklin Township</a></li>
+        <li><a href="/service-areas/turnersville-nj/">Turnersville</a></li>
+        </ul>
+        <a href="/service-areas/sewell-nj/" class="acc-link">View Local Page <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="areas-county-card size-md">
+        <div class="acc-top"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 8h1M14 8h1M9 12h1M14 12h1M9 16h1M14 16h1"/><path d="M10 21v-4h4v4"/></svg><h3>Camden County</h3></div>
+        <p>From Haddonfield to Cherry Hill, we're a regular sight in driveways and loading docks across Camden County.</p>
+        <ul class="acc-towns">
+        <li><a href="/service-areas/haddonfield-nj/">Haddonfield</a></li>
+        <li><a href="/service-areas/cherry-hill-nj/">Cherry Hill</a></li>
+        <li><a href="/service-areas/voorhees-nj/">Voorhees</a></li>
+        <li><a href="/service-areas/blackwood-nj/">Blackwood</a></li>
+        </ul>
+        <a href="/service-areas/haddonfield-nj/" class="acc-link">View Local Page <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="areas-county-card size-sm muted">
+        <div class="acc-top"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c8 0 14-6 14-14-8 0-14 6-14 14z"/><path d="M5 19c2-4 5-7 9-9"/></svg><h3>Atlantic County</h3></div>
+        <p>We take on shore-area jobs by request throughout Atlantic County. Give us a call to confirm your town and get on the schedule.</p>
+        <a href="tel:8565821711" class="acc-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.6c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> Call 856-582-1711</a>
+      </div>
+      <div class="areas-county-card size-sm muted">
+        <div class="acc-top"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h14l-2.5 4L19 12H5"/></svg><h3>Cape May County</h3></div>
+        <p>Cape May County jobs are scheduled by request. Call ahead and we'll confirm we can make it out to you.</p>
+        <a href="tel:8565821711" class="acc-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.6c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> Call 856-582-1711</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="areas-support">
+  <div class="wrap areas-support-inner">
+    <div class="areas-support-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6.5l8.5 6 8.5-6"/></svg></div>
+    <div class="areas-support-copy">
+      <h3>Can&rsquo;t find your town?</h3>
+      <p>We may still service your area &mdash; our town pages don't cover every last street. Give us a call and we'll be happy to confirm.</p>
+    </div>
+    <a href="tel:8565821711" class="btn btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.6c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> Call 856-582-1711</a>
+  </div>
+</section>
+
+<section class="areas-bridge">
+  <div class="wrap areas-bridge-grid">
+    <div class="areas-bridge-copy">
+      <span class="eyebrow eyebrow-light">Extended Area</span>
+      <h2>Just Across the Bridge</h2>
+      <p>We also schedule appointments in Philadelphia, PA and in Wilmington and the surrounding Delaware area &mdash; just give us a call first to confirm.</p>
+      <div class="areas-bridge-btns">
+        <a href="/service-areas/philadelphia-pa/" class="btn btn-outline-light">Philadelphia <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="/service-areas/wilmington-de/" class="btn btn-outline-light">Wilmington <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <p class="areas-bridge-note">Give us a call &mdash; we're happy to check!</p>
+    </div>
+    <div class="areas-bridge-art" aria-hidden="true">
+      <svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" class="skyline-svg">
+        <rect x="20" y="150" width="26" height="120" />
+        <rect x="52" y="110" width="30" height="160" />
+        <rect x="88" y="170" width="22" height="100" />
+        <rect x="116" y="70" width="34" height="200" />
+        <rect x="156" y="130" width="24" height="140" />
+        <rect x="186" y="95" width="28" height="175" />
+        <rect x="220" y="150" width="20" height="120" />
+        <path d="M244 270 L244 60 M200 100 L288 100" stroke-width="3" fill="none" />
+        <rect x="270" y="140" width="26" height="130" />
+        <rect x="302" y="180" width="22" height="90" />
+        <rect x="330" y="115" width="30" height="155" />
+        <rect x="366" y="160" width="24" height="110" />
+        <rect x="396" y="90" width="32" height="180" />
+        <rect x="434" y="145" width="24" height="125" />
+        <path d="M0 270h480" stroke-width="2" />
+      </svg>
     </div>
   </div>
 </section>

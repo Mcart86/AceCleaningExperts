@@ -31,6 +31,44 @@ document.addEventListener("DOMContentLoaded", function () {
     update();
   });
 
+  // Service Areas: search your city or ZIP, get matching town pages inline.
+  var areaInput = document.getElementById("areaSearchInput");
+  var areaResults = document.getElementById("areaSearchResults");
+  var areaDataEl = document.getElementById("areaSearchData");
+  if (areaInput && areaResults && areaDataEl) {
+    var areaTowns = [];
+    try { areaTowns = JSON.parse(areaDataEl.textContent); } catch (e) { areaTowns = []; }
+
+    function renderAreaResults(query) {
+      var q = query.trim().toLowerCase();
+      if (!q) { areaResults.hidden = true; areaResults.innerHTML = ""; return; }
+      var matches = areaTowns.filter(function (t) {
+        return t.name.toLowerCase().indexOf(q) !== -1 ||
+               t.county.toLowerCase().indexOf(q) !== -1 ||
+               t.zip.indexOf(q) !== -1;
+      }).slice(0, 6);
+
+      if (matches.length) {
+        areaResults.innerHTML = matches.map(function (t) {
+          return '<a href="/service-areas/' + t.slug + '/">' + t.name + '<span>' + t.county + '</span></a>';
+        }).join("");
+      } else {
+        areaResults.innerHTML =
+          '<div class="areas-search-empty">We don&rsquo;t see an exact match for &ldquo;' + query.trim() +
+          '&rdquo; &mdash; call <a href="tel:8565821711">856-582-1711</a> and we&rsquo;ll confirm.</div>';
+      }
+      areaResults.hidden = false;
+    }
+
+    areaInput.addEventListener("input", function () { renderAreaResults(areaInput.value); });
+    areaInput.addEventListener("focus", function () {
+      if (areaInput.value.trim()) renderAreaResults(areaInput.value);
+    });
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest("#areasSearch")) { areaResults.hidden = true; }
+    });
+  }
+
   // Header gains a shadow once the page has scrolled past the top.
   var header = document.querySelector(".site-header");
   if (header) {
@@ -45,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Scroll-reveal: fade/rise content into view as it enters the viewport.
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var revealTargets = document.querySelectorAll(
-    ".section-head, .svc-card, .testi-card, .who-card, .county-card, .step, .faq-item, .feature-row"
+    ".section-head, .svc-card, .testi-card, .who-card, .county-card, .step, .faq-item, .feature-row, .areas-feat-card, .areas-county-card"
   );
   if (reduceMotion || !("IntersectionObserver" in window)) {
     revealTargets.forEach(function (el) { el.classList.add("reveal-visible"); });
