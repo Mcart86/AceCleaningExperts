@@ -571,7 +571,9 @@ def town_page(t):
   </div>
 </section>
 
+<div class="wrap">
 {quote_snippet(review_text, review_name, color=("red" if hero_variant == " dark" else "charcoal"))}
+</div>
 
 <section>
   <div class="wrap">
@@ -707,7 +709,9 @@ home_body = f"""
   </div>
 </section>
 
+<div class="wrap">
 {quote_snippet("I've been using Ace Cleaning Experts <span class=\"qs-highlight\">for over 20 years</span>, and they consistently do a fantastic job. Professional, efficient, reasonably priced, and incredibly courteous.", "Karen")}
+</div>
 
 {stats_bar()}
 
@@ -900,7 +904,9 @@ our_work_body = f"""
   </div>
 </section>
 
+<div class="wrap">
 {quote_snippet("Will definitely use them again &mdash; <span class=\"qs-highlight\">couldn't be happier with their work</span>!", "Leslie")}
+</div>
 
 <section>
   <div class="wrap">
@@ -927,7 +933,9 @@ about_body = f"""
   </div>
 </section>
 
+<div class="wrap">
 {quote_snippet("Consistent, quality workmanship and price point <span class=\"qs-highlight\">for decades</span>. There is no other competition that comes close.", "Glenn")}
+</div>
 
 <section>
   <div class="wrap">
@@ -1020,7 +1028,9 @@ services_body = f"""
   </div>
 </section>
 
+<div class="wrap">
 {quote_snippet("Ace cleaned the tile in my kitchen and two bathrooms, plus two area rugs and my basement carpeting and stairs. <span class=\"qs-highlight\">Everything looks great</span>, they were on time, and pricing was fair. Will use them again for my floor cleaning needs!", "Christopher", color="red")}
+</div>
 
 <section>
   <div class="wrap">
@@ -1103,7 +1113,9 @@ carpet_body = f"""
   </div>
 </section>
 
+<div class="wrap">
 {quote_snippet("Our dog had an accident and our robot vacuum rolled over it and all over the home office. Team came out ASAP, within 2 hrs of me calling, and <span class=\"qs-highlight\">cleaned up a disaster</span>. Friendly, accommodating and reasonably priced.", "Ema")}
+</div>
 
 <section>
   <div class="wrap">
@@ -1177,7 +1189,9 @@ uphol_body = f"""
   </div>
 </section>
 
+<div class="wrap">
 {quote_snippet("By far the best carpet cleaning and upholstery cleaning company in the area. They're extremely professional and <span class=\"qs-highlight\">pay attention to the finest details</span>. Quick to get back to you regarding appointments. I highly recommend Ace.", "Andrea", color="red")}
+</div>
 
 <section>
   <div class="wrap">
@@ -1251,7 +1265,9 @@ tile_body = f"""
   </div>
 </section>
 
+<div class="wrap">
 {quote_snippet("On time and did a good job cleaning tile and grout for a <span class=\"qs-highlight\">reasonable price</span>.", "Mark")}
+</div>
 
 <section>
   <div class="wrap">
@@ -1470,7 +1486,9 @@ areas_body = f"""
   </div>
 </section>
 
+<div class="wrap">
 {quote_snippet("Will definitely use them again &mdash; <span class=\"qs-highlight\">couldn't be happier with their work</span>!", "Leslie")}
+</div>
 
 <section class="areas-featured">
   <div class="wrap">
@@ -1576,7 +1594,9 @@ contact_body = f"""
   </div>
 </section>
 
+<div class="wrap">
 {quote_snippet("<span class=\"qs-highlight\">Easy to get a quote from the owner</span>. Good prices for multiple rooms to be cleaned.", "Kevin", color="red")}
+</div>
 
 <section>
   <div class="wrap" style="display:grid; grid-template-columns: 0.9fr 1.1fr; gap:60px; align-items:flex-start;">
