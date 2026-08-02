@@ -1113,7 +1113,7 @@ carpet_body = f"""
   </div>
 </section>
 
-<section class="section-tint-red">
+<section class="section-red">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Common Questions</span>
@@ -1186,7 +1186,7 @@ uphol_body = f"""
   </div>
 </section>
 
-<section class="section-tint-red">
+<section class="section-red">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Common Questions</span>
@@ -1259,7 +1259,7 @@ tile_body = f"""
   </div>
 </section>
 
-<section class="section-tint-red">
+<section class="section-red">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Common Questions</span>
@@ -1366,7 +1366,7 @@ commercial_body = f"""
   </div>
 </div>
 
-<section class="section-tint-red">
+<section class="section-red">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Common Questions</span>

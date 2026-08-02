@@ -60,6 +60,14 @@ button { font-family: inherit; cursor: pointer; }
 section { padding: 120px 0; }
 .section-tint { background: var(--gray); }
 .section-tint-red { background: var(--red-tint); }
+.section-red { background: var(--red); }
+.section-red .eyebrow { color: var(--white); }
+.section-red .eyebrow::before { background-color: var(--white); }
+.section-red h2 { color: var(--white); }
+.section-red .faq-item { border-bottom-color: rgba(255,255,255,0.25); }
+.section-red .faq-item summary { color: var(--white); }
+.section-red .faq-item summary .chev { color: var(--white); }
+.section-red .faq-item p { color: rgba(255,255,255,0.85); }
 @media (max-width: 900px) { section { padding: 72px 0; } }
 @media (max-width: 600px) { .wrap { padding: 0 22px; } section { padding: 56px 0; } }
 
