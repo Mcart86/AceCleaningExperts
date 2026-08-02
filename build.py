@@ -683,7 +683,7 @@ home_body = f"""
       <span class="eyebrow">The Proof</span>
       <h2>Real Results. Every Time.</h2>
       <p class="lede">We don't just clean &mdash; we transform your floors. See the difference for yourself.</p>
-      <a href="/services/" class="btn btn-primary">View More Results {icon('arrow')}</a>
+      <a href="/our-work/" class="btn btn-primary">View More Results {icon('arrow')}</a>
     </div>
     <div class="ba-intro-slider">
       <div class="ba-slider">
@@ -804,16 +804,6 @@ home_body = f"""
   </div>
 </section>
 
-<section style="background:var(--gray);">
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow">See The Difference</span>
-      <h2>Our Work</h2>
-    </div>
-    {gallery_grid()}
-  </div>
-</section>
-
 <section id="meet-ace">
   <div class="wrap meet-ace-row">
     <div>
@@ -868,6 +858,29 @@ home_body = f"""
 page("/", "Ace Cleaning Experts | South Jersey's Trusted Carpet Cleaning Experts",
      "Veteran-owned, family-operated carpet, tile and upholstery cleaning serving Sewell, Deptford, Haddonfield and all of South Jersey for 40+ years. Call 856-582-1711.",
      "home", home_body)
+
+# ============================================================ OUR WORK ===
+our_work_body = f"""
+<section class="page-hero">
+  <div class="wrap">
+    {breadcrumb([("Home","/"),("Our Work", None)])}
+    <span class="eyebrow">See The Difference</span>
+    <h1>Our Work</h1>
+    <p class="lede">Real before-and-after results from carpet, tile and upholstery jobs across South Jersey &mdash; no stock photos, just our own work.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    {gallery_grid()}
+  </div>
+</section>
+
+{cta_band("Ready to See Results Like This in Your Home?", "Fast response, honest pricing, and a crew that shows up when they say they will.")}
+"""
+page("/our-work/", "Our Work | Real Before & After Photos | Ace Cleaning Experts",
+     "See real before-and-after photos from Ace Cleaning Experts' carpet, tile and upholstery cleaning jobs across South Jersey.",
+     "", our_work_body)
 
 # ============================================================== ABOUT ===
 about_body = f"""
