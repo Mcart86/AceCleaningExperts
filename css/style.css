@@ -828,8 +828,11 @@ footer.site-footer a:hover { color: var(--white); }
 }
 
 /* ---------- Can't-find-your-town support band ---------- */
-.areas-support { background: var(--charcoal); padding: 56px 0; }
-.areas-support-inner { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; }
+.areas-support {
+  position: relative; padding: 72px 0; overflow: hidden;
+  background: linear-gradient(120deg, rgba(20,20,20,0.88), rgba(30,30,30,0.72)), url("/images/philly-skyline-support-v1.webp") center 60% / cover no-repeat;
+}
+.areas-support-inner { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; position: relative; z-index: 1; }
 .areas-support-icon {
   width: 56px; height: 56px; border-radius: 50%; background: rgba(200,16,46,0.16);
   display: flex; align-items: center; justify-content: center; color: var(--red); flex-shrink: 0;
