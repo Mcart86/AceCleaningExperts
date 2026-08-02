@@ -334,76 +334,120 @@ TOWNS = [
         "name": "West Deptford",
         "county": "Gloucester County",
         "zip": None,
-        "about": "[Placeholder &mdash; add specific local detail for West Deptford here: nearby "
-                 "neighborhoods, landmarks, or well-known streets Ace commonly serves. Replace before launch.]",
+        "about": "West Deptford sits along the Delaware River and is home to Ladd's Castle, the oldest brick "
+                 "house in Gloucester County and a National Register landmark, along with the RiverWinds "
+                 "Community Center's waterfront trails and golf course. From the Green-Fields neighborhood "
+                 "to the streets around Thorofare, we handle carpet, tile and upholstery cleaning for homes "
+                 "and businesses throughout the township.",
     },
     {
         "slug": "logan-township-nj",
         "name": "Logan Township",
         "county": "Gloucester County",
         "zip": "08085",
-        "about": "[Placeholder &mdash; add specific local detail for Logan Township here: nearby "
-                 "neighborhoods, landmarks, or well-known streets Ace commonly serves. Replace before launch.]",
+        "about": "Logan Township runs along Raccoon Creek near Swedesboro, with roots going back to some of "
+                 "the first Swedish settlers in the Repaupo section along the Delaware River meadowlands. "
+                 "It's a mix of quiet farmland and newer development, and we're a regular stop for carpet, "
+                 "tile and upholstery cleaning across the township.",
     },
     {
         "slug": "washington-township-nj",
         "name": "Washington Township",
         "county": "Gloucester County",
         "zip": "08080",
-        "about": "[Placeholder &mdash; add specific local detail for Washington Township here: nearby "
-                 "neighborhoods, landmarks, or well-known streets Ace commonly serves. Replace before launch.]",
+        "about": "Washington Township stretches from the Grenloch Terrace section &mdash; once a Lenni Lenape "
+                 "village and later a 19th-century industrial hub near Grenloch Lake &mdash; out through Sewell "
+                 "and Turnersville. It's one of the most populous townships in Gloucester County, and one of "
+                 "the areas we serve most often for carpet, tile and upholstery cleaning.",
     },
     {
         "slug": "franklin-township-nj",
         "name": "Franklin Township",
         "county": "Gloucester County",
         "zip": "08322",
-        "about": "[Placeholder &mdash; add specific local detail for Franklin Township here: nearby "
-                 "neighborhoods, landmarks, or well-known streets Ace commonly serves. Replace before launch.]",
+        "about": "Franklin Township is the largest township by area in Gloucester County, taking in "
+                 "Franklinville, Malaga and several other rural communities. Malaga's glassworks date back "
+                 "to 1814, and Franklinville still has its historic railroad station. We serve homes and "
+                 "businesses across the township's more spread-out communities for carpet, tile and "
+                 "upholstery cleaning.",
     },
     {
         "slug": "cherry-hill-nj",
         "name": "Cherry Hill",
         "county": "Camden County",
         "zip": "08003",
-        "about": "[Placeholder &mdash; add specific local detail for Cherry Hill here: nearby "
-                 "neighborhoods, landmarks, or well-known streets Ace commonly serves. Replace before launch.]",
+        "about": "Cherry Hill takes its name from the blooming cherry trees that gave the former Delaware "
+                 "Township its new identity in 1961, the same year the Cherry Hill Mall opened as one of the "
+                 "first enclosed shopping centers in the country. It's one of the largest townships in South "
+                 "Jersey, and we handle carpet, tile and upholstery cleaning for homes and businesses "
+                 "throughout it.",
     },
     {
         "slug": "voorhees-nj",
         "name": "Voorhees",
         "county": "Camden County",
         "zip": "08043",
-        "about": "[Placeholder &mdash; add specific local detail for Voorhees here: nearby "
-                 "neighborhoods, landmarks, or well-known streets Ace commonly serves. Replace before launch.]",
+        "about": "Voorhees was named for Governor Foster McGowan Voorhees when it split off as its own "
+                 "township in 1899, and today it's home to the Flyers Skate Zone, the Philadelphia Flyers' "
+                 "training facility. From the neighborhoods around Voorhees Town Center to the quieter streets "
+                 "further out, we're a regular for carpet, tile and upholstery cleaning across the township.",
     },
     {
         "slug": "blackwood-nj",
         "name": "Blackwood",
         "county": "Camden County",
         "zip": "08012",
-        "about": "[Placeholder &mdash; add specific local detail for Blackwood here: nearby "
-                 "neighborhoods, landmarks, or well-known streets Ace commonly serves. Replace before launch.]",
+        "about": "Blackwood is home to Camden County College's 320-acre main campus, established in 1967, "
+                 "along with Pennco Tech and a mix of longtime residential streets. It's part of Gloucester "
+                 "Township, and we serve homes and businesses throughout the area for carpet, tile and "
+                 "upholstery cleaning.",
     },
     {
         "slug": "turnersville-nj",
         "name": "Turnersville",
         "county": "Gloucester County",
         "zip": "08012",
-        "about": "[Placeholder &mdash; add specific local detail for Turnersville here: nearby "
-                 "neighborhoods, landmarks, or well-known streets Ace commonly serves. Replace before launch.]",
+        "about": "Turnersville grew from a historic farming crossroads into one of Washington Township's "
+                 "busiest commercial hubs, right at the intersection of Route 42 and the Atlantic City "
+                 "Expressway. Between the retail corridor and the neighborhoods around it, it's one of our "
+                 "most frequent stops for carpet, tile and upholstery cleaning.",
+    },
+    {
+        "slug": "philadelphia-pa",
+        "name": "Philadelphia",
+        "state": "PA",
+        "county": "Philadelphia County",
+        "zip": None,
+        "about": "Just across the Delaware River from our South Jersey home base, Philadelphia is one of "
+                 "the extended areas we regularly take appointments in &mdash; call ahead to confirm your "
+                 "address and schedule, and we'll let you know honestly if it's a fit for the day you need.",
+    },
+    {
+        "slug": "wilmington-de",
+        "name": "Wilmington",
+        "state": "DE",
+        "county": "New Castle County",
+        "zip": None,
+        "about": "Wilmington and the surrounding New Castle County area are part of our extended service "
+                 "zone beyond South Jersey. Give us a call to confirm your address and we'll schedule "
+                 "honestly around drive time &mdash; no runaround about whether we can make it work.",
     },
 ]
 
 def town_page(t):
     name = t["name"]
+    state = t.get("state", "NJ")
     locality = f'{t["county"]} &middot; {t["zip"]}' if t.get("zip") else t["county"]
+    pricing_line = (
+        "wherever you're located in South Jersey" if state == "NJ"
+        else f"wherever you're located in the {name} area"
+    )
     body = f"""
 <section class="page-hero">
   <div class="wrap">
     {breadcrumb([("Home","/"),("Service Areas","/service-areas/"),(name, None)])}
     <span class="eyebrow">{locality}</span>
-    <h1>Carpet &amp; Floor Cleaning in {name}, NJ</h1>
+    <h1>Carpet &amp; Floor Cleaning in {name}, {state}</h1>
     <p class="lede">{t["about"]}</p>
     <div class="btn-row">
       <a href="/contact/" class="btn btn-primary">Get Free Quote</a>
@@ -436,15 +480,15 @@ def town_page(t):
     {faq([
         (f"How fast can you get to {name}?", f"{name} is one of our regularly serviced areas, so scheduling is usually quick &mdash; call {PHONE} and we'll give you a real timeframe, not a runaround."),
         ("Do you serve both homes and businesses here?", "Yes &mdash; residential and commercial jobs, from single rooms to full offices or storefronts."),
-        ("Is pricing different by town?", "No &mdash; our pricing is based on the job, not the zip code. You'll get the same honest, up-front quote wherever you're located in South Jersey."),
+        ("Is pricing different by town?", f"No &mdash; our pricing is based on the job, not the zip code. You'll get the same honest, up-front quote {pricing_line}."),
     ])}
   </div>
 </section>
 
 {cta_band(f"Ready to Book in {name}?", f"Fast response, honest pricing, and a crew that shows up when they say they will.")}
 """
-    page(f"/service-areas/{t['slug']}/", f"Carpet Cleaning in {name}, NJ | Ace Cleaning Experts",
-         f"Professional carpet, tile and upholstery cleaning in {name}, NJ. EPA-certified products, honest pricing. Call {PHONE}.",
+    page(f"/service-areas/{t['slug']}/", f"Carpet Cleaning in {name}, {state} | Ace Cleaning Experts",
+         f"Professional carpet, tile and upholstery cleaning in {name}, {state}. EPA-certified products, honest pricing. Call {PHONE}.",
          "areas", body)
 
 # Edit/add entries here to revise testimonials — each is (quote, name, town, star_count)
@@ -730,7 +774,7 @@ about_body = f"""
   <div class="wrap">
     {breadcrumb([("Home","/"),("About Us", None)])}
     <span class="eyebrow">Our Story</span>
-    <h1>Four Decades of Straight Talk and Clean Carpets</h1>
+    <h1>Four Decades of Clean Carpets and Floors</h1>
     <p class="lede">Ace Cleaning Experts started the way most good local businesses do &mdash; with a family, a van, and a determination to do the job right. For over 40 years, we've helped South Jersey families and businesses restore carpets, tile, upholstery and grout &mdash; eliminating stubborn dirt, stains and odors along the way. We're still locally owned and operated: not a franchise, not a national call center, just the same commitment to honest pricing and work you can trust.</p>
   </div>
 </section>
@@ -1226,9 +1270,8 @@ areas_body = f"""
       <p class="lede">We also schedule appointments in Philadelphia, PA and in Wilmington and the surrounding Delaware area.</p>
     </div>
     <div class="area-pill-grid">
-      <span class="area-pill">Philadelphia, PA</span>
-      <span class="area-pill">Wilmington, DE</span>
-      <span class="area-pill">Delaware &mdash; surrounding areas</span>
+      <a href="/service-areas/philadelphia-pa/" class="area-pill">Philadelphia, PA</a>
+      <a href="/service-areas/wilmington-de/" class="area-pill">Wilmington, DE</a>
     </div>
   </div>
 </section>
