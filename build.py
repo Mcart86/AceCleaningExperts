@@ -941,10 +941,10 @@ about_body = f"""
   <div class="wrap">
     <div class="feature-row">
       <div class="feature-copy">
-        <h3>Veteran-Owned. Family-Operated. Still Local.</h3>
-        <p class="lede" style="font-size:1.05rem;">We're proud to be a veteran-owned, family-operated business serving the same South Jersey communities we call home. The person who quotes your job is accountable for the crew that shows up to do it &mdash; no corporate hand-offs, no surprise fees.</p>
+        <h3>Owned by Jeff Denoible, U.S. Marine Corps Veteran</h3>
+        <p class="lede" style="font-size:1.05rem;">Ace Cleaning Experts is owned and run by Jeff Denoible, a U.S. Marine Corps veteran who brought that same discipline and attention to detail into the business. We're proud to be veteran-owned and family-operated, serving the same South Jersey communities we call home. The person who quotes your job is accountable for the crew that shows up to do it &mdash; no corporate hand-offs, no surprise fees.</p>
       </div>
-      <div class="feature-visual"><img class="card-edge" src="/images/veteran-owned.webp" alt="Ace Cleaning Experts owner in U.S. Marine Corps dress uniform" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);"></div>
+      <div class="feature-visual"><img class="card-edge" src="/images/veteran-owned.webp" alt="Jeff Denoible, owner of Ace Cleaning Experts, in U.S. Marine Corps dress uniform" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);"></div>
     </div>
     <div class="feature-row reverse">
       <div class="feature-copy">
