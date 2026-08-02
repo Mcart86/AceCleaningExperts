@@ -301,21 +301,21 @@ def related_links(current_href):
         f'<li>{icon("check")} <a href="{href}">{label}</a></li>'
         for href, label in PRIORITY_AREAS
     )
-    return f'''<section style="background:var(--gray);">
+    return f'''<section>
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Explore More</span>
       <h2>More Ways We Can Help</h2>
     </div>
-    <div class="grid-2" style="gap:48px;">
-      <div>
-        <h3 style="font-size:1.05rem; margin-bottom:16px;">Other Services</h3>
+    <div class="related-split">
+      <div class="related-panel panel-red-tint">
+        <h3>Other Services</h3>
         <ul class="checklist">
           {other_services}
         </ul>
       </div>
-      <div>
-        <h3 style="font-size:1.05rem; margin-bottom:16px;">Popular Service Areas</h3>
+      <div class="related-panel panel-charcoal">
+        <h3>Popular Service Areas</h3>
         <ul class="checklist">
           {areas}
         </ul>
@@ -1328,9 +1328,9 @@ commercial_body = f"""
     </div>
     <div class="grid-4">
       <div class="who-card"><div class="icon">{icon('building')}</div><h3>Offices</h3><p>Evening visits keep cleaning off the workday.</p></div>
-      <div class="who-card"><div class="icon">{icon('briefcase')}</div><h3>Retail Stores</h3><p>Scheduled around store hours and foot traffic.</p></div>
+      <div class="who-card"><div class="icon icon-charcoal">{icon('briefcase')}</div><h3>Retail Stores</h3><p>Scheduled around store hours and foot traffic.</p></div>
       <div class="who-card"><div class="icon">{icon('shield')}</div><h3>Medical Facilities</h3><p>EPA-certified products safe for patients and staff.</p></div>
-      <div class="who-card"><div class="icon">{icon('utensils')}</div><h3>Restaurants</h3><p>Fast-dry service that respects your open hours.</p></div>
+      <div class="who-card"><div class="icon icon-charcoal">{icon('utensils')}</div><h3>Restaurants</h3><p>Fast-dry service that respects your open hours.</p></div>
     </div>
   </div>
 </section>
@@ -1359,7 +1359,14 @@ commercial_body = f"""
   </div>
 </section>
 
-<section style="background:var(--gray);">
+<div class="quote-strip">
+  <div class="wrap">
+    <blockquote>&ldquo;Ace handled our office carpets on a Saturday so Monday morning nobody knew we'd even been closed. Same crew every time, no surprises on the invoice.&rdquo;</blockquote>
+    <div class="quote-strip-attrib">&mdash; South Jersey Office Manager, Google Review</div>
+  </div>
+</div>
+
+<section class="section-tint-red">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Common Questions</span>

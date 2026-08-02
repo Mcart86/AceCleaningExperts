@@ -327,6 +327,7 @@ img.hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: 
 .who-card { text-align: center; padding: 32px 18px; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm); transition: transform 0.2s ease, box-shadow 0.2s ease; position: relative; }
 .who-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
 .who-card .icon { width: 52px; height: 52px; border-radius: 50%; background: var(--red-tint); color: var(--red); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+.who-card .icon.icon-charcoal { background: var(--charcoal); color: var(--white); }
 .who-card h3 { font-size: 0.98rem; margin: 0 0 8px; }
 .who-card p { margin: 0; font-size: 0.86rem; color: var(--charcoal-70); line-height: 1.45; }
 
@@ -529,6 +530,26 @@ footer.site-footer a:hover { color: var(--white); }
 
 /* ---------- Stats bar (homepage, under hero) ---------- */
 .stats-bar { background: var(--charcoal); padding: 64px 0; }
+
+.quote-strip { background: var(--charcoal); padding: 72px 0; text-align: center; position: relative; overflow: hidden; }
+.quote-strip blockquote {
+  margin: 0 auto; max-width: 760px; font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.3rem, 2.6vw, 1.75rem); line-height: 1.45; color: var(--white); font-style: italic;
+}
+.quote-strip-attrib { margin-top: 22px; font-size: 0.9rem; font-weight: 600; color: var(--red); text-transform: uppercase; letter-spacing: 0.04em; }
+
+.related-split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
+.related-panel { border-radius: var(--radius); padding: 36px 32px; }
+.related-panel h3 { font-size: 1.05rem; margin-bottom: 16px; }
+.panel-red-tint { background: var(--red-tint); }
+.panel-charcoal { background: var(--charcoal); }
+.panel-charcoal h3 { color: var(--white); }
+.panel-charcoal .checklist li { border-bottom-color: rgba(255,255,255,0.12); color: rgba(255,255,255,0.92); }
+.panel-charcoal .checklist a { color: rgba(255,255,255,0.92); }
+.panel-charcoal .checklist a:hover { color: var(--red); }
+.panel-charcoal .go { color: var(--white); }
+.panel-charcoal .go:hover { color: var(--red); }
+@media (max-width: 700px) { .related-split { grid-template-columns: 1fr; } }
 .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
 .stats-grid-4 { grid-template-columns: repeat(4, 1fr); }
 .stats-grid-5 { grid-template-columns: repeat(5, 1fr); }
