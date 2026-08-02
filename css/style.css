@@ -589,63 +589,63 @@ footer.site-footer a:hover { color: var(--white); }
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  margin: 32px auto 0;
-  max-width: 920px;
+  margin: 20px auto 0;
+  max-width: 720px;
 }
 @media (max-width: 700px) { .quote-card { grid-template-columns: 1fr; } }
 
-.qc-photo { position: relative; min-height: 220px; }
+.qc-photo { position: relative; min-height: 110px; }
 .qc-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .qc-photo::before {
   content: "";
   position: absolute; top: 0; left: 0;
-  width: 84px; height: 84px;
+  width: 52px; height: 52px;
   background: var(--red);
   clip-path: polygon(0 0, 100% 0, 0 100%);
   z-index: 1;
 }
 .qc-quote-mark {
-  position: absolute; top: 8px; left: 12px;
+  position: absolute; top: 4px; left: 8px;
   color: var(--white); font-family: var(--font-display);
-  font-size: 2.1rem; font-weight: 800; line-height: 1; z-index: 2;
+  font-size: 1.3rem; font-weight: 800; line-height: 1; z-index: 2;
 }
 .qc-veteran-badge {
-  position: absolute; bottom: 14px; left: 14px; z-index: 2;
-  width: 88px; height: 88px; border-radius: 50%;
-  background: var(--white); border: 2px solid var(--red);
+  position: absolute; bottom: 8px; left: 8px; z-index: 2;
+  width: 54px; height: 54px; border-radius: 50%;
+  background: var(--white); border: 1.5px solid var(--red);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; padding: 6px; box-shadow: var(--shadow-sm);
+  text-align: center; padding: 4px; box-shadow: var(--shadow-sm);
 }
-.qc-veteran-badge svg { color: var(--red); width: 18px; height: 18px; margin-bottom: 3px; }
-.qc-veteran-badge span { font-size: 7.5px; font-weight: 800; letter-spacing: 0.02em; line-height: 1.2; color: var(--charcoal); text-transform: uppercase; }
+.qc-veteran-badge svg { color: var(--red); width: 12px; height: 12px; margin-bottom: 2px; }
+.qc-veteran-badge span { font-size: 5px; font-weight: 800; letter-spacing: 0.02em; line-height: 1.1; color: var(--charcoal); text-transform: uppercase; }
 
-.qc-content { position: relative; padding: 32px 36px; overflow: hidden; }
+.qc-content { position: relative; padding: 16px 20px; overflow: hidden; }
 .qc-content::after {
   content: "\201D";
-  position: absolute; top: -18px; right: 22px;
-  font-family: var(--font-display); font-size: 6.5rem; font-weight: 800;
+  position: absolute; top: -10px; right: 14px;
+  font-family: var(--font-display); font-size: 3.5rem; font-weight: 800;
   color: var(--charcoal); opacity: 0.06; line-height: 1; pointer-events: none;
 }
-.qc-stars { position: relative; z-index: 1; color: var(--red); letter-spacing: 3px; margin-bottom: 14px; font-size: 1.05rem; }
-.qc-headline { position: relative; z-index: 1; font-family: var(--font-display); font-weight: 800; font-size: clamp(1.25rem, 2.2vw, 1.55rem); line-height: 1.28; color: var(--charcoal); margin: 0 0 12px; }
+.qc-stars { position: relative; z-index: 1; color: var(--red); letter-spacing: 2px; margin-bottom: 6px; font-size: 0.85rem; }
+.qc-headline { position: relative; z-index: 1; font-family: var(--font-display); font-weight: 800; font-size: clamp(0.98rem, 1.6vw, 1.15rem); line-height: 1.22; color: var(--charcoal); margin: 0 0 6px; }
 .qc-headline .qs-highlight { color: var(--red); font-style: normal; }
-.qc-rest { position: relative; z-index: 1; color: var(--charcoal-70); font-size: 0.96rem; margin: 0 0 20px; }
-.qc-divider { position: relative; z-index: 1; border: none; border-top: 3px solid var(--red); width: 44px; margin: 0 0 20px; }
-.qc-footer { position: relative; z-index: 1; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
-.qc-person, .qc-badge-block { display: flex; align-items: center; gap: 10px; }
-.qc-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--charcoal); color: var(--white); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.qc-avatar svg { width: 18px; height: 18px; }
-.qc-person strong { display: block; font-size: 0.9rem; }
-.qc-verified { font-size: 0.78rem; color: var(--charcoal-50); display: flex; align-items: center; gap: 4px; }
-.qc-verified svg { color: var(--red); width: 13px; height: 13px; }
-.qc-vdivider { width: 1px; height: 34px; background: var(--border); }
-.qc-badge-block svg { color: var(--red); width: 22px; height: 22px; flex-shrink: 0; }
-.qc-badge-block strong { display: block; font-size: 0.82rem; }
-.qc-badge-block .sub { font-size: 0.76rem; color: var(--charcoal-50); }
+.qc-rest { position: relative; z-index: 1; color: var(--charcoal-70); font-size: 0.82rem; margin: 0 0 10px; }
+.qc-divider { position: relative; z-index: 1; border: none; border-top: 2px solid var(--red); width: 32px; margin: 0 0 10px; }
+.qc-footer { position: relative; z-index: 1; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.qc-person, .qc-badge-block { display: flex; align-items: center; gap: 7px; }
+.qc-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--charcoal); color: var(--white); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.qc-avatar svg { width: 13px; height: 13px; }
+.qc-person strong { display: block; font-size: 0.8rem; }
+.qc-verified { font-size: 0.7rem; color: var(--charcoal-50); display: flex; align-items: center; gap: 3px; }
+.qc-verified svg { color: var(--red); width: 11px; height: 11px; }
+.qc-vdivider { width: 1px; height: 26px; background: var(--border); }
+.qc-badge-block svg { color: var(--red); width: 16px; height: 16px; flex-shrink: 0; }
+.qc-badge-block strong { display: block; font-size: 0.74rem; }
+.qc-badge-block .sub { font-size: 0.68rem; color: var(--charcoal-50); }
 
 /* ---------- Simplified variant for narrow-column contexts ---------- */
-.quote-card-simple { background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--red); border-radius: var(--radius-sm); padding: 24px 26px; box-shadow: var(--shadow-sm); }
-.quote-card-simple .qc-stars { font-size: 0.9rem; margin-bottom: 10px; }
-.quote-card-simple .qc-headline { font-size: 1rem; margin-bottom: 8px; }
-.quote-card-simple .qc-rest { font-size: 0.9rem; margin-bottom: 16px; }
-.quote-card-simple.inline { margin: 28px 0 0; }
+.quote-card-simple { background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--red); border-radius: var(--radius-sm); padding: 14px 16px; box-shadow: var(--shadow-sm); }
+.quote-card-simple .qc-stars { font-size: 0.75rem; margin-bottom: 6px; }
+.quote-card-simple .qc-headline { font-size: 0.88rem; margin-bottom: 6px; }
+.quote-card-simple .qc-rest { font-size: 0.8rem; margin-bottom: 10px; }
+.quote-card-simple.inline { margin: 20px 0 0; }
