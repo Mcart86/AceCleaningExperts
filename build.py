@@ -40,6 +40,8 @@ ICONS = {
 "facebook": '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 8h2V5h-2a4 4 0 0 0-4 4v2H9v3h2v7h3v-7h2.2l.8-3H14V9c0-.6.4-1 1-1z"/></svg>',
 "search": '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>',
 "compass": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9l-2 6-4-2 2-6z"/></svg>',
+"spade": '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C12 2 4 10 4 15a5 5 0 0 0 8 4c-.3 1.5-1 2.5-2 3.3V23h4v-.7c-1-.8-1.7-1.8-2-3.3a5 5 0 0 0 8-4C20 10 12 2 12 2z"/></svg>',
+"ace_card": '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="1.5" width="18" height="21" rx="2.5"/><path d="M12 8.2c0 0-3.4 3.6-3.4 5.8a2.4 2.4 0 0 0 3.9 1.9c-.15.7-.5 1.2-1 1.6v.7h1v-.7c-.5-.4-.85-.9-1-1.6a2.4 2.4 0 0 0 3.9-1.9c0-2.2-3.4-5.8-3.4-5.8z" fill="currentColor" stroke="none"/><text x="5.2" y="7" font-size="5.5" font-weight="700" fill="currentColor" font-family="Georgia, serif">A</text></svg>',
 }
 
 def icon(name):
@@ -373,6 +375,9 @@ def quote_snippet(text, name, stars=5, inline=False, photo=None, photo_alt=""):
 
 def placeholder(label, extra_class=""):
     return f'<div class="placeholder-block {extra_class}">{icon("droplet")}<span>{label}</span></div>'
+
+def card_divider():
+    return '<div class="card-divider" role="presentation"></div>'
 
 # ---------------------------------------------------------- location pages ----
 # Each town: slug, display name, county, zip, and a short paragraph of genuinely
@@ -738,9 +743,13 @@ home_body = f"""
   </div>
 </section>
 
+{card_divider()}
+
 <section id="why-ace">
   <div class="wrap why-row">
-    <img src="/images/why-ace-team.webp" alt="Ace Cleaning Experts owner and family in front of the company van" class="why-ace-photo">
+    <div class="card-fan">
+      <img src="/images/why-ace-team.webp" alt="Ace Cleaning Experts owner and family in front of the company van" class="why-ace-photo">
+    </div>
     <div>
       <span class="eyebrow">Why South Jersey Chooses Ace</span>
       <h2>Experience. Integrity. Results You Can Count On.</h2>
@@ -792,7 +801,7 @@ home_body = f"""
       )}
     </div>
     <div class="trust-badge-box">
-      {icon('shield')}
+      {icon('ace_card')}
       <div>
         <strong>Veteran-Owned. Family-Operated. Serving South Jersey Since 1983.</strong>
         <div class="sub">Fully Insured &bull; Professional Equipment &bull; 100% Satisfaction Guaranteed</div>
@@ -814,7 +823,9 @@ home_body = f"""
       <p style="margin:22px 0 0;"><a href="/about-us/" class="btn btn-outline">Learn More About Us {icon('arrow')}</a></p>
       {quote_snippet("Nick and Jeff were professional, friendly, and thorough from start to finish. You can really tell <span class=\"qs-highlight\">they take pride in their work</span>.", "Chris", inline=True)}
     </div>
-    <img src="/images/meet-ace-team-v2.webp" alt="The Ace Cleaning Experts family washing the company van together" class="meet-ace-photo">
+    <div class="card-fan">
+      <img src="/images/meet-ace-team-v2.webp" alt="The Ace Cleaning Experts family washing the company van together" class="meet-ace-photo">
+    </div>
   </div>
 </section>
 
@@ -905,14 +916,14 @@ about_body = f"""
         <h3>Veteran-Owned. Family-Operated. Still Local.</h3>
         <p class="lede" style="font-size:1.05rem;">We're proud to be a veteran-owned, family-operated business serving the same South Jersey communities we call home. The person who quotes your job is accountable for the crew that shows up to do it &mdash; no corporate hand-offs, no surprise fees.</p>
       </div>
-      <div class="feature-visual"><img src="/images/veteran-owned.webp" alt="Ace Cleaning Experts owner in U.S. Marine Corps dress uniform" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);"></div>
+      <div class="feature-visual"><img class="card-edge" src="/images/veteran-owned.webp" alt="Ace Cleaning Experts owner in U.S. Marine Corps dress uniform" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);"></div>
     </div>
     <div class="feature-row reverse">
       <div class="feature-copy">
         <h3>The Same Care We'd Want in Our Own Homes</h3>
         <p class="lede" style="font-size:1.05rem;">Every technician is trained on EPA-certified cleaning agents and modern extraction equipment, and every job wraps up with a walkthrough so you know exactly what was done.</p>
       </div>
-      <div class="feature-visual"><img src="/images/technician-care.webp" alt="Ace Cleaning Experts technicians at work cleaning carpets" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);"></div>
+      <div class="feature-visual"><img class="card-edge" src="/images/technician-care.webp" alt="Ace Cleaning Experts technicians at work cleaning carpets" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);"></div>
     </div>
   </div>
 </section>
@@ -1078,12 +1089,12 @@ carpet_body = f"""
       <h2>Every Carpet Cleaning Visit Covers</h2>
     </div>
     <ul class="checklist grid-2" style="display:grid;">
-      <li>{icon('check')} Pre-treatment of high-traffic areas and visible stains</li>
-      <li>{icon('check')} Hot water / steam extraction with EPA-certified solutions</li>
-      <li>{icon('check')} Pet odor and stain treatment where needed</li>
-      <li>{icon('check')} Scotchgard fabric protector applied after cleaning</li>
-      <li>{icon('check')} Fast-dry techniques to minimize downtime</li>
-      <li>{icon('check')} Straightforward, honest pricing quoted up front</li>
+      <li>{icon('spade')} Pre-treatment of high-traffic areas and visible stains</li>
+      <li>{icon('spade')} Hot water / steam extraction with EPA-certified solutions</li>
+      <li>{icon('spade')} Pet odor and stain treatment where needed</li>
+      <li>{icon('spade')} Scotchgard fabric protector applied after cleaning</li>
+      <li>{icon('spade')} Fast-dry techniques to minimize downtime</li>
+      <li>{icon('spade')} Straightforward, honest pricing quoted up front</li>
     </ul>
   </div>
 </section>
@@ -1150,12 +1161,12 @@ uphol_body = f"""
       <h2>Every Upholstery Visit Covers</h2>
     </div>
     <ul class="checklist grid-2" style="display:grid;">
-      <li>{icon('check')} Fabric identification and spot-testing before cleaning</li>
-      <li>{icon('check')} EPA-certified, low-moisture cleaning agents</li>
-      <li>{icon('check')} Targeted stain and odor removal</li>
-      <li>{icon('check')} Scotchgard protection to guard against future spills</li>
-      <li>{icon('check')} Sofas, sectionals, loveseats, dining and accent chairs</li>
-      <li>{icon('check')} Faster dry times than DIY rental machines</li>
+      <li>{icon('spade')} Fabric identification and spot-testing before cleaning</li>
+      <li>{icon('spade')} EPA-certified, low-moisture cleaning agents</li>
+      <li>{icon('spade')} Targeted stain and odor removal</li>
+      <li>{icon('spade')} Scotchgard protection to guard against future spills</li>
+      <li>{icon('spade')} Sofas, sectionals, loveseats, dining and accent chairs</li>
+      <li>{icon('spade')} Faster dry times than DIY rental machines</li>
     </ul>
   </div>
 </section>
@@ -1222,12 +1233,12 @@ tile_body = f"""
       <h2>Every Visit Covers</h2>
     </div>
     <ul class="checklist grid-2" style="display:grid;">
-      <li>{icon('check')} Deep tile and grout cleaning to lift embedded dirt</li>
-      <li>{icon('check')} EPA-certified solutions safe for kitchens and bathrooms</li>
-      <li>{icon('check')} Hardwood floor cleaning suited to the floor's finish</li>
-      <li>{icon('check')} Mildew and grime treatment in high-moisture areas</li>
-      <li>{icon('check')} Honest guidance on what grout can and can't be restored</li>
-      <li>{icon('check')} Straightforward, up-front pricing</li>
+      <li>{icon('spade')} Deep tile and grout cleaning to lift embedded dirt</li>
+      <li>{icon('spade')} EPA-certified solutions safe for kitchens and bathrooms</li>
+      <li>{icon('spade')} Hardwood floor cleaning suited to the floor's finish</li>
+      <li>{icon('spade')} Mildew and grime treatment in high-moisture areas</li>
+      <li>{icon('spade')} Honest guidance on what grout can and can't be restored</li>
+      <li>{icon('spade')} Straightforward, up-front pricing</li>
     </ul>
   </div>
 </section>
@@ -1294,15 +1305,15 @@ commercial_body = f"""
         <span class="eyebrow">Built for Businesses</span>
         <h2>What Commercial Clients Get</h2>
         <ul class="checklist" style="margin-top:22px;">
-          <li>{icon('check')} Flexible scheduling, including evenings and weekends</li>
-          <li>{icon('check')} Carpet, tile, grout and hardwood floor care</li>
-          <li>{icon('check')} EPA-certified products safe for staff and visitors</li>
-          <li>{icon('check')} Fast-dry techniques to minimize closed hours</li>
-          <li>{icon('check')} Straightforward quotes with no hidden fees</li>
-          <li>{icon('check')} One point of contact for recurring service</li>
+          <li>{icon('spade')} Flexible scheduling, including evenings and weekends</li>
+          <li>{icon('spade')} Carpet, tile, grout and hardwood floor care</li>
+          <li>{icon('spade')} EPA-certified products safe for staff and visitors</li>
+          <li>{icon('spade')} Fast-dry techniques to minimize closed hours</li>
+          <li>{icon('spade')} Straightforward quotes with no hidden fees</li>
+          <li>{icon('spade')} One point of contact for recurring service</li>
         </ul>
       </div>
-      <div class="feature-visual"><img src="/images/commercial-service.webp" alt="Commercial floor cleaning by Ace Cleaning Experts" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);"></div>
+      <div class="feature-visual"><img class="card-edge" src="/images/commercial-service.webp" alt="Commercial floor cleaning by Ace Cleaning Experts" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);"></div>
     </div>
   </div>
 </section>
@@ -1426,7 +1437,7 @@ areas_body = f"""
       <script type="application/json" id="areaSearchData">{_AREA_SEARCH_DATA}</script>
     </div>
     <div class="areas-hero-photo">
-      <img src="/images/areas-hero-van-v1.webp" alt="Ace Cleaning Experts service van parked outside a South Jersey home">
+      <img class="card-edge" src="/images/areas-hero-van-v1.webp" alt="Ace Cleaning Experts service van parked outside a South Jersey home">
       <span class="areas-hero-tag">Est. 1983</span>
     </div>
   </div>
@@ -1484,6 +1495,8 @@ areas_body = f"""
     </div>
   </div>
 </section>
+
+{card_divider()}
 
 <section class="areas-support">
   <div class="wrap areas-support-inner">
