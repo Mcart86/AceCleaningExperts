@@ -308,7 +308,7 @@ def related_links(current_href):
       <h2>More Ways We Can Help</h2>
     </div>
     <div class="related-split">
-      <div class="related-panel panel-red-tint">
+      <div class="related-panel panel-red">
         <h3>Other Services</h3>
         <ul class="checklist">
           {other_services}
@@ -926,7 +926,7 @@ about_body = f"""
   </div>
 </section>
 
-<section class="section-tint-red">
+<section class="section-red">
   <div class="wrap" style="max-width:820px; text-align:center;">
     <span class="eyebrow">What We Solve</span>
     <h2>Problems Big and Small, Solved Right</h2>
@@ -1558,7 +1558,7 @@ contact_body = f"""
         <li style="display:flex; gap:12px; margin-bottom:16px;">{icon('clock')} Mon&ndash;Sat: 9:00am&ndash;5:00pm, Sunday: Closed</li>
         <li style="display:flex; gap:12px;">{icon('pin')} Serving Sewell, Deptford, Haddonfield &amp; all of South Jersey</li>
       </ul>
-      <div style="margin-top:32px; padding:22px; background:var(--red-tint); border:1px solid var(--red); border-radius:var(--radius); font-size:0.92rem;">
+      <div style="margin-top:32px; padding:22px; background:var(--red); border-radius:var(--radius); font-size:0.92rem; color:var(--white);">
         <strong>Fastest way to reach us:</strong> call {PHONE}. Most quotes take less than five minutes over the phone.
       </div>
     </div>
