@@ -1302,18 +1302,21 @@ commercial_body = f"""
 
 <section>
   <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Built for Businesses</span>
-      <h2>What Commercial Clients Get</h2>
+    <div class="feature-row">
+      <div class="feature-copy">
+        <span class="eyebrow">Built for Businesses</span>
+        <h2>What Commercial Clients Get</h2>
+        <ul class="checklist" style="margin-top:22px;">
+          <li>{icon('check')} Flexible scheduling, including evenings and weekends</li>
+          <li>{icon('check')} Carpet, tile, grout and hardwood floor care</li>
+          <li>{icon('check')} EPA-certified products safe for staff and visitors</li>
+          <li>{icon('check')} Fast-dry techniques to minimize closed hours</li>
+          <li>{icon('check')} Straightforward quotes with no hidden fees</li>
+          <li>{icon('check')} One point of contact for recurring service</li>
+        </ul>
+      </div>
+      <div class="feature-visual"><img src="/images/commercial-service.webp" alt="Commercial floor cleaning by Ace Cleaning Experts" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);"></div>
     </div>
-    <ul class="checklist grid-2" style="display:grid;">
-      <li>{icon('check')} Flexible scheduling, including evenings and weekends</li>
-      <li>{icon('check')} Carpet, tile, grout and hardwood floor care</li>
-      <li>{icon('check')} EPA-certified products safe for staff and visitors</li>
-      <li>{icon('check')} Fast-dry techniques to minimize closed hours</li>
-      <li>{icon('check')} Straightforward quotes with no hidden fees</li>
-      <li>{icon('check')} One point of contact for recurring service</li>
-    </ul>
   </div>
 </section>
 
@@ -1324,13 +1327,22 @@ commercial_body = f"""
       <h2>Industries We Regularly Serve</h2>
     </div>
     <div class="grid-4">
-      <div class="who-card"><div class="icon">{icon('building')}</div><h3>Offices</h3></div>
-      <div class="who-card"><div class="icon">{icon('briefcase')}</div><h3>Retail Stores</h3></div>
-      <div class="who-card"><div class="icon">{icon('shield')}</div><h3>Medical Facilities</h3></div>
-      <div class="who-card"><div class="icon">{icon('utensils')}</div><h3>Restaurants</h3></div>
+      <div class="who-card"><div class="icon">{icon('building')}</div><h3>Offices</h3><p>Evening visits keep cleaning off the workday.</p></div>
+      <div class="who-card"><div class="icon">{icon('briefcase')}</div><h3>Retail Stores</h3><p>Scheduled around store hours and foot traffic.</p></div>
+      <div class="who-card"><div class="icon">{icon('shield')}</div><h3>Medical Facilities</h3><p>EPA-certified products safe for patients and staff.</p></div>
+      <div class="who-card"><div class="icon">{icon('utensils')}</div><h3>Restaurants</h3><p>Fast-dry service that respects your open hours.</p></div>
     </div>
   </div>
 </section>
+
+<div class="stats-bar">
+  <div class="wrap stats-grid stats-grid-4">
+    <div class="stat"><div class="stat-num">40+</div><div class="stat-label">Years in Business</div></div>
+    <div class="stat"><div class="stat-num stat-num-bold">5&#9733;</div><div class="stat-label">Star Rating</div></div>
+    <div class="stat"><div class="stat-num" style="font-size:clamp(1.4rem,3vw,2rem);">Insured</div><div class="stat-label">&amp; EPA-Certified</div></div>
+    <div class="stat"><div class="stat-num stat-icon">{icon('flag')}</div><div class="stat-label">Veteran Owned</div></div>
+  </div>
+</div>
 
 <section>
   <div class="wrap">
