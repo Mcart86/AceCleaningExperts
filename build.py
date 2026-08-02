@@ -995,6 +995,7 @@ about_body = f"""
   <div class="wrap">
     <div class="feature-row">
       <div class="feature-copy">
+        <img src="/images/us-flag-v1.webp" alt="American flag" style="width:60px; height:auto; margin-bottom:16px; border-radius:2px; box-shadow:var(--shadow-sm);">
         <h3>Owned by Jeff DeNobile, U.S. Marine Corps Veteran</h3>
         <p class="lede" style="font-size:1.05rem;">Ace Cleaning Experts is owned and run by Jeff DeNobile, a U.S. Marine Corps veteran who brought that same discipline and attention to detail into the business. We're proud to be veteran-owned and family-operated, serving the same South Jersey communities we call home. The person who quotes your job is accountable for the crew that shows up to do it &mdash; no corporate hand-offs, no surprise fees.</p>
       </div>
