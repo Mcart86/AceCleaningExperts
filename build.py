@@ -40,6 +40,7 @@ ICONS = {
 "book": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H12v16H5.5A1.5 1.5 0 0 1 4 18.5v-13z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H12v16h6.5a1.5 1.5 0 0 0 1.5-1.5v-13z"/></svg>',
 "hardhat": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16a8 8 0 0 1 16 0z"/><path d="M2 16h20M11 5v5M9 5h6"/></svg>',
 "facebook": '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 8h2V5h-2a4 4 0 0 0-4 4v2H9v3h2v7h3v-7h2.2l.8-3H14V9c0-.6.4-1 1-1z"/></svg>',
+"instagram": '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>',
 "search": '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>',
 "compass": '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9l-2 6-4-2 2-6z"/></svg>',
 "spade": '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C12 2 4 10 4 15a5 5 0 0 0 8 4c-.3 1.5-1 2.5-2 3.3V23h4v-.7c-1-.8-1.7-1.8-2-3.3a5 5 0 0 0 8-4C20 10 12 2 12 2z"/></svg>',
@@ -74,7 +75,7 @@ def local_business_schema():
             "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
             "opens": "09:00", "closes": "17:00",
         }],
-        "sameAs": ["https://www.facebook.com/AceCleaningExperts/"],
+        "sameAs": ["https://www.facebook.com/AceCleaningExperts/", "https://www.instagram.com/acecleaning1/"],
     }
     return f'<script type="application/ld+json">{json.dumps(schema)}</script>'
 
@@ -163,6 +164,7 @@ def footer():
       <p>Veteran-owned, family-operated carpet and floor cleaning serving South Jersey for 40+ years.</p>
       <div class="foot-social">
         <a href="https://www.facebook.com/AceCleaningExperts/" aria-label="Facebook">{icon('facebook')}</a>
+        <a href="https://www.instagram.com/acecleaning1/" aria-label="Instagram">{icon('instagram')}</a>
       </div>
     </div>
     <div>
