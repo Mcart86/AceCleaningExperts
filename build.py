@@ -1160,7 +1160,7 @@ page("/carpet-cleaning-service/", "Carpet Cleaning in South Jersey | Ace Cleanin
 
 # ================================================= UPHOLSTERY CLEANING ==
 uphol_body = f"""
-<section class="page-hero dark">
+<section class="page-hero dark card-back-test">
   <div class="wrap">
     <div class="page-hero-copy">
       {breadcrumb([("Home","/"),("Services","/services/"),("Upholstery Cleaning", None)])}
