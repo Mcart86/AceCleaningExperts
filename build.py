@@ -525,6 +525,9 @@ TOWN_REVIEW_POOL = [
     ("Our dog had an accident and our robot vacuum rolled it all over the home office. Team came out ASAP and <span class=\"qs-highlight\">cleaned up a disaster</span>. Friendly, accommodating and reasonably priced.", "Ema"),
     ("Will definitely use them again &mdash; <span class=\"qs-highlight\">couldn't be happier with their work</span>!", "Leslie"),
     ("Wonderful family business &mdash; they do a great job and <span class=\"qs-highlight\">are always on time</span>.", "Cyndi"),
+    ("<span class=\"qs-highlight\">Fantastic job</span>!!!!", "Christine"),
+    ("Great place and <span class=\"qs-highlight\">great people</span>!", "Diane"),
+    ("<span class=\"qs-highlight\">Only the best</span> by Ace Cleaners!!", "Diane"),
 ]
 
 def town_page(t):
@@ -983,6 +986,8 @@ about_body = f"""
   </div>
 </section>
 
+{quote_snippet("Consistent, quality workmanship and price point <span class=\"qs-highlight\">for decades</span>. There is no other competition that comes close.", "Glenn")}
+
 <section>
   <div class="wrap">
     <div class="section-head center">
@@ -1060,6 +1065,8 @@ services_body = f"""
   </div>
 </section>
 
+{quote_snippet("Ace cleaned the tile in my kitchen and two bathrooms, plus two area rugs and my basement carpeting and stairs. <span class=\"qs-highlight\">Everything looks great</span>, they were on time, and pricing was fair. Will use them again for my floor cleaning needs!", "Christopher")}
+
 <section style="background:var(--gray);">
   <div class="wrap">
     <div class="section-head center">
@@ -1116,6 +1123,8 @@ carpet_body = f"""
     </ul>
   </div>
 </section>
+
+{quote_snippet("Having a home with 2 young children our carpets were a mess. One call and they had us scheduled quickly, arrived early and <span class=\"qs-highlight\">had the job done within the time frame they gave</span>. We'll definitely be repeat customers.", "Dan")}
 
 <section style="background:var(--gray);">
   <div class="wrap">
@@ -1190,6 +1199,8 @@ uphol_body = f"""
     </ul>
   </div>
 </section>
+
+{quote_snippet("They are the best around! <span class=\"qs-highlight\">My carpets and my couches came out amazing</span>.", "Joe")}
 
 <section style="background:var(--gray);">
   <div class="wrap">
@@ -1280,7 +1291,7 @@ tile_body = f"""
   </div>
 </section>
 
-{quote_snippet("<span class=\"qs-highlight\">Very professional from start to finish</span>. Great price, and I'll be using their services again.", "Barbara D.")}
+{quote_snippet("On time and did a good job cleaning tile and grout for a <span class=\"qs-highlight\">reasonable price</span>.", "Mark")}
 
 <section class="section-red">
   <div class="wrap">
@@ -1586,7 +1597,7 @@ contact_body = f"""
       <div style="margin-top:32px; padding:22px; background:var(--red); border-radius:var(--radius); font-size:0.92rem; color:var(--white);">
         <strong>Fastest way to reach us:</strong> call {PHONE}. Most quotes take less than five minutes over the phone.
       </div>
-      {quote_snippet("<span class=\"qs-highlight\">Very professional from start to finish</span>. Great price, and I'll be using their services again.", "Barbara D.", inline=True)}
+      {quote_snippet("<span class=\"qs-highlight\">Easy to get a quote from the owner</span>. Good prices for multiple rooms to be cleaned.", "Kevin", inline=True)}
     </div>
     <div>
       <!-- Form posts to Formspree. Replace YOUR_FORM_ID with your real endpoint from formspree.io before launch. -->
