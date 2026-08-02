@@ -336,7 +336,6 @@ def service_showcase_card(href, category, headline, description, chips, photo_sr
     return f'''<div class="svc-showcase-card">
       <img src="{photo_src}" alt="{photo_alt}" class="svc-photo">
       <div class="svc-body">
-        <span class="svc-category">{category}</span>
         <h3>{headline}</h3>
         <p>{description}</p>
         <div class="svc-chip-row">
