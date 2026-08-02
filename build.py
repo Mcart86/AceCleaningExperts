@@ -352,7 +352,7 @@ def quote_snippet(text, name, stars=5, inline=False, photo=None, photo_alt=""):
     if photo and not inline:
         return f'''<div class="quote-card">
       <div class="qc-photo">
-        <img src="{photo}" alt="{photo_alt}">
+        <div class="placeholder-block" style="width:100%; height:100%; border-radius:0; border:none;">{icon('rug')}<span>Photo</span></div>
         <span class="qc-quote-mark">&ldquo;</span>
         <div class="qc-veteran-badge">{icon('shield')}<span>Veteran Owned &amp; Proud to Serve</span></div>
       </div>
