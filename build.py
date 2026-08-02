@@ -236,7 +236,7 @@ def stats_bar():
     <div class="stat"><div class="stat-num">10,000+</div><div class="stat-label">Homes Cleaned</div></div>
     <div class="stat"><div class="stat-num stat-num-bold">5&#9733;</div><div class="stat-label">Star Rating</div></div>
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Satisfaction Guaranteed</div></div>
-    <div class="stat"><div class="stat-num stat-icon">{icon('flag')}</div><div class="stat-label">Veteran Owned</div></div>
+    <div class="stat"><div class="stat-num stat-icon"><img src="/images/us-flag-v1.webp" alt="American flag" style="width:44px;height:auto;border-radius:2px;box-shadow:var(--shadow-sm);"></div><div class="stat-label">Veteran Owned</div></div>
   </div></div>"""
 
 def breadcrumb(trail):
@@ -1520,7 +1520,7 @@ commercial_body = f"""
     <div class="stat"><div class="stat-num">40+</div><div class="stat-label">Years in Business</div></div>
     <div class="stat"><div class="stat-num stat-num-bold">5&#9733;</div><div class="stat-label">Star Rating</div></div>
     <div class="stat"><div class="stat-num" style="font-size:clamp(1.4rem,3vw,2rem);">Insured</div><div class="stat-label">&amp; EPA-Certified</div></div>
-    <div class="stat"><div class="stat-num stat-icon">{icon('flag')}</div><div class="stat-label">Veteran Owned</div></div>
+    <div class="stat"><div class="stat-num stat-icon"><img src="/images/us-flag-v1.webp" alt="American flag" style="width:44px;height:auto;border-radius:2px;box-shadow:var(--shadow-sm);"></div><div class="stat-label">Veteran Owned</div></div>
   </div>
 </div>
 
