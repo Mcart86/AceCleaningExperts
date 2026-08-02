@@ -808,7 +808,28 @@ footer.site-footer a:hover { color: var(--white); }
 .areas-county-card.size-lg { grid-column: span 7; }
 .areas-county-card.size-md { grid-column: span 5; }
 .areas-county-card.size-sm { grid-column: span 6; }
-.areas-county-card.muted { background: var(--gray); box-shadow: none; }
+
+/* Color-coded variants: red = home turf, charcoal = secondary home county, tints = by-request extended counties */
+.areas-county-card.color-red { background: var(--red); border-color: var(--red); box-shadow: var(--shadow-red); }
+.areas-county-card.color-red h3 { color: var(--white); }
+.areas-county-card.color-red .acc-top svg { color: var(--white); }
+.areas-county-card.color-red .acc-towns a { color: rgba(255,255,255,0.92); }
+.areas-county-card.color-red .acc-towns a:hover { color: var(--white); text-decoration: underline; }
+.areas-county-card.color-red .acc-link { color: var(--white); }
+.areas-county-card.color-red > p { color: rgba(255,255,255,0.82); }
+
+.areas-county-card.color-charcoal { background: var(--charcoal); border-color: var(--charcoal); }
+.areas-county-card.color-charcoal h3 { color: var(--white); }
+.areas-county-card.color-charcoal .acc-top svg { color: var(--red); }
+.areas-county-card.color-charcoal .acc-towns a { color: rgba(255,255,255,0.9); }
+.areas-county-card.color-charcoal .acc-towns a:hover { color: var(--red); }
+.areas-county-card.color-charcoal .acc-link { color: var(--white); }
+.areas-county-card.color-charcoal > p { color: rgba(255,255,255,0.68); }
+
+.areas-county-card.color-tint { background: var(--red-tint); border-color: transparent; box-shadow: none; }
+.areas-county-card.color-tint .acc-link { color: var(--red-dark); }
+
+.areas-county-card.color-gray { background: var(--gray); border-color: transparent; box-shadow: none; }
 .acc-top { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
 .acc-top svg { color: var(--red); flex-shrink: 0; }
 .acc-top h3 { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; }

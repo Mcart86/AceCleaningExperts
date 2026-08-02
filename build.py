@@ -1422,7 +1422,7 @@ areas_body = f"""
       <p class="lede">Our home counties, and the counties we're expanding into as we take on more South Jersey shore-area work.</p>
     </div>
     <div class="areas-county-grid">
-      <div class="areas-county-card size-lg">
+      <div class="areas-county-card size-lg color-red">
         <div class="acc-top">{icon('home')}<h3>Gloucester County</h3></div>
         <p>Our home county &mdash; Sewell and Deptford Township are where Ace got its start in 1983, and it's still where we run the most jobs every week.</p>
         <ul class="acc-towns">
@@ -1430,7 +1430,7 @@ areas_body = f"""
         </ul>
         <a href="/service-areas/sewell-nj/" class="acc-link">View Local Page {icon('arrow')}</a>
       </div>
-      <div class="areas-county-card size-md">
+      <div class="areas-county-card size-md color-charcoal">
         <div class="acc-top">{icon('building')}<h3>Camden County</h3></div>
         <p>From Haddonfield to Cherry Hill, we're a regular sight in driveways and loading docks across Camden County.</p>
         <ul class="acc-towns">
@@ -1438,12 +1438,12 @@ areas_body = f"""
         </ul>
         <a href="/service-areas/haddonfield-nj/" class="acc-link">View Local Page {icon('arrow')}</a>
       </div>
-      <div class="areas-county-card size-sm muted">
+      <div class="areas-county-card size-sm color-tint">
         <div class="acc-top">{icon('leaf')}<h3>Atlantic County</h3></div>
         <p>We take on shore-area jobs by request throughout Atlantic County. Give us a call to confirm your town and get on the schedule.</p>
         <a href="tel:{PHONE_TEL}" class="acc-link">{icon('phone')} Call {PHONE}</a>
       </div>
-      <div class="areas-county-card size-sm muted">
+      <div class="areas-county-card size-sm color-gray">
         <div class="acc-top">{icon('flag')}<h3>Cape May County</h3></div>
         <p>Cape May County jobs are scheduled by request. Call ahead and we'll confirm we can make it out to you.</p>
         <a href="tel:{PHONE_TEL}" class="acc-link">{icon('phone')} Call {PHONE}</a>
