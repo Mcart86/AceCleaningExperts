@@ -411,7 +411,27 @@ footer.site-footer a:hover { color: var(--white); }
 .page-hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
 .page-hero-photo { position: relative; }
 .page-hero-photo img { width: 100%; height: 320px; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow-md); display: block; }
-.page-hero-photo .placeholder-block { height: 320px; width: 100%; }
+.hero-visual-panel {
+  position: relative; overflow: hidden; height: 320px; width: 100%;
+  border-radius: var(--radius); box-shadow: var(--shadow-md);
+  background: var(--red);
+}
+.hero-visual-panel::before {
+  content: ""; position: absolute; inset: 0; z-index: 0;
+  background-color: rgba(255,255,255,1); opacity: 0.07;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 20L20 0L40 20L20 40Z' fill='none' stroke='black' stroke-width='1'/%3E%3C/svg%3E") repeat;
+  -webkit-mask-size: 40px 40px;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 20L20 0L40 20L20 40Z' fill='none' stroke='black' stroke-width='1'/%3E%3C/svg%3E") repeat;
+  mask-size: 40px 40px;
+}
+.hero-visual-panel::after {
+  content: ""; position: absolute; z-index: 0; width: 260px; height: 260px;
+  right: -35px; bottom: -45px; transform: rotate(-8deg);
+  background-color: rgba(255,255,255,1); opacity: 0.16;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C12 2 4 10 4 15a5 5 0 0 0 8 4c-.3 1.5-1 2.5-2 3.3V23h4v-.7c-1-.8-1.7-1.8-2-3.3a5 5 0 0 0 8-4C20 10 12 2 12 2z'/%3E%3C/svg%3E") no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C12 2 4 10 4 15a5 5 0 0 0 8 4c-.3 1.5-1 2.5-2 3.3V23h4v-.7c-1-.8-1.7-1.8-2-3.3a5 5 0 0 0 8-4C20 10 12 2 12 2z'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+@media (max-width: 900px) { .hero-visual-panel { height: 240px; } .hero-visual-panel::after { width: 190px; height: 190px; } }
 .county-badge {
   display: inline-block; padding: 7px 16px; border-radius: 999px;
   font-size: 12.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
@@ -422,7 +442,7 @@ footer.site-footer a:hover { color: var(--white); }
 .county-badge-neutral { background: var(--gray-mid); color: var(--charcoal-70); }
 @media (max-width: 900px) {
   .page-hero-grid { grid-template-columns: 1fr; gap: 28px; }
-  .page-hero-photo img, .page-hero-photo .placeholder-block { height: 240px; }
+  .page-hero-photo img { height: 240px; }
 }
 .breadcrumb { font-size: 12.5px; font-weight: 600; color: var(--charcoal-50); margin-bottom: 18px; }
 .breadcrumb a:hover { color: var(--red); }

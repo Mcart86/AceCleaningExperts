@@ -539,7 +539,7 @@ def town_page(t):
         <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
       </div>
     </div>
-    <div class="page-hero-photo">{placeholder(f"Recent Job in {name}, {state}")}</div>
+    <div class="page-hero-photo hero-visual-panel"></div>
   </div>
 </section>
 
@@ -842,7 +842,7 @@ our_work_body = f"""
       <h1>Our Work</h1>
       <p class="lede">Real before-and-after results from carpet, tile and upholstery jobs across South Jersey &mdash; no stock photos, just our own work.</p>
     </div>
-    <div class="page-hero-photo">{placeholder("Featured Job Photo")}</div>
+    <div class="page-hero-photo hero-visual-panel"></div>
   </div>
 </section>
 
@@ -868,7 +868,7 @@ about_body = f"""
       <h1>Four Decades of Clean Carpets and Floors</h1>
       <p class="lede">Ace Cleaning Experts started the way most good local businesses do &mdash; with a family, a van, and a determination to do the job right. For over 40 years, we've helped South Jersey families and businesses restore carpets, tile, upholstery and grout &mdash; eliminating stubborn dirt, stains and odors along the way. We're still locally owned and operated: not a franchise, not a national call center, just the same commitment to honest pricing and work you can trust.</p>
     </div>
-    <div class="page-hero-photo">{placeholder("Ace Team Photo")}</div>
+    <div class="page-hero-photo hero-visual-panel"></div>
   </div>
 </section>
 
@@ -961,7 +961,7 @@ services_body = f"""
       <h1>Cleaning Services for Every Room and Every Business</h1>
       <p class="lede">Carpet, upholstery, tile, grout, hardwood and commercial floor care &mdash; all handled by the same local crew, with EPA-certified products and 40+ years of hands-on experience behind every job.</p>
     </div>
-    <div class="page-hero-photo">{placeholder("Services Photo")}</div>
+    <div class="page-hero-photo hero-visual-panel"></div>
   </div>
 </section>
 
@@ -1043,7 +1043,7 @@ carpet_body = f"""
         <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
       </div>
     </div>
-    <div class="page-hero-photo">{placeholder("Carpet Cleaning Photo")}</div>
+    <div class="page-hero-photo hero-visual-panel"></div>
   </div>
 </section>
 
@@ -1116,7 +1116,7 @@ uphol_body = f"""
         <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
       </div>
     </div>
-    <div class="page-hero-photo">{placeholder("Upholstery Cleaning Photo")}</div>
+    <div class="page-hero-photo hero-visual-panel"></div>
   </div>
 </section>
 
@@ -1189,7 +1189,7 @@ tile_body = f"""
         <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
       </div>
     </div>
-    <div class="page-hero-photo">{placeholder("Tile &amp; Grout Cleaning Photo")}</div>
+    <div class="page-hero-photo hero-visual-panel"></div>
   </div>
 </section>
 
@@ -1262,7 +1262,7 @@ commercial_body = f"""
         <a href="tel:{PHONE_TEL}" class="btn btn-outline">{icon('phone')} Call {PHONE}</a>
       </div>
     </div>
-    <div class="page-hero-photo">{placeholder("Commercial Job Photo")}</div>
+    <div class="page-hero-photo hero-visual-panel"></div>
   </div>
 </section>
 
@@ -1510,7 +1510,7 @@ contact_body = f"""
       <h1>Let's Get Your Space Looking Its Best</h1>
       <p class="lede">Call us directly for the fastest response, or send over a few details and we'll follow up to schedule your free quote.</p>
     </div>
-    <div class="page-hero-photo">{placeholder("Contact Photo")}</div>
+    <div class="page-hero-photo hero-visual-panel"></div>
   </div>
 </section>
 
