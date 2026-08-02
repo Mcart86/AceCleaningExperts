@@ -551,6 +551,11 @@ def town_page(t):
     name = t["name"]
     state = t.get("state", "NJ")
     locality = f'{t["county"]} &middot; {t["zip"]}' if t.get("zip") else t["county"]
+    county_variant = (
+        "county-badge-red" if t["county"] == "Gloucester County"
+        else "county-badge-charcoal" if t["county"] == "Camden County"
+        else "county-badge-neutral"
+    )
     pricing_line = (
         "wherever you're located in South Jersey" if state == "NJ"
         else f"wherever you're located in the {name} area"
@@ -560,7 +565,7 @@ def town_page(t):
   <div class="wrap page-hero-grid">
     <div class="page-hero-copy">
       {breadcrumb([("Home","/"),("Service Areas","/service-areas/"),(name, None)])}
-      <span class="eyebrow">{locality}</span>
+      <span class="county-badge {county_variant}">{locality}</span>
       <h1>Carpet &amp; Floor Cleaning in {name}, {state}</h1>
       <p class="lede">{t["about"]}</p>
       <div class="btn-row">
@@ -921,7 +926,7 @@ about_body = f"""
   </div>
 </section>
 
-<section>
+<section class="section-tint-red">
   <div class="wrap" style="max-width:820px; text-align:center;">
     <span class="eyebrow">What We Solve</span>
     <h2>Problems Big and Small, Solved Right</h2>
@@ -929,7 +934,7 @@ about_body = f"""
   </div>
 </section>
 
-<section style="background:var(--gray);">
+<section class="section-tint">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Credentials</span>
@@ -1108,7 +1113,7 @@ carpet_body = f"""
   </div>
 </section>
 
-<section>
+<section class="section-tint-red">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Common Questions</span>
@@ -1181,7 +1186,7 @@ uphol_body = f"""
   </div>
 </section>
 
-<section>
+<section class="section-tint-red">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Common Questions</span>
@@ -1254,7 +1259,7 @@ tile_body = f"""
   </div>
 </section>
 
-<section>
+<section class="section-tint-red">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Common Questions</span>
