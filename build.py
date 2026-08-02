@@ -845,7 +845,7 @@ home_body = f"""
         <a href="/service-areas/logan-township-nj/" class="area-pill">Logan Township</a>
         <a href="/service-areas/franklin-township-nj/" class="area-pill">Franklin Township</a>
       </div>
-      <p style="margin-top:26px;"><a href="/service-areas/" class="btn btn-outline">View All Service Areas</a></p>
+      <p style="margin-top:26px;"><a href="/service-areas/" class="btn btn-primary">View All Service Areas</a></p>
       {quote_snippet("I've used Ace for well over 10 years \u2014 not only to support a local company, but because <span class=\"qs-highlight\">they're always professional and always on-time</span>.", "David", inline=True)}
     </div>
     <img src="/images/south-jersey-badge-v2.webp" alt="Ace Cleaning Experts sponsors a local South Jersey youth sports team" class="area-badge">
