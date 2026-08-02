@@ -133,7 +133,7 @@ def footer():
     return f"""<footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <div class="footer-logo-badge"><img src="/images/ace-logo.jpg" alt="Ace Cleaning Experts logo" class="footer-logo-img"></div>
+      <div class="footer-logo-badge"><img loading="lazy" src="/images/ace-logo.jpg" alt="Ace Cleaning Experts logo" class="footer-logo-img"></div>
       <p>Veteran-owned, family-operated carpet and floor cleaning serving South Jersey for 40+ years.</p>
       <div class="foot-social">
         <a href="https://www.facebook.com/AceCleaningExperts/" aria-label="Facebook">{icon('facebook')}</a>
@@ -236,7 +236,7 @@ def stats_bar():
     <div class="stat"><div class="stat-num">10,000+</div><div class="stat-label">Homes Cleaned</div></div>
     <div class="stat"><div class="stat-num stat-num-bold">5&#9733;</div><div class="stat-label">Star Rating</div></div>
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Satisfaction Guaranteed</div></div>
-    <div class="stat"><div class="stat-num stat-icon"><img src="/images/us-flag-v1.webp" alt="American flag" style="width:44px;height:auto;border-radius:2px;box-shadow:var(--shadow-sm);"></div><div class="stat-label">Veteran Owned</div></div>
+    <div class="stat"><div class="stat-num stat-icon"><img loading="lazy" src="/images/us-flag-v1.webp" alt="American flag" style="width:44px;height:auto;border-radius:2px;box-shadow:var(--shadow-sm);"></div><div class="stat-label">Veteran Owned</div></div>
   </div></div>"""
 
 def breadcrumb(trail):
@@ -335,8 +335,8 @@ def mini_ba_slider(before_src, after_src, before_alt, after_alt, placeholder=Fal
     if placeholder:
         return f'<div class="ba-slider ba-slider-mini"><div class="placeholder-block" style="width:100%; height:100%; border:none; border-radius:0;">{icon("rug")}<span>Before &amp; After</span></div></div>'
     return f'''<div class="ba-slider ba-slider-mini">
-      <img src="{before_src}" alt="{before_alt}" class="ba-before">
-      <img src="{after_src}" alt="{after_alt}" class="ba-after">
+      <img loading="lazy" src="{before_src}" alt="{before_alt}" class="ba-before">
+      <img loading="lazy" src="{after_src}" alt="{after_alt}" class="ba-after">
       <span class="ba-tag before-tag">Before</span>
       <span class="ba-tag after-tag">After</span>
       <div class="ba-handle"></div>
@@ -346,7 +346,7 @@ def mini_ba_slider(before_src, after_src, before_alt, after_alt, placeholder=Fal
 def service_showcase_card(href, category, headline, description, chips, photo_src, photo_alt):
     badge_cls = "svc-category-charcoal" if category == "Commercial Service" else "svc-category-red"
     return f'''<div class="svc-showcase-card">
-      <img src="{photo_src}" alt="{photo_alt}" class="svc-photo">
+      <img loading="lazy" src="{photo_src}" alt="{photo_alt}" class="svc-photo">
       <div class="svc-body">
         <span class="svc-category {badge_cls}">{category}</span>
         <h3>{headline}</h3>
@@ -369,7 +369,7 @@ def gallery_grid(images=GALLERY_IMAGES):
   </div>
   <div class="lightbox" id="lightbox" hidden>
     <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
-    <img src="" alt="" id="lightboxImg">
+    <img loading="lazy" src="" alt="" id="lightboxImg">
   </div>'''
 
 def quote_snippet(text, name, stars=5, inline=False, photo=None, photo_alt="", color="charcoal"):
@@ -779,8 +779,8 @@ home_body = f"""
     </div>
     <div class="ba-intro-slider">
       <div class="ba-slider">
-        <img src="/images/carpet-before-v2.webp" alt="Dirty, stained carpet before Ace Cleaning Experts deep clean" class="ba-before">
-        <img src="/images/carpet-after-v2.webp" alt="Same carpet after Ace Cleaning Experts deep clean, looking like new" class="ba-after">
+        <img loading="lazy" src="/images/carpet-before-v2.webp" alt="Dirty, stained carpet before Ace Cleaning Experts deep clean" class="ba-before">
+        <img loading="lazy" src="/images/carpet-after-v2.webp" alt="Same carpet after Ace Cleaning Experts deep clean, looking like new" class="ba-after">
         <span class="ba-tag before-tag">Before</span>
         <span class="ba-tag after-tag">After</span>
         <div class="ba-handle"></div>
@@ -792,8 +792,8 @@ home_body = f"""
     <div class="ba-mini-grid">
       <div class="ba-mini">
         <div class="ba-slider ba-slider-mini">
-          <img src="/images/carpet-mini-before.webp" alt="Dirty carpet before Ace Cleaning Experts cleaning" class="ba-before">
-          <img src="/images/carpet-mini-after.webp" alt="Same carpet after Ace Cleaning Experts cleaning" class="ba-after">
+          <img loading="lazy" src="/images/carpet-mini-before.webp" alt="Dirty carpet before Ace Cleaning Experts cleaning" class="ba-before">
+          <img loading="lazy" src="/images/carpet-mini-after.webp" alt="Same carpet after Ace Cleaning Experts cleaning" class="ba-after">
           <span class="ba-tag before-tag">Before</span>
           <span class="ba-tag after-tag">After</span>
           <div class="ba-handle"></div>
@@ -803,8 +803,8 @@ home_body = f"""
       </div>
       <div class="ba-mini">
         <div class="ba-slider ba-slider-mini">
-          <img src="/images/tile-mini-before.webp" alt="Dirty, stained grout before Ace Cleaning Experts tile cleaning" class="ba-before">
-          <img src="/images/tile-mini-after.webp" alt="Same tile floor after Ace Cleaning Experts tile cleaning, grout restored" class="ba-after">
+          <img loading="lazy" src="/images/tile-mini-before.webp" alt="Dirty, stained grout before Ace Cleaning Experts tile cleaning" class="ba-before">
+          <img loading="lazy" src="/images/tile-mini-after.webp" alt="Same tile floor after Ace Cleaning Experts tile cleaning, grout restored" class="ba-after">
           <span class="ba-tag before-tag">Before</span>
           <span class="ba-tag after-tag">After</span>
           <div class="ba-handle"></div>
@@ -814,8 +814,8 @@ home_body = f"""
       </div>
       <div class="ba-mini">
         <div class="ba-slider ba-slider-mini">
-          <img src="/images/upholstery-mini-before-v2.webp" alt="Stained upholstery before Ace Cleaning Experts cleaning" class="ba-before">
-          <img src="/images/upholstery-mini-after-v2.webp" alt="Same upholstery after Ace Cleaning Experts cleaning" class="ba-after">
+          <img loading="lazy" src="/images/upholstery-mini-before-v2.webp" alt="Stained upholstery before Ace Cleaning Experts cleaning" class="ba-before">
+          <img loading="lazy" src="/images/upholstery-mini-after-v2.webp" alt="Same upholstery after Ace Cleaning Experts cleaning" class="ba-after">
           <span class="ba-tag before-tag">Before</span>
           <span class="ba-tag after-tag">After</span>
           <div class="ba-handle"></div>
@@ -832,7 +832,7 @@ home_body = f"""
 <section id="why-ace">
   <div class="wrap why-row">
     <div class="card-fan">
-      <img src="/images/why-ace-team.webp" alt="Ace Cleaning Experts owner and family in front of the company van" class="why-ace-photo">
+      <img loading="lazy" src="/images/why-ace-team.webp" alt="Ace Cleaning Experts owner and family in front of the company van" class="why-ace-photo">
     </div>
     <div>
       <span class="eyebrow">Why South Jersey Chooses Ace</span>
@@ -903,7 +903,7 @@ home_body = f"""
       <p style="margin:22px 0 0;"><a href="/about-us/" class="btn btn-outline">Learn More About Us {icon('arrow')}</a></p>
     </div>
     <div class="card-fan">
-      <img src="/images/meet-ace-team-v2.webp" alt="The Ace Cleaning Experts family washing the company van together" class="meet-ace-photo">
+      <img loading="lazy" src="/images/meet-ace-team-v2.webp" alt="The Ace Cleaning Experts family washing the company van together" class="meet-ace-photo">
     </div>
   </div>
 </section>
@@ -917,7 +917,7 @@ home_body = f"""
       <p style="margin-top:26px;"><a href="/service-areas/" class="btn btn-primary">View All Service Areas</a></p>
     </div>
     <div class="card-fan">
-      <img src="/images/team-sponsor-jersey-v1.webp" alt="Ace Cleaning Experts logo on the back of a sponsored local youth baseball team jersey" class="area-badge">
+      <img loading="lazy" src="/images/team-sponsor-jersey-v1.webp" alt="Ace Cleaning Experts logo on the back of a sponsored local youth baseball team jersey" class="area-badge">
     </div>
   </div>
 </section>
@@ -995,18 +995,18 @@ about_body = f"""
   <div class="wrap">
     <div class="feature-row">
       <div class="feature-copy">
-        <img src="/images/us-flag-v1.webp" alt="American flag" style="width:60px; height:auto; margin-bottom:16px; border-radius:2px; box-shadow:var(--shadow-sm);">
+        <img loading="lazy" src="/images/us-flag-v1.webp" alt="American flag" style="width:60px; height:auto; margin-bottom:16px; border-radius:2px; box-shadow:var(--shadow-sm);">
         <h3>Owned by Jeff DeNobile, U.S. Marine Corps Veteran</h3>
         <p class="lede" style="font-size:1.05rem;">Ace Cleaning Experts is owned and run by Jeff DeNobile, a U.S. Marine Corps veteran who brought that same discipline and attention to detail into the business. We're proud to be veteran-owned and family-operated, serving the same South Jersey communities we call home. The person who quotes your job is accountable for the crew that shows up to do it &mdash; no corporate hand-offs, no surprise fees.</p>
       </div>
-      <div class="feature-visual"><img class="card-edge" src="/images/veteran-owned.webp" alt="Jeff DeNobile, owner of Ace Cleaning Experts, in U.S. Marine Corps dress uniform" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);"></div>
+      <div class="feature-visual"><img loading="lazy" class="card-edge" src="/images/veteran-owned.webp" alt="Jeff DeNobile, owner of Ace Cleaning Experts, in U.S. Marine Corps dress uniform" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);"></div>
     </div>
     <div class="feature-row reverse">
       <div class="feature-copy">
         <h3>The Same Care We'd Want in Our Own Homes</h3>
         <p class="lede" style="font-size:1.05rem;">Every technician is trained on EPA-certified cleaning agents and modern extraction equipment, and every job wraps up with a walkthrough so you know exactly what was done.</p>
       </div>
-      <div class="feature-visual"><img class="card-edge" src="/images/technician-care.webp" alt="Ace Cleaning Experts technicians at work cleaning carpets" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);"></div>
+      <div class="feature-visual"><img loading="lazy" class="card-edge" src="/images/technician-care.webp" alt="Ace Cleaning Experts technicians at work cleaning carpets" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);"></div>
     </div>
   </div>
 </section>
@@ -1058,8 +1058,8 @@ about_body = f"""
       <p class="lede" style="margin:0 auto;">Every job runs through a HydraMaster Titan truck-mounted extraction system &mdash; the same commercial-grade equipment top cleaning companies rely on, delivering higher heat, stronger suction, and faster dry times than rental machines or portable units.</p>
     </div>
     <div class="grid-2" style="gap:24px; margin-top:36px;">
-      <img src="/images/equipment-titan-575-v1.webp" alt="HydraMaster Titan 575 truck-mounted carpet cleaning system in the Ace Cleaning Experts van" style="width:100%; border-radius:var(--radius); box-shadow:var(--shadow-sm); aspect-ratio:3/4; object-fit:cover;">
-      <img src="/images/equipment-02.webp" alt="Professional cleaning hoses and equipment organized in the Ace Cleaning Experts van" style="width:100%; border-radius:var(--radius); box-shadow:var(--shadow-sm); aspect-ratio:3/4; object-fit:cover;">
+      <img loading="lazy" src="/images/equipment-titan-575-v1.webp" alt="HydraMaster Titan 575 truck-mounted carpet cleaning system in the Ace Cleaning Experts van" style="width:100%; border-radius:var(--radius); box-shadow:var(--shadow-sm); aspect-ratio:3/4; object-fit:cover;">
+      <img loading="lazy" src="/images/equipment-02.webp" alt="Professional cleaning hoses and equipment organized in the Ace Cleaning Experts van" style="width:100%; border-radius:var(--radius); box-shadow:var(--shadow-sm); aspect-ratio:3/4; object-fit:cover;">
     </div>
   </div>
 </section>
@@ -1096,7 +1096,7 @@ services_body = f"""
     </div>
     <div class="grid-4">
       <div class="svc-card">
-        <img src="/images/carpet-service.webp" alt="Clean carpet after Ace Cleaning Experts service" class="svc-photo">
+        <img loading="lazy" src="/images/carpet-service.webp" alt="Clean carpet after Ace Cleaning Experts service" class="svc-photo">
         <div class="svc-body">
           <div class="icon">{icon('rug')}</div>
           <h3>Carpet Cleaning</h3>
@@ -1105,7 +1105,7 @@ services_body = f"""
         </div>
       </div>
       <div class="svc-card">
-        <img src="/images/upholstery-gallery-02.webp" alt="Recliner cushion before and after Ace Cleaning Experts upholstery cleaning" class="svc-photo">
+        <img loading="lazy" src="/images/upholstery-gallery-02.webp" alt="Recliner cushion before and after Ace Cleaning Experts upholstery cleaning" class="svc-photo">
         <div class="svc-body">
           <div class="icon">{icon('sofa')}</div>
           <h3>Upholstery Cleaning</h3>
@@ -1114,7 +1114,7 @@ services_body = f"""
         </div>
       </div>
       <div class="svc-card">
-        <img src="/images/tile-service.webp" alt="Mosaic tile floor cleaned by Ace Cleaning Experts, dirty grout restored to clean" class="svc-photo">
+        <img loading="lazy" src="/images/tile-service.webp" alt="Mosaic tile floor cleaned by Ace Cleaning Experts, dirty grout restored to clean" class="svc-photo">
         <div class="svc-body">
           <div class="icon">{icon('tile')}</div>
           <h3>Tile, Grout &amp; Hardwood</h3>
@@ -1123,7 +1123,7 @@ services_body = f"""
         </div>
       </div>
       <div class="svc-card">
-        <img src="/images/commercial-service.webp" alt="Area rug being deep cleaned by Ace Cleaning Experts" class="svc-photo">
+        <img loading="lazy" src="/images/commercial-service.webp" alt="Area rug being deep cleaned by Ace Cleaning Experts" class="svc-photo">
         <div class="svc-body">
           <div class="icon">{icon('building')}</div>
           <h3>Commercial Floor Care</h3>
@@ -1480,7 +1480,7 @@ commercial_body = f"""
           <li>{icon('spade')} One point of contact for recurring service</li>
         </ul>
       </div>
-      <div class="feature-visual"><img class="card-edge" src="/images/commercial-service.webp" alt="Commercial floor cleaning by Ace Cleaning Experts" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);"></div>
+      <div class="feature-visual"><img loading="lazy" class="card-edge" src="/images/commercial-service.webp" alt="Commercial floor cleaning by Ace Cleaning Experts" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);"></div>
     </div>
   </div>
 </section>
@@ -1520,7 +1520,7 @@ commercial_body = f"""
     <div class="stat"><div class="stat-num">40+</div><div class="stat-label">Years in Business</div></div>
     <div class="stat"><div class="stat-num stat-num-bold">5&#9733;</div><div class="stat-label">Star Rating</div></div>
     <div class="stat"><div class="stat-num" style="font-size:clamp(1.4rem,3vw,2rem);">Insured</div><div class="stat-label">&amp; EPA-Certified</div></div>
-    <div class="stat"><div class="stat-num stat-icon"><img src="/images/us-flag-v1.webp" alt="American flag" style="width:44px;height:auto;border-radius:2px;box-shadow:var(--shadow-sm);"></div><div class="stat-label">Veteran Owned</div></div>
+    <div class="stat"><div class="stat-num stat-icon"><img loading="lazy" src="/images/us-flag-v1.webp" alt="American flag" style="width:44px;height:auto;border-radius:2px;box-shadow:var(--shadow-sm);"></div><div class="stat-label">Veteran Owned</div></div>
   </div>
 </div>
 
@@ -1701,7 +1701,7 @@ areas_body = f"""
       <p class="areas-bridge-note">Give us a call &mdash; we're happy to check!</p>
     </div>
     <div class="areas-bridge-art">
-      <img src="/images/philly-skyline-support-v1.webp" alt="Philadelphia skyline along the Schuylkill River">
+      <img loading="lazy" src="/images/philly-skyline-support-v1.webp" alt="Philadelphia skyline along the Schuylkill River">
     </div>
   </div>
 </section>
