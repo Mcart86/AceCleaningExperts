@@ -224,7 +224,7 @@ def trust_strip():
     return f'<div class="trust-strip"><div class="wrap">\n    {lis}\n  </div></div>'
 
 def stats_bar():
-    return """<div class="stats-bar"><div class="wrap stats-grid stats-grid-4">
+    return """<div class="stats-float-card"><div class="stats-grid stats-grid-4">
     <div class="stat"><div class="stat-num">40+</div><div class="stat-label">Years Experience</div></div>
     <div class="stat"><div class="stat-num">10,000+</div><div class="stat-label">Homes Cleaned</div></div>
     <div class="stat"><div class="stat-num stat-num-bold">5&#9733;</div><div class="stat-label">Star Rating</div></div>
@@ -653,8 +653,8 @@ print("build.py scaffold loaded")
 
 # ============================================================== HOME ====
 home_body = f"""
-<section class="hero">
-  <div class="wrap">
+<section class="hero hero-split">
+  <div class="wrap hero-split-wrap">
     <div class="hero-copy">
       <span class="eyebrow">South Jersey's Carpet, Tile &amp; Upholstery Cleaning Experts</span>
       <h1>Your Family's Home Deserves a Family You Can Trust</h1>
@@ -669,26 +669,34 @@ home_body = f"""
         <li>{icon('building')} Residential &amp; Commercial</li>
       </ul>
     </div>
-    <img src="/images/hero-family.jpg" alt="Three generations of the Ace Cleaning Experts family" class="hero-visual hero-photo">
+    <div class="hero-image-wrap">
+      <img src="/images/hero-family.jpg" alt="Three generations of the Ace Cleaning Experts family" class="hero-visual hero-photo">
+    </div>
   </div>
 </section>
 
 {stats_bar()}
 
-<section id="before-after">
-  <div class="wrap">
-    <div class="section-head center">
+<section id="before-after" class="ba-section">
+  <div class="wrap ba-intro-row">
+    <div class="ba-intro-copy">
       <span class="eyebrow">The Proof</span>
-      <h2>See the Ace Difference</h2>
+      <h2>Real Results. Every Time.</h2>
+      <p class="lede">We don't just clean &mdash; we transform your floors. See the difference for yourself.</p>
+      <a href="/services/" class="btn btn-primary">View More Results {icon('arrow')}</a>
     </div>
-    <div class="ba-slider">
-      <img src="/images/carpet-before-v2.webp" alt="Dirty, stained carpet before Ace Cleaning Experts deep clean" class="ba-before">
-      <img src="/images/carpet-after-v2.webp" alt="Same carpet after Ace Cleaning Experts deep clean, looking like new" class="ba-after">
-      <span class="ba-tag before-tag">Before</span>
-      <span class="ba-tag after-tag">After</span>
-      <div class="ba-handle"></div>
-      <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Drag to compare before and after">
+    <div class="ba-intro-slider">
+      <div class="ba-slider">
+        <img src="/images/carpet-before-v2.webp" alt="Dirty, stained carpet before Ace Cleaning Experts deep clean" class="ba-before">
+        <img src="/images/carpet-after-v2.webp" alt="Same carpet after Ace Cleaning Experts deep clean, looking like new" class="ba-after">
+        <span class="ba-tag before-tag">Before</span>
+        <span class="ba-tag after-tag">After</span>
+        <div class="ba-handle"></div>
+        <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Drag to compare before and after">
+      </div>
     </div>
+  </div>
+  <div class="wrap">
     <div class="ba-mini-grid">
       <div class="ba-mini">
         <div class="ba-slider ba-slider-mini">
@@ -732,16 +740,17 @@ home_body = f"""
   <div class="wrap why-row">
     <img src="/images/why-ace-team.webp" alt="Ace Cleaning Experts owner and family in front of the company van" class="why-ace-photo">
     <div>
-      <span class="eyebrow">Why Ace</span>
-      <h2>Why South Jersey Chooses Ace</h2>
+      <span class="eyebrow">Why South Jersey Chooses Ace</span>
+      <h2>Experience. Integrity. Results You Can Count On.</h2>
       <p class="lede" style="font-size:1.05rem;">We've been doing this for 40+ years &mdash; not because it's trendy, but because South Jersey homes and businesses keep calling us back.</p>
-      <ul class="benefit-list">
-        <li><span class="b-icon">{icon('shield')}</span><span class="b-text">Veteran-Owned</span></li>
-        <li><span class="b-icon">{icon('home')}</span><span class="b-text">Family-Owned &amp; Operated</span></li>
-        <li><span class="b-icon">{icon('droplet')}</span><span class="b-text">Professional-Grade Equipment</span></li>
-        <li><span class="b-icon">{icon('star')}</span><span class="b-text">Experienced, Trained Technicians</span></li>
-        <li><span class="b-icon">{icon('check')}</span><span class="b-text">Satisfaction Guaranteed</span></li>
-      </ul>
+      <div class="benefit-grid">
+        <div class="benefit-item"><span class="b-icon">{icon('shield')}</span><div><strong>Veteran-Owned</strong><span>Proudly served our country. Now proudly serving you.</span></div></div>
+        <div class="benefit-item"><span class="b-icon">{icon('users')}</span><div><strong>Experienced Technicians</strong><span>Trained and experienced in the latest techniques.</span></div></div>
+        <div class="benefit-item"><span class="b-icon">{icon('home')}</span><div><strong>Family-Owned &amp; Operated</strong><span>Local, honest and committed to our community.</span></div></div>
+        <div class="benefit-item"><span class="b-icon">{icon('check')}</span><div><strong>Satisfaction Guaranteed</strong><span>If you're not happy, we'll make it right.</span></div></div>
+        <div class="benefit-item"><span class="b-icon">{icon('droplet')}</span><div><strong>Professional Equipment</strong><span>Truck-mounted systems for a deeper clean.</span></div></div>
+        <div class="benefit-item"><span class="b-icon">{icon('star')}</span><div><strong>40+ Years Experience</strong><span>Serving South Jersey since 1983.</span></div></div>
+      </div>
       {quote_snippet("I've been using Ace Cleaning Experts <span class=\"qs-highlight\">for over 20 years</span>, and they consistently do a fantastic job. Professional, efficient, reasonably priced, and incredibly courteous.", "Karen", inline=True)}
     </div>
   </div>

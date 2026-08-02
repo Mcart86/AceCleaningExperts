@@ -511,9 +511,9 @@ footer.site-footer a:hover { color: var(--white); }
 @media (max-width: 700px) { .stats-grid { grid-template-columns: 1fr 1fr; gap: 32px 20px; } }
 .stat-num { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.2rem, 4.5vw, 3.2rem); color: var(--red); line-height: 1; margin-bottom: 10px; }
 .stat-num-bold { font-weight: 900; }
-.stat-label { font-size: 0.9rem; font-weight: 600; color: rgba(255, 255, 255, 0.72); }
-.stat-placeholder .stat-num { color: rgba(255, 255, 255, 0.35); border: 1px dashed rgba(255, 255, 255, 0.35); border-radius: var(--radius-sm); padding: 4px 14px; display: inline-block; font-size: clamp(1.2rem, 2.4vw, 1.5rem); }
-.stat-placeholder .stat-label { font-style: italic; color: rgba(255, 255, 255, 0.5); }
+.stat-label { font-size: 0.9rem; font-weight: 600; color: var(--charcoal-70); }
+.stat-placeholder .stat-num { color: var(--charcoal-30); border: 1px dashed var(--charcoal-30); border-radius: var(--radius-sm); padding: 4px 14px; display: inline-block; font-size: clamp(1.2rem, 2.4vw, 1.5rem); }
+.stat-placeholder .stat-label { font-style: italic; color: var(--charcoal-50); }
 
 /* ---------- Testimonial carousel ---------- */
 .testi-carousel { display: flex; align-items: center; gap: 20px; max-width: 760px; margin: 0 auto; }
@@ -672,3 +672,46 @@ footer.site-footer a:hover { color: var(--white); }
 .trust-badge-box strong { display: block; font-size: 0.98rem; }
 .trust-badge-box .sub { font-size: 0.86rem; color: var(--charcoal-50); margin-top: 4px; }
 @media (max-width: 700px) { .trust-badge-box { flex-direction: column; text-align: center; } }
+
+/* ---------- Hero: split layout override ---------- */
+.hero.hero-split { padding: 72px 0 90px; }
+.hero-split .hero-split-wrap { flex-direction: row; align-items: center; gap: 60px; text-align: left; }
+.hero-split .hero-copy { max-width: 520px; text-align: left; }
+.hero-split .hero-copy .btn-row { justify-content: flex-start; }
+.hero-split .hero-trust { justify-content: flex-start; }
+.hero-image-wrap { flex: 1 1 50%; position: relative; z-index: 1; }
+.hero-image-wrap .hero-photo { border-radius: var(--radius); box-shadow: var(--shadow-md); aspect-ratio: 4/3; }
+@media (max-width: 960px) {
+  .hero-split .hero-split-wrap { flex-direction: column; text-align: center; gap: 40px; }
+  .hero-split .hero-copy { max-width: 100%; text-align: center; }
+  .hero-split .hero-copy .btn-row, .hero-split .hero-trust { justify-content: center; }
+}
+
+/* ---------- Floating stats card (overlaps hero/next-section boundary) ---------- */
+.stats-float-card {
+  position: relative;
+  z-index: 6;
+  max-width: 1100px;
+  margin: -64px auto 0;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 32px 24px;
+}
+@media (max-width: 900px) { .stats-float-card { margin-top: -40px; padding: 24px 16px; } }
+@media (max-width: 600px) { .stats-float-card { margin: 0 16px; } }
+
+/* ---------- Before/After: asymmetric intro row ---------- */
+.ba-section { padding-top: 96px; }
+.ba-intro-row { display: grid; grid-template-columns: 0.75fr 1.25fr; gap: 48px; align-items: center; margin-bottom: 40px; }
+.ba-intro-copy .btn-row, .ba-intro-copy { text-align: left; }
+.ba-intro-copy .btn { margin-top: 8px; }
+@media (max-width: 900px) { .ba-intro-row { grid-template-columns: 1fr; gap: 24px; text-align: center; } }
+
+/* ---------- Why Ace: 2-column benefit grid (replaces vertical list) ---------- */
+.benefit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; margin: 26px 0 30px; }
+.benefit-item { display: flex; align-items: flex-start; gap: 12px; }
+.benefit-item .b-icon { color: var(--red); flex-shrink: 0; margin-top: 2px; }
+.benefit-item strong { display: block; font-size: 0.92rem; margin-bottom: 2px; }
+.benefit-item span { font-size: 0.82rem; color: var(--charcoal-50); line-height: 1.4; }
+@media (max-width: 600px) { .benefit-grid { grid-template-columns: 1fr; } }
