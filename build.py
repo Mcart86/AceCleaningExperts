@@ -332,19 +332,15 @@ def mini_ba_slider(before_src, after_src, before_alt, after_alt, placeholder=Fal
       <input type="range" min="0" max="100" value="50" class="ba-range" aria-label="Drag to compare before and after">
     </div>'''
 
-def service_showcase_card(href, category, headline, description, chips, before_src=None, after_src=None, before_alt="", after_alt="", placeholder=False):
-    photo = mini_ba_slider(before_src, after_src, before_alt, after_alt, placeholder=placeholder)
-    chip_html = "\n          ".join(
-        f'<div class="svc-chip">{icon(ic)}<span>{label}</span></div>' for ic, label in chips
-    )
+def service_showcase_card(href, category, headline, description, chips, photo_src, photo_alt):
     return f'''<div class="svc-showcase-card">
-      {photo}
+      <img src="{photo_src}" alt="{photo_alt}" class="svc-photo">
       <div class="svc-body">
         <span class="svc-category">{category}</span>
         <h3>{headline}</h3>
         <p>{description}</p>
         <div class="svc-chip-row">
-          {chip_html}
+          {"".join(f'<div class="svc-chip">{icon(ic)}<span>{label}</span></div>' for ic, label in chips)}
         </div>
         <a href="{href}" class="svc-explore">Explore Service <span class="explore-arrow">{icon('arrow')}</span></a>
       </div>
@@ -764,28 +760,25 @@ home_body = f"""
           "/carpet-cleaning-service/", "Residential Service", "Revive Your Carpets",
           "Deep steam extraction removes embedded dirt, allergens and stubborn stains for a fresher, healthier home.",
           [("paw", "Safe for Kids &amp; Pets"), ("clock", "Fast Dry Time"), ("leaf", "Eco Friendly")],
-          before_src="/images/carpet-before-v2.webp", after_src="/images/carpet-after-v2.webp",
-          before_alt="Dirty carpet before Ace Cleaning Experts cleaning", after_alt="Clean carpet after Ace Cleaning Experts cleaning",
+          "/images/carpet-service.webp", "Clean carpet after Ace Cleaning Experts service",
       )}
       {service_showcase_card(
           "/tile-grout-cleaning/", "Residential Service", "Restore Tile &amp; Grout",
           "Grout scrubbed and sealed to remove years of buildup and bring back the original beauty of your tile.",
           [("sparkle", "Deep Cleaning"), ("shield", "Protects Longer"), ("check", "No Harsh Chemicals")],
-          before_src="/images/tile-mini-before.webp", after_src="/images/tile-mini-after.webp",
-          before_alt="Dirty, stained grout before Ace Cleaning Experts tile cleaning", after_alt="Clean tile floor after Ace Cleaning Experts tile cleaning",
+          "/images/tile-service.webp", "Mosaic tile floor cleaned by Ace Cleaning Experts, dirty grout restored to clean",
       )}
       {service_showcase_card(
           "/upholstery-cleaning/", "Residential Service", "Refresh Your Furniture",
           "Fabric-safe cleaning lifts stains and odors without soaking, over-wetting or fading your furniture.",
           [("steam", "Odor Removal"), ("shield", "Stain Protection"), ("sofa", "Extends Life")],
-          before_src="/images/upholstery-mini-before-v2.webp", after_src="/images/upholstery-mini-after-v2.webp",
-          before_alt="Stained upholstery before Ace Cleaning Experts cleaning", after_alt="Clean upholstery after Ace Cleaning Experts cleaning",
+          "/images/upholstery-gallery-02.webp", "Recliner cushion before and after Ace Cleaning Experts upholstery cleaning",
       )}
       {service_showcase_card(
           "/commercial-carpet-cleaning/", "Commercial Service", "Keep Your Business Looking Its Best",
           "Flexible scheduling that works around your business hours, not ours.",
           [("building", "Flexible Scheduling"), ("shield", "Trusted by Businesses"), ("calendar", "Custom Solutions")],
-          placeholder=True,
+          "/images/commercial-service.webp", "Area rug being deep cleaned by Ace Cleaning Experts",
       )}
     </div>
     <div class="trust-badge-box">
