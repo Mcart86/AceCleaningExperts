@@ -366,8 +366,10 @@ def gallery_grid(images=GALLERY_IMAGES):
     <img src="" alt="" id="lightboxImg">
   </div>'''
 
-def quote_snippet(text, name, stars=5, inline=False, photo=None, photo_alt=""):
+def quote_snippet(text, name, stars=5, inline=False, photo=None, photo_alt="", color="charcoal"):
     cls = "quote-strip-card inline" if inline else "quote-strip-card"
+    if color == "red":
+        cls += " color-red"
     return f'''<div class="{cls}">
       <blockquote>&ldquo;{text}&rdquo;</blockquote>
       <div class="quote-strip-attrib">&mdash; {name}, Google Review</div>
@@ -569,7 +571,7 @@ def town_page(t):
   </div>
 </section>
 
-{quote_snippet(review_text, review_name)}
+{quote_snippet(review_text, review_name, color=("red" if hero_variant == " dark" else "charcoal"))}
 
 <section>
   <div class="wrap">
@@ -1018,7 +1020,7 @@ services_body = f"""
   </div>
 </section>
 
-{quote_snippet("Ace cleaned the tile in my kitchen and two bathrooms, plus two area rugs and my basement carpeting and stairs. <span class=\"qs-highlight\">Everything looks great</span>, they were on time, and pricing was fair. Will use them again for my floor cleaning needs!", "Christopher")}
+{quote_snippet("Ace cleaned the tile in my kitchen and two bathrooms, plus two area rugs and my basement carpeting and stairs. <span class=\"qs-highlight\">Everything looks great</span>, they were on time, and pricing was fair. Will use them again for my floor cleaning needs!", "Christopher", color="red")}
 
 <section>
   <div class="wrap">
@@ -1175,7 +1177,7 @@ uphol_body = f"""
   </div>
 </section>
 
-{quote_snippet("By far the best carpet cleaning and upholstery cleaning company in the area. They're extremely professional and <span class=\"qs-highlight\">pay attention to the finest details</span>. Quick to get back to you regarding appointments. I highly recommend Ace.", "Andrea")}
+{quote_snippet("By far the best carpet cleaning and upholstery cleaning company in the area. They're extremely professional and <span class=\"qs-highlight\">pay attention to the finest details</span>. Quick to get back to you regarding appointments. I highly recommend Ace.", "Andrea", color="red")}
 
 <section>
   <div class="wrap">
@@ -1323,7 +1325,7 @@ commercial_body = f"""
   </div>
 </section>
 
-<div class="quote-strip">
+<div class="quote-strip color-red">
   <div class="wrap">
     <blockquote>&ldquo;Ace handled our office carpets on a Saturday so Monday morning nobody knew we'd even been closed. Same crew every time, no surprises on the invoice.&rdquo;</blockquote>
     <div class="quote-strip-attrib">&mdash; South Jersey Office Manager, Google Review</div>
@@ -1574,7 +1576,7 @@ contact_body = f"""
   </div>
 </section>
 
-{quote_snippet("<span class=\"qs-highlight\">Easy to get a quote from the owner</span>. Good prices for multiple rooms to be cleaned.", "Kevin")}
+{quote_snippet("<span class=\"qs-highlight\">Easy to get a quote from the owner</span>. Good prices for multiple rooms to be cleaned.", "Kevin", color="red")}
 
 <section>
   <div class="wrap" style="display:grid; grid-template-columns: 0.9fr 1.1fr; gap:60px; align-items:flex-start;">
