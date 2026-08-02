@@ -856,7 +856,7 @@ footer.site-footer a:hover { color: var(--white); }
 .areas-hero-photo img { border-radius: var(--radius); box-shadow: var(--shadow-md); width: 100%; height: 460px; object-fit: cover; }
 .card-edge { box-shadow: 0 0 0 3px var(--white), 0 0 0 6px var(--red), var(--shadow-md) !important; }
 
-.card-fan { position: relative; }
+.card-fan { position: relative; z-index: 0; }
 .card-fan::before, .card-fan::after {
   content: ""; position: absolute; inset: 0; z-index: -1;
   border-radius: var(--radius); box-shadow: var(--shadow-sm);
