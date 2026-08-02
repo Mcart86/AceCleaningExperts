@@ -340,9 +340,11 @@ def mini_ba_slider(before_src, after_src, before_alt, after_alt, placeholder=Fal
     </div>'''
 
 def service_showcase_card(href, category, headline, description, chips, photo_src, photo_alt):
+    badge_cls = "svc-category-charcoal" if category == "Commercial Service" else "svc-category-red"
     return f'''<div class="svc-showcase-card">
       <img src="{photo_src}" alt="{photo_alt}" class="svc-photo">
       <div class="svc-body">
+        <span class="svc-category {badge_cls}">{category}</span>
         <h3>{headline}</h3>
         <p>{description}</p>
         <div class="svc-chip-row">
@@ -868,7 +870,7 @@ home_body = f"""
   </div>
 </section>
 
-<section id="faq">
+<section id="faq" class="section-red">
   <div class="wrap">
     <div class="section-head center">
       <span class="eyebrow">Questions</span>
@@ -1341,11 +1343,8 @@ commercial_body = f"""
   </div>
 </section>
 
-<div class="quote-strip color-red">
-  <div class="wrap">
-    <blockquote>&ldquo;Ace handled our office carpets on a Saturday so Monday morning nobody knew we'd even been closed. Same crew every time, no surprises on the invoice.&rdquo;</blockquote>
-    <div class="quote-strip-attrib">&mdash; South Jersey Office Manager, Google Review</div>
-  </div>
+<div class="wrap">
+{quote_snippet("<span class=\"qs-highlight\">Very professional from start to finish</span>. Great price, and I'll be using their services again.", "Barbara D.", color="red")}
 </div>
 
 <section>
