@@ -52,6 +52,7 @@ NAV = [
     ("About", "/about-us/", "about"),
     ("Services", "/services/", "services"),
     ("Commercial", "/commercial-carpet-cleaning/", "commercial"),
+    ("Our Work", "/our-work/", "our-work"),
     ("Service Areas", "/service-areas/", "areas"),
     ("Contact", "/contact/", "contact"),
 ]
@@ -920,7 +921,7 @@ our_work_body = f"""
 """
 page("/our-work/", "Our Work | Real Before & After Photos | Ace Cleaning Experts",
      "See real before-and-after photos from Ace Cleaning Experts' carpet, tile and upholstery cleaning jobs across South Jersey.",
-     "", our_work_body)
+     "our-work", our_work_body)
 
 # ============================================================== ABOUT ===
 about_body = f"""
