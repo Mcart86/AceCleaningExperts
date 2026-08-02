@@ -561,6 +561,8 @@ def town_page(t):
   </div>
 </section>
 
+{quote_snippet(review_text, review_name)}
+
 <section>
   <div class="wrap">
     <div class="section-head">
@@ -617,8 +619,6 @@ def town_page(t):
     ])}
   </div>
 </section>
-
-{quote_snippet(review_text, review_name)}
 
 {cta_band(f"Ready to Book in {name}?", f"Fast response, honest pricing, and a crew that shows up when they say they will.")}
 """
@@ -697,6 +697,18 @@ home_body = f"""
   </div>
 </section>
 
+{quote_snippet("My carpets <span class=\"qs-highlight\">looked and smelled brand new</span> after they were cleaned. They exceeded my expectations.", "Jeff")}
+
+{quote_snippet("I've been using Ace Cleaning Experts <span class=\"qs-highlight\">for over 20 years</span>, and they consistently do a fantastic job. Professional, efficient, reasonably priced, and incredibly courteous.", "Karen")}
+
+{quote_snippet("Ace is <span class=\"qs-highlight\">my favorite carpet cleaner of all time</span>. They are responsive, reliable and trustworthy.", "Anne")}
+
+{quote_snippet("Nick and Jeff were professional, friendly, and thorough from start to finish. You can really tell <span class=\"qs-highlight\">they take pride in their work</span>.", "Chris")}
+
+{quote_snippet("I've used Ace for well over 10 years \u2014 not only to support a local company, but because <span class=\"qs-highlight\">they're always professional and always on-time</span>.", "David")}
+
+{quote_snippet("Great service and people. Been using them <span class=\"qs-highlight\">since 1990, never a complaint</span>.", "Bob")}
+
 {stats_bar()}
 
 <section id="before-after" class="ba-section">
@@ -754,7 +766,6 @@ home_body = f"""
         <div class="ba-mini-label">Upholstery</div>
       </div>
     </div>
-    {quote_snippet("My carpets <span class=\"qs-highlight\">looked and smelled brand new</span> after they were cleaned. They exceeded my expectations.", "Jeff", photo="/images/carpet-after-v2.webp", photo_alt="Clean carpet after Ace Cleaning Experts service")}
   </div>
 </section>
 
@@ -777,7 +788,6 @@ home_body = f"""
         <div class="benefit-item"><span class="b-icon">{icon('droplet')}</span><div><strong>Professional Equipment</strong><span>Truck-mounted systems for a deeper clean.</span></div></div>
         <div class="benefit-item"><span class="b-icon">{icon('star')}</span><div><strong>40+ Years Experience</strong><span>Serving South Jersey since 1983.</span></div></div>
       </div>
-      {quote_snippet("I've been using Ace Cleaning Experts <span class=\"qs-highlight\">for over 20 years</span>, and they consistently do a fantastic job. Professional, efficient, reasonably priced, and incredibly courteous.", "Karen", inline=True)}
     </div>
   </div>
 </section>
@@ -822,9 +832,6 @@ home_body = f"""
         <div class="sub">Fully Insured &bull; Professional Equipment &bull; 100% Satisfaction Guaranteed</div>
       </div>
     </div>
-    <div style="display:flex; flex-direction:column; gap:28px; margin-top:56px;">
-      {quote_snippet("Ace is <span class=\"qs-highlight\">my favorite carpet cleaner of all time</span>. They are responsive, reliable and trustworthy.", "Anne", photo="/images/carpet-mini-after.webp", photo_alt="Clean carpet after Ace Cleaning Experts service")}
-    </div>
     <p style="text-align:center; margin-top:40px;"><a href="/services/" class="btn btn-outline">View All Services</a></p>
   </div>
 </section>
@@ -836,7 +843,6 @@ home_body = f"""
       <h2>The People Behind Ace</h2>
       <p class="lede">Veteran-owned and family-operated, serving South Jersey for 40+ years. The person who quotes your job is accountable for the crew that shows up to do it &mdash; no corporate hand-offs, no call centers.</p>
       <p style="margin:22px 0 0;"><a href="/about-us/" class="btn btn-outline">Learn More About Us {icon('arrow')}</a></p>
-      {quote_snippet("Nick and Jeff were professional, friendly, and thorough from start to finish. You can really tell <span class=\"qs-highlight\">they take pride in their work</span>.", "Chris", inline=True)}
     </div>
     <div class="card-fan">
       <img src="/images/meet-ace-team-v2.webp" alt="The Ace Cleaning Experts family washing the company van together" class="meet-ace-photo">
@@ -851,7 +857,6 @@ home_body = f"""
       <h2>Proudly Serving South Jersey</h2>
       <p class="lede">Home base in Sewell, Deptford and Haddonfield &mdash; with crews out across Gloucester and Camden counties, and beyond, every week.</p>
       <p style="margin-top:26px;"><a href="/service-areas/" class="btn btn-primary">View All Service Areas</a></p>
-      {quote_snippet("I've used Ace for well over 10 years \u2014 not only to support a local company, but because <span class=\"qs-highlight\">they're always professional and always on-time</span>.", "David", inline=True)}
     </div>
     <div class="card-fan">
       <img src="/images/team-sponsor-jersey-v1.webp" alt="Ace Cleaning Experts logo on the back of a sponsored local youth baseball team jersey" class="area-badge">
@@ -876,12 +881,6 @@ home_body = f"""
   </div>
 </section>
 
-<section style="padding:0 0 100px;">
-  <div class="wrap" style="max-width:960px;">
-    {quote_snippet("Great service and people. Been using them <span class=\"qs-highlight\">since 1990, never a complaint</span>.", "Bob", photo="/images/gallery-09.webp", photo_alt="Stained carpet before and after Ace Cleaning Experts deep cleaning")}
-  </div>
-</section>
-
 {cta_band("Ready to Love Your Floors Again?", "Veteran-owned. Family-operated. No upsells, no runaround &mdash; just honest work, every time.")}
 """
 page("/", "Ace Cleaning Experts | South Jersey's Trusted Carpet Cleaning Experts",
@@ -901,13 +900,13 @@ our_work_body = f"""
   </div>
 </section>
 
+{quote_snippet("Will definitely use them again &mdash; <span class=\"qs-highlight\">couldn't be happier with their work</span>!", "Leslie")}
+
 <section>
   <div class="wrap">
     {gallery_grid()}
   </div>
 </section>
-
-{quote_snippet("Will definitely use them again &mdash; <span class=\"qs-highlight\">couldn't be happier with their work</span>!", "Leslie")}
 
 {cta_band("Ready to See Results Like This in Your Home?", "Fast response, honest pricing, and a crew that shows up when they say they will.")}
 """
@@ -927,6 +926,10 @@ about_body = f"""
     </div>
   </div>
 </section>
+
+{quote_snippet("Consistent, quality workmanship and price point <span class=\"qs-highlight\">for decades</span>. There is no other competition that comes close.", "Glenn")}
+
+{quote_snippet("Ace Cleaning Experts makes our marble tile <span class=\"qs-highlight\">look like new every time</span>.", "Fabrizio")}
 
 <section>
   <div class="wrap">
@@ -986,8 +989,6 @@ about_body = f"""
   </div>
 </section>
 
-{quote_snippet("Consistent, quality workmanship and price point <span class=\"qs-highlight\">for decades</span>. There is no other competition that comes close.", "Glenn")}
-
 <section>
   <div class="wrap">
     <div class="section-head center">
@@ -999,7 +1000,6 @@ about_body = f"""
       <img src="/images/equipment-01.webp" alt="HydraMaster Titan truck-mounted carpet cleaning system" style="width:100%; border-radius:var(--radius); box-shadow:var(--shadow-sm); aspect-ratio:3/4; object-fit:cover;">
       <img src="/images/equipment-02.webp" alt="Professional cleaning hoses and equipment organized in the Ace Cleaning Experts van" style="width:100%; border-radius:var(--radius); box-shadow:var(--shadow-sm); aspect-ratio:3/4; object-fit:cover;">
     </div>
-    {quote_snippet("Ace Cleaning Experts makes our marble tile <span class=\"qs-highlight\">look like new every time</span>.", "Fabrizio")}
   </div>
 </section>
 
@@ -1021,6 +1021,10 @@ services_body = f"""
     </div>
   </div>
 </section>
+
+{quote_snippet("Ace cleaned the tile in my kitchen and two bathrooms, plus two area rugs and my basement carpeting and stairs. <span class=\"qs-highlight\">Everything looks great</span>, they were on time, and pricing was fair. Will use them again for my floor cleaning needs!", "Christopher")}
+
+{quote_snippet("Wonderful family business &mdash; they do a great job and <span class=\"qs-highlight\">are always on time</span>.", "Cyndi")}
 
 <section>
   <div class="wrap">
@@ -1065,8 +1069,6 @@ services_body = f"""
   </div>
 </section>
 
-{quote_snippet("Ace cleaned the tile in my kitchen and two bathrooms, plus two area rugs and my basement carpeting and stairs. <span class=\"qs-highlight\">Everything looks great</span>, they were on time, and pricing was fair. Will use them again for my floor cleaning needs!", "Christopher")}
-
 <section style="background:var(--gray);">
   <div class="wrap">
     <div class="section-head center">
@@ -1081,8 +1083,6 @@ services_body = f"""
     ])}
   </div>
 </section>
-
-{quote_snippet("Wonderful family business &mdash; they do a great job and <span class=\"qs-highlight\">are always on time</span>.", "Cyndi")}
 
 {cta_band()}
 """
@@ -1107,6 +1107,10 @@ carpet_body = f"""
   </div>
 </section>
 
+{quote_snippet("Having a home with 2 young children our carpets were a mess. One call and they had us scheduled quickly, arrived early and <span class=\"qs-highlight\">had the job done within the time frame they gave</span>. We'll definitely be repeat customers.", "Dan")}
+
+{quote_snippet("Our dog had an accident and our robot vacuum rolled over it and all over the home office. Team came out ASAP, within 2 hrs of me calling, and <span class=\"qs-highlight\">cleaned up a disaster</span>. Friendly, accommodating and reasonably priced.", "Ema")}
+
 <section>
   <div class="wrap">
     <div class="section-head">
@@ -1124,8 +1128,6 @@ carpet_body = f"""
   </div>
 </section>
 
-{quote_snippet("Having a home with 2 young children our carpets were a mess. One call and they had us scheduled quickly, arrived early and <span class=\"qs-highlight\">had the job done within the time frame they gave</span>. We'll definitely be repeat customers.", "Dan")}
-
 <section style="background:var(--gray);">
   <div class="wrap">
     <div class="section-head center">
@@ -1140,8 +1142,6 @@ carpet_body = f"""
     ])}
   </div>
 </section>
-
-{quote_snippet("Our dog had an accident and our robot vacuum rolled over it and all over the home office. Team came out ASAP, within 2 hrs of me calling, and <span class=\"qs-highlight\">cleaned up a disaster</span>. Friendly, accommodating and reasonably priced.", "Ema")}
 
 <section class="section-red">
   <div class="wrap">
@@ -1183,6 +1183,10 @@ uphol_body = f"""
   </div>
 </section>
 
+{quote_snippet("They are the best around! <span class=\"qs-highlight\">My carpets and my couches came out amazing</span>.", "Joe")}
+
+{quote_snippet("By far the best carpet cleaning and upholstery cleaning company in the area. They're extremely professional and <span class=\"qs-highlight\">pay attention to the finest details</span>. Quick to get back to you regarding appointments. I highly recommend Ace.", "Andrea")}
+
 <section>
   <div class="wrap">
     <div class="section-head">
@@ -1200,8 +1204,6 @@ uphol_body = f"""
   </div>
 </section>
 
-{quote_snippet("They are the best around! <span class=\"qs-highlight\">My carpets and my couches came out amazing</span>.", "Joe")}
-
 <section style="background:var(--gray);">
   <div class="wrap">
     <div class="section-head center">
@@ -1216,8 +1218,6 @@ uphol_body = f"""
     ])}
   </div>
 </section>
-
-{quote_snippet("By far the best carpet cleaning and upholstery cleaning company in the area. They're extremely professional and <span class=\"qs-highlight\">pay attention to the finest details</span>. Quick to get back to you regarding appointments. I highly recommend Ace.", "Andrea")}
 
 <section class="section-red">
   <div class="wrap">
@@ -1259,6 +1259,8 @@ tile_body = f"""
   </div>
 </section>
 
+{quote_snippet("On time and did a good job cleaning tile and grout for a <span class=\"qs-highlight\">reasonable price</span>.", "Mark")}
+
 <section>
   <div class="wrap">
     <div class="section-head">
@@ -1290,8 +1292,6 @@ tile_body = f"""
     ])}
   </div>
 </section>
-
-{quote_snippet("On time and did a good job cleaning tile and grout for a <span class=\"qs-highlight\">reasonable price</span>.", "Mark")}
 
 <section class="section-red">
   <div class="wrap">
@@ -1332,6 +1332,13 @@ commercial_body = f"""
     </div>
   </div>
 </section>
+
+<div class="quote-strip">
+  <div class="wrap">
+    <blockquote>&ldquo;Ace handled our office carpets on a Saturday so Monday morning nobody knew we'd even been closed. Same crew every time, no surprises on the invoice.&rdquo;</blockquote>
+    <div class="quote-strip-attrib">&mdash; South Jersey Office Manager, Google Review</div>
+  </div>
+</div>
 
 <section>
   <div class="wrap">
@@ -1391,13 +1398,6 @@ commercial_body = f"""
     ])}
   </div>
 </section>
-
-<div class="quote-strip">
-  <div class="wrap">
-    <blockquote>&ldquo;Ace handled our office carpets on a Saturday so Monday morning nobody knew we'd even been closed. Same crew every time, no surprises on the invoice.&rdquo;</blockquote>
-    <div class="quote-strip-attrib">&mdash; South Jersey Office Manager, Google Review</div>
-  </div>
-</div>
 
 <section class="section-red">
   <div class="wrap">
@@ -1478,6 +1478,8 @@ areas_body = f"""
   </div>
 </section>
 
+{quote_snippet("Will definitely use them again &mdash; <span class=\"qs-highlight\">couldn't be happier with their work</span>!", "Leslie")}
+
 <section class="areas-featured">
   <div class="wrap">
     <div class="section-head">
@@ -1531,8 +1533,6 @@ areas_body = f"""
   </div>
 </section>
 
-{quote_snippet("Will definitely use them again &mdash; <span class=\"qs-highlight\">couldn't be happier with their work</span>!", "Leslie")}
-
 {card_divider()}
 
 <section class="areas-support">
@@ -1584,6 +1584,8 @@ contact_body = f"""
   </div>
 </section>
 
+{quote_snippet("<span class=\"qs-highlight\">Easy to get a quote from the owner</span>. Good prices for multiple rooms to be cleaned.", "Kevin")}
+
 <section>
   <div class="wrap" style="display:grid; grid-template-columns: 0.9fr 1.1fr; gap:60px; align-items:flex-start;">
     <div>
@@ -1597,7 +1599,6 @@ contact_body = f"""
       <div style="margin-top:32px; padding:22px; background:var(--red); border-radius:var(--radius); font-size:0.92rem; color:var(--white);">
         <strong>Fastest way to reach us:</strong> call {PHONE}. Most quotes take less than five minutes over the phone.
       </div>
-      {quote_snippet("<span class=\"qs-highlight\">Easy to get a quote from the owner</span>. Good prices for multiple rooms to be cleaned.", "Kevin", inline=True)}
     </div>
     <div>
       <!-- Form posts to Formspree. Replace YOUR_FORM_ID with your real endpoint from formspree.io before launch. -->
