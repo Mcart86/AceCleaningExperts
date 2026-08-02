@@ -1352,18 +1352,16 @@ _AREA_SEARCH_DATA = json.dumps([
     {"name": t["name"], "slug": t["slug"], "county": t["county"], "zip": t["zip"]} for t in TOWNS
 ])
 
-def _featured_card(t, size):
+def _featured_card(t):
     short = t["name"].replace(" Township", "")
-    return f'''<a href="/service-areas/{t["slug"]}/" class="areas-feat-card {size}">
+    variant = "color-gloucester" if t["county"] == "Gloucester County" else "color-camden"
+    return f'''<a href="/service-areas/{t["slug"]}/" class="areas-feat-card {variant}">
       <span class="afc-name">{short}</span>
       <span class="afc-meta">{t["county"]}</span>
       <span class="afc-arrow">{icon('arrow')}</span>
     </a>'''
 
-_sizes = ["lg" if (i // 4 + i % 4) % 2 == 0 else "md" for i in range(8)]
-_featured_cards = "\n    ".join(
-    _featured_card(t, s) for t, s in zip(_FEATURED_TOWNS, _sizes)
-)
+_featured_cards = "\n    ".join(_featured_card(t) for t in _FEATURED_TOWNS)
 
 def _county_town_list(towns):
     return "\n        ".join(
