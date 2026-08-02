@@ -253,7 +253,7 @@ nav.primary-nav .nav-dropdown-panel a:hover { background: var(--gray); color: va
 }
 .placeholder-block svg { color: var(--charcoal-30); }
 .hero-visual { width: 100%; aspect-ratio: 1400 / 755; border-radius: var(--radius); }
-img.hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+img.hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: 35% center; display: block; }
 
 /* ---------- Section head ---------- */
 .section-head { max-width: 640px; margin-bottom: 52px; }
@@ -390,7 +390,7 @@ img.hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: 
 .form-grid .full { grid-column: 1 / -1; }
 @media (max-width: 620px) { .form-grid { grid-template-columns: 1fr; } }
 .field label { display: block; font-size: 0.85rem; font-weight: 700; color: var(--charcoal-70); margin-bottom: 8px; }
-.field input, .field select, .field textarea { width: 100%; padding: 14px 15px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); background: var(--white); font-family: var(--font); font-size: 0.97rem; color: var(--charcoal); }
+.field input, .field select, .field textarea { width: 100%; padding: 14px 15px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); background: var(--white); font-family: var(--font); font-size: 1rem; color: var(--charcoal); }
 .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--red); }
 .field textarea { resize: vertical; min-height: 120px; }
 
@@ -582,6 +582,7 @@ footer.site-footer a:hover { color: var(--white); }
 .quote-strip-card.color-red { background: var(--red); }
 .quote-strip-card.color-red .quote-strip-attrib { color: var(--white); }
 .quote-strip-card.inline { margin-top: 24px; padding: 36px 32px; }
+@media (max-width: 600px) { .quote-strip-card { padding: 30px 24px; } .quote-strip-card.inline { padding: 26px 20px; } }
 .quote-strip-card blockquote {
   margin: 0 auto; max-width: 620px; font-family: var(--font-display); font-weight: 600; font-style: italic;
   font-size: clamp(1.05rem, 1.8vw, 1.3rem); line-height: 1.5; color: var(--white);
@@ -593,6 +594,7 @@ footer.site-footer a:hover { color: var(--white); }
 
 .related-split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
 .related-panel { border-radius: var(--radius); padding: 36px 32px; }
+@media (max-width: 600px) { .related-panel { padding: 26px 22px; } }
 .related-panel h3 { font-size: 1.05rem; margin-bottom: 16px; }
 .panel-red { background: var(--red); }
 .panel-red h3 { color: var(--white); }
@@ -851,7 +853,7 @@ footer.site-footer a:hover { color: var(--white); }
 .areas-search-box svg { color: var(--charcoal-50); flex-shrink: 0; }
 .areas-search-box input {
   border: none; outline: none; background: transparent; width: 100%;
-  font-family: var(--font); font-size: 0.98rem; color: var(--charcoal);
+  font-family: var(--font); font-size: 1rem; color: var(--charcoal);
 }
 .areas-search-results {
   position: absolute; top: calc(100% + 8px); left: 0; right: 0; z-index: 5;
